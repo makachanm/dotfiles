@@ -1,0 +1,124 @@
+// ============================================================================
+// 자동 실행 (Autostart 데몬)
+// ============================================================================
+spawn-at-startup "waybar"
+spawn-at-startup "swaync"
+spawn-at-startup "swaybg" "-i" "/home/maka/Pictures/wallpaper/147887248_p0.png" "-m" "fill"
+spawn-at-startup "swayidle" "-w" \
+    "timeout" "250" "niri msg action power-off-monitoris" \
+    "timeout" "1000" "systemctl suspend"
+spawn-at-startup "/usr/libexec/xfce-polkit"
+spawn-at-startup "kime"
+//spawn-at-startup "kdeconnectd"
+//spawn-at-startup "kdeconnect-indicator"
+spawn-at-startup "tailscale" "systray"
+spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
+
+environment {
+    GTK_IM_MODULE "kime"
+    QT_IM_MODULE "kime"
+    XMODIFIERS "@im=kime"
+    SDL_IM_MODULE "kime"
+    INPUT_METHOD "kime"
+    GLFW_IM_MODULE "kime"
+}
+
+// ============================================================================
+// 레이아웃 및 타일링 옵션
+// ============================================================================
+output "eDP-1" { 
+    mode "2240x1400"
+    scale 1.15
+    position x=0 y=0
+}
+
+output "DP-1" { 
+    mode "3840x2160"
+    scale 1.4
+    position x=1920 y=0
+}
+
+gestures {
+    hot-corners {
+        off
+    }
+}
+
+layout {
+    gaps 0
+    default-column-width { proportion 0.5; }
+    
+    focus-ring {
+        off
+    } 
+}
+
+// ============================================================================
+// 입력 장치 설정
+// ============================================================================
+input {
+    keyboard {
+        xkb {
+            layout "kr"
+        }
+    }
+    touchpad {
+        tap
+        dwt
+        natural-scroll
+    }
+}
+
+// ============================================================================
+// 단축키 설정 (Custom Keybindings)
+// ============================================================================
+binds {
+    // ------------------------------------------------------------------------
+    // 요청하신 커스텀 단축키
+    // ------------------------------------------------------------------------
+    // 창 포커스 이동 (Super + A / S)
+
+    Mod+Escape { close-window; }
+
+    Mod+Q { focus-column-left; }
+    Mod+W { focus-column-right; }
+
+    // 창 위치 교체 (Super + Q / W)
+    Mod+A { move-column-left; }
+    Mod+S { move-column-right; }
+ 
+    // 창 크기 조절 (Super + E / D)
+    Mod+E { set-column-width "+10%"; }
+    Mod+D { set-column-width "-10%"; }
+
+    // 전체화면 토글 (Super + Z)
+    Mod+Z { maximize-column; }
+    Mod+X { toggle-window-floating; }
+    // 워크스페이스 전환 (Super + X / C)
+    Mod+Shift+A { focus-monitor-left; }
+    Mod+Shift+S { focus-monitor-right; } 
+
+    // ------------------------------------------------------------------------
+    // 필수 기본 윈도우 조작 단축키
+    // ------------------------------------------------------------------------
+    Mod+T { spawn "alacritty"; }
+    Mod+Space  { spawn "rofi" "-show" "drun" "-show-icons"; }
+    Mod+N      { spawn "swaync-client" "-t" "-sw"; }
+    Mod+R { spawn-sh "cliphist list | rofi -dmenu -i -p clipboard | cliphist decode | wl-copy"; }
+    Mod+Shift+R { spawn-sh "cliphist wipe"; }
+    Mod+F { spawn "sh" "-c" "grim -g \"$(slurp)\" - | wl-copy"; }
+
+    Mod+Shift+Escape { quit; }
+    Ctrl+Shift+Escape { spawn "xfce4-taskmanager"; }
+
+    // 마우스 휠 스크롤 포커스 이동
+    //Mod+WheelScrollDown coalesce=true { focus-column-right; }
+    //Mod+WheelScrollUp   coalesce=true { focus-column-left; }
+
+    // 미디어 및 시스템 키
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
+    XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "set" "10%+"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "10%-"; }
+}

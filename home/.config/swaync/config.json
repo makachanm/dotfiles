@@ -1,0 +1,81 @@
+{
+  "$schema": "/etc/swaync/configSchema.json",
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "overlay",
+  "control-center-layer": "top",
+  "layer-shell": true,
+  "cssPriority": "application",
+  "control-center-width": 350,
+  "control-center-height": 600,
+  "notification-window-width": 350,
+  "keyboard-shortcuts": true,
+  "transition-time": 200,
+  "hide-on-action": true,
+  "widgets": [
+    "title",
+    "dnd",
+    "buttons-grid#tools",
+    "volume",
+    "backlight",
+    "notifications",
+    "buttons-grid#power"
+  ],
+  "widget-config": {
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": "Clear All"
+    },
+    "dnd": {
+      "text": "Do Not Disturb"
+    },
+    "volume": {
+      "label": "VOL"
+    },
+    "backlight": {
+      "label": "BRI",
+      "device": "amdgpu_bl1"
+    },
+    "buttons-grid#tools": {
+      "actions": [
+        {
+          "label": "NET",
+          "command": "nm-connection-editor"
+        },
+        {
+          "label": "BLT",
+          "command": "blueman-manager"
+        },
+	{
+          "label": "MIX",
+          "command": "pavucontrol"
+        },
+	{
+	  "label": "REC",
+	  "command": "pkill wf-recorder || wf-recorder -g \"$(slurp)\" -f ~/Videos/recording_$(date +%Y%m%d_%H%M%S).mp4"
+	}
+      ]
+    },
+    "buttons-grid#power": {
+      "actions": [
+        {
+          "label": "EXIT",
+          "command": "niri msg action quit"
+        },
+	{
+	  "label": "SUSP",
+	  "command": "systemctl suspend"
+	},
+        {
+          "label": "REBT",
+          "command": "systemctl reboot"
+        },
+        {
+          "label": "POFF",
+          "command": "systemctl poweroff"
+        }
+      ]
+    }
+  }
+}

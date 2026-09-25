@@ -1,0 +1,78 @@
+configuration {
+    modi: "drun,run,window";
+    font: "monospace 11";
+    show-icons: false;
+    terminal: "foot";
+    drun-display-format: "{name}";
+    location: 0;
+    disable-history: false;
+}
+
+@theme "/dev/null"
+
+* {
+    bg: #1e1e1ed9;
+    bg-selected: #444444;
+    fg: #ffffff;
+    fg-dim: #888888;
+    border-col: #444444;
+
+    background-color: transparent;
+    text-color: @fg;
+    margin: 0px;
+    padding: 0px;
+}
+
+window {
+    background-color: @bg;
+    border: 1px;
+    border-color: @border-col;
+    border-radius: 0px;
+    width: 450px;
+    padding: 12px;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    spacing: 8px;
+}
+
+inputbar {
+    children: [ prompt, entry ];
+    border: 1px;
+    border-color: @border-col;
+    border-radius: 0px;
+    padding: 6px;
+}
+
+prompt {
+    text-color: @fg-dim;
+    padding: 0px 8px 0px 2px;
+}
+
+entry {
+    text-color: @fg;
+    placeholder: "Search...";
+    placeholder-color: @fg-dim;
+}
+
+listview {
+    lines: 8;
+    columns: 1;
+    fixed-height: false;
+    spacing: 2px;
+}
+
+element {
+    padding: 6px 8px;
+    border-radius: 0px;
+}
+
+element selected {
+    background-color: @bg-selected;
+    text-color: @fg;
+}
+
+element-text {
+    text-color: inherit;
+}

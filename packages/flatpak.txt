@@ -1,0 +1,2 @@
+io.github.nolight132.sonora
+org.prismlauncher.PrismLauncher

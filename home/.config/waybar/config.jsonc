@@ -1,0 +1,79 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "spacing": 4,
+    "modules-left": ["niri/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "cpu", "battery", "power-profiles-daemon", "custom/notification"],
+    
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}"
+    },
+    "cpu": {
+        "format": "CPU {usage}%",
+        "tooltip": false
+    },
+    "keyboard-state": {
+        "numlock": false,
+        "capslock": true,
+        "format": "{icon}",
+        "format-icons": {
+            "locked": "CAPS ON",
+            "unlocked": "CAPS OFF"
+        }
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "BAL",
+        "performance": "POW",
+        "balanced": "BAL",
+        "power-saver": "SAV"
+     }
+   },
+    "clock": {
+        "format": "{:%Y-%m-%d %a %H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>"
+    },
+    "battery": {
+    	"states": {
+        	"warning": 30,
+           "critical": 15
+       },
+       "format": "BAT {capacity}%",
+       "format-charging": "CHG {capacity}%",
+       "format-plugged": "PLG {capacity}%",
+       "format-icons": ["", "", "", "", ""]
+   },
+    "pulseaudio": {
+        "format": "VOL {volume}%",
+        "format-muted": "VOL Muted",
+        "on-click": "pavucontrol"
+    },
+    "network": {
+        "format-wifi": "NET {signalStrength}%",
+        "format-ethernet": "NET Wired",
+        "format-disconnected": "NET Offline"
+    },
+    "cpu": {
+        "format": "CPU {usage}%"
+    },
+    "memory": {
+        "format": "MEM {percentage}%"
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "NOTI",
+        "on-click": "swaync-client -t -sw",
+        "escape": true
+    },
+    "custom/runcat": {
+        "exec": "polycat",
+        "restart-interval": 1
+    }
+}

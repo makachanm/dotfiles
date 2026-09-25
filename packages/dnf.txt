@@ -1,0 +1,114 @@
+## 데스크탑
+niri
+waybar
+rofi
+swaybg
+swayidle
+swaylock
+SwayNotificationCenter
+xdg-desktop-portal-wlr
+xdg-desktop-portal-gnome
+cliphist
+grim
+slurp
+wf-recorder
+brightnessctl
+alacritty
+sddm
+qt5-qtgraphicaleffects
+keyd
+tuned-ppd
+
+## 데스크탑 유틸
+Thunar
+tumbler
+mousepad
+xarchiver
+xfce4-settings
+xfce4-taskmanager
+xfce4-screenshooter
+galculator
+blueman
+pavucontrol
+qpwgraph
+
+## 한글 입력기
+kime
+fcitx5
+fcitx5-hangul
+fcitx5-configtool
+
+## 셸
+zsh
+git
+htop
+fastfetch
+yt-dlp
+unrar
+
+## 개발
+gcc
+gcc-c++
+make
+cmake
+meson
+ninja-build
+clang
+clang-tools-extra
+llvm
+flex
+bison
+bison-devel
+libfl-static
+glibc-static
+libstdc++-static
+openssl-devel
+libasan
+libubsan
+valgrind
+perf
+massif-visualizer
+golang
+cargo
+nodejs22
+nodejs22-npm
+code
+texlive-scheme-medium
+
+## 가상화
+moby-engine
+docker-compose
+toolbox
+libvirt-daemon-kvm
+libvirt-daemon-config-network
+
+## 인터넷
+librewolf
+thorium-browser
+thunderbird
+slack
+vesktop
+ayugram-desktop
+kde-connect
+tailscale
+
+## 멀티미디어
+gimp
+kdenlive
+obs-studio
+audacity
+audacious
+vlc
+transmission-gtk
+simple-scan
+qdirstat
+
+## 멀티미디어 코덱
+gstreamer1-plugins-bad-freeworld
+gstreamer1-plugins-ugly
+libavcodec-freeworld
+libheif-freeworld
+
+## 게임 / 호환성
+steam
+wine-common

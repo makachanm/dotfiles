@@ -1,0 +1,41 @@
+# 폰트 및 기본 동작
+font=monospace
+font-size=14
+ignore-empty-password
+show-failed-attempts
+
+# 배경 설정 (어두운 반투명)
+color=1e1e1eF0
+
+# 인디케이터 크기 및 형태 설정 (직각 사각형 형태)
+indicator
+indicator-radius=80
+indicator-thickness=10
+
+# 색상 설정 (기본은 투명, 키 입력 시 테두리와 글자 표시)
+inside-color=00000000
+inside-clear-color=00000000
+inside-caps-lock-color=00000000
+inside-ver-color=00000000
+inside-wrong-color=00000000
+
+ring-color=444444ff
+ring-clear-color=aaaa00ff
+ring-caps-lock-color=00aaaaff
+ring-ver-color=ffffffff
+ring-wrong-color=ff4444ff
+
+line-color=00000000
+line-clear-color=00000000
+line-caps-lock-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
+
+text-color=ffffffff
+text-clear-color=ffffffff
+text-caps-lock-color=ffffffff
+text-ver-color=ffffffff
+text-wrong-color=ffffffff
+
+bs-hl-color=ff4444ff
+key-hl-color=ffffffff

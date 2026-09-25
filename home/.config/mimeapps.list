@@ -1,0 +1,18 @@
+[Default Applications]
+x-scheme-handler/http=librewolf.desktop
+x-scheme-handler/https=librewolf.desktop
+application/pdf=librewolf.desktop
+text/plain=org.xfce.mousepad.desktop
+text/html=librewolf.desktop
+x-scheme-handler/discord=vesktop.desktop
+x-scheme-handler/tg=userapp-AyuGram Desktop-ACOFU3.desktop
+x-scheme-handler/tonsite=userapp-AyuGram Desktop-K8AFU3.desktop
+
+[Added Associations]
+x-scheme-handler/http=librewolf.desktop;
+x-scheme-handler/https=librewolf.desktop;
+application/pdf=librewolf.desktop;
+text/plain=libreoffice-writer.desktop;org.xfce.mousepad.desktop;
+text/html=librewolf.desktop;
+x-scheme-handler/tg=userapp-AyuGram Desktop-ACOFU3.desktop;
+x-scheme-handler/tonsite=userapp-AyuGram Desktop-K8AFU3.desktop;
