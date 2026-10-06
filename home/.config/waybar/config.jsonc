@@ -20,8 +20,17 @@
         "spacing": 12
     },
     "clock": {
-        "format": "<span color='#888888'>{0:%Y-%m-%d %a}</span>  {0:%H:%M}",
-        "tooltip-format": "<tt><big>{calendar}</big></tt>"
+        "format": "<span color='#888888'>{0:%m.%d %a}</span> {0:%H:%M}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "format": {
+                "months": "<span color='#ffffff'><b>{}</b></span>",
+                "weekdays": "<span color='#888888'>{}</span>",
+                "days": "<span color='#c4c4c4'>{}</span>",
+                "today": "<span color='#000000' background='#ffffff'><b>{}</b></span>"
+            }
+        }
     },
     "power-profiles-daemon": {
         "format": "<span color='#888888'>MODE</span> {icon}",
