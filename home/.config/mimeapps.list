@@ -1,19 +1,19 @@
 [Default Applications]
-x-scheme-handler/http=librewolf.desktop
-x-scheme-handler/https=librewolf.desktop
-application/pdf=librewolf.desktop
+x-scheme-handler/http=zen-browser.desktop
+x-scheme-handler/https=zen-browser.desktop
+application/pdf=zen-browser.desktop
 text/plain=org.xfce.mousepad.desktop
-text/html=librewolf.desktop
+text/html=zen-browser.desktop
 x-scheme-handler/discord=vesktop.desktop
 x-scheme-handler/tg=userapp-AyuGram Desktop-ACOFU3.desktop
 x-scheme-handler/tonsite=userapp-AyuGram Desktop-K8AFU3.desktop
 x-scheme-handler/claude-cli=claude-code-url-handler.desktop
 
 [Added Associations]
-x-scheme-handler/http=librewolf.desktop;
-x-scheme-handler/https=librewolf.desktop;
-application/pdf=librewolf.desktop;
+x-scheme-handler/http=zen-browser.desktop;
+x-scheme-handler/https=zen-browser.desktop;
+application/pdf=zen-browser.desktop;
 text/plain=libreoffice-writer.desktop;org.xfce.mousepad.desktop;
-text/html=librewolf.desktop;
+text/html=zen-browser.desktop;
 x-scheme-handler/tg=userapp-AyuGram Desktop-ACOFU3.desktop;
 x-scheme-handler/tonsite=userapp-AyuGram Desktop-K8AFU3.desktop;

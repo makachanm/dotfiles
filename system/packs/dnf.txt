@@ -84,6 +84,7 @@ libvirt-daemon-config-network
 
 ## 인터넷
 librewolf
+zen-browser
 thorium-browser
 thunderbird
 slack
