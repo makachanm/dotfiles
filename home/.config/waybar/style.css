@@ -6,27 +6,34 @@
     min-height: 0;
 }
 
-/* 바 전체 배경 투명화 */
 window#waybar {
     background-color: #000000;
     color: #ffffff;
 }
 
-/* 기본 모듈: 마진과 패딩 유지, 배경/테두리만 투명화 */
-#clock,
-#battery,
-#pulseaudio,
-#network,
-#cpu,
-#memory,
-#tray {
-    padding: 0 3px;
-    margin: 3px 2px;
-    background-color: transparent;
-    border: none;
+tooltip {
+    background-color: #000000;
+    border: 1px solid #444444;
 }
 
-/* 트레이 내부 아이콘 간격 조정 */
+tooltip label {
+    color: #ffffff;
+    padding: 2px 4px;
+}
+
+#workspaces button,
+#clock,
+#tray,
+#power-profiles-daemon,
+#cpu,
+#battery,
+#custom-notification {
+    padding: 0 5px;
+    margin: 3px 2px;
+    background-color: transparent;
+    color: #ffffff;
+}
+
 #tray > .passive,
 #tray > .active,
 #tray > .needs-attention,
@@ -36,57 +43,18 @@ window#waybar {
     padding: 0 2px;
 }
 
-/* 워크스페이스 버튼: 마진 및 패딩 유지 */
-#workspaces button {
-    padding: 0 5px;
-    margin: 3px 2px;
-    background-color: transparent;
-    color: #ffffff;
+#workspaces button:hover,
+#power-profiles-daemon:hover,
+#custom-notification:hover {
+    background-color: #333333;
 }
 
-/* 클릭/선택된 버튼만 하이라이트 */
 #workspaces button.focused {
     background-color: #444444;
-    color: #ffffff;
-}
-
-#workspaces button:hover {
-    background-color: #333333;
-    color: #ffffff;
 }
 
 #workspaces button.urgent {
     background-color: #a00000;
-    color: #ffffff;
-}
-
-/* 알림 버튼 (클릭 가능 요소 하이라이트) */
-#custom-notification {
-    padding: 0px 5px;
-    margin: 3px 2px;
-    background-color: transparent;
-    color: #ffffff;
-}
-
-#custom-notification:hover {
-    background-color: #444444;
-}
-
-#power-profiles-daemon {
-    background: transparent;
-    color: #ffffff;
-    padding: 0px 5px;
-    margin: 3px 2px;
-}
-
-/* 마우스 호버 시 강조 */
-#power-profiles-daemon:hover {
-    background: #444444;
-}
-
-/* 상태별 색상 강조 */
-#pulseaudio.muted {
-    color: #888888;
 }
 
 #battery.warning {

@@ -12,11 +12,11 @@ configuration {
 
 * {
     bg: #000000;
-    bg-input: rgba(20, 20, 20, 0.9);
+    bg-input: #141414;
     bg-selected: #444444;
     fg: #ffffff;
     fg-dim: #888888;
-    border-col: #555555;
+    border-col: #444444;
 
     background-color: transparent;
     text-color: @fg;

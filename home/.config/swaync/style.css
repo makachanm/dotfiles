@@ -1,93 +1,235 @@
+:root {
+  --cc-bg: #000000;
+  --noti-border-color: #444444;
+  --noti-bg: 20, 20, 20;
+  --noti-bg-alpha: 1;
+  --noti-bg-darker: #000000;
+  --noti-bg-hover: #333333;
+  --noti-bg-focus: transparent;
+  --noti-close-bg: transparent;
+  --noti-close-bg-hover: #444444;
+  --text-color: #ffffff;
+  --text-color-disabled: #888888;
+  --bg-selected: #444444;
+  --border: 1px solid #444444;
+  --border-radius: 0;
+  --notification-shadow: none;
+  --notification-icon-size: 48px;
+  --notification-group-icon-size: 24px;
+  --font-size-body: 13px;
+  --font-size-summary: 13px;
+}
+
 * {
-    font-family: 'Pretendard SemiBold', sans-serif;
-    border-radius: 0px !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
+  font-family: 'Pretendard SemiBold', sans-serif;
+  font-size: 13px;
 }
 
-/* 전체 바탕 및 메인 컨트롤 센터 */
+button {
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
+  background: transparent;
+  border: 1px solid #444444;
+  color: #ffffff;
+  padding: 6px 10px;
+}
+
+button:hover {
+  background: #333333;
+}
+
+button:active,
+button:checked {
+  background: #444444;
+}
+
 .control-center {
-   justify-content: center;
-    border-radius: 0px;
-    background: #000000;
-    color: #ffffff;
-    padding: 12px;
+  background: #000000;
+  border-left: 1px solid #444444;
+  border-radius: 0;
+  padding: 4px;
 }
 
-/* 알림 카드 패널 */
+.floating-notifications .notification-row .notification-background {
+  padding: 4px 8px;
+}
+
+.control-center .notification-row .notification-background {
+  padding: 4px 0;
+}
+
+.notification-row:focus,
+.notification-group:focus {
+  background: transparent;
+}
+
 .notification {
-    font-family: 'Pretendard ExtraBold', sans-serif;
-    background: rgba(20, 20, 20, 0.9);
-    border: 1px solid #555555;
-    margin: 6px 0px;
+  background: #141414;
+  border: 1px solid #444444;
+  border-radius: 0;
+  box-shadow: none;
 }
 
+.notification.critical {
+  border-color: #a00000;
+}
+
+.notification-default-action,
 .notification-content {
-    padding: 8px;
+  border-radius: 0;
+  background: transparent;
 }
 
-/* 알림 제목 및 본문 텍스트 */
-.summary {
-    color: #ffffff;
-    font-weight: bold;
+.notification-default-action {
+  padding: 8px;
 }
 
-.body {
-    color: #cccccc;
+.notification-default-action:hover {
+  background: #333333;
 }
 
-/* 위젯 패널 및 버튼 그리드 */
-.widget-title {
-    font-family: 'Pretendard ExtraBold', sans-serif;
-    color: #888888;
-    margin-bottom: 8px;
+.notification-content .image {
+  margin-right: 10px;
+  border-radius: 0;
 }
 
-.widget-button-grid {
-  margin: 0 auto;
+.notification-content .text-box .summary {
+  font-family: 'Pretendard Bold', sans-serif;
+  color: #ffffff;
 }
 
-.widget-buttons-grid button,
-.widget-action-buttons button,
+.notification-content .text-box .time {
+  color: #888888;
+  margin-left: 8px;
+  margin-right: 24px;
+}
+
+.notification-content .text-box .body {
+  color: #cccccc;
+}
+
+.notification-alt-actions {
+  padding: 0 8px 8px;
+  border-radius: 0;
+}
+
+.notification-action {
+  margin: 0 2px;
+}
+
+.notification-action > button {
+  border-radius: 0;
+  padding: 4px 8px;
+}
+
 .close-button {
-    margin: 0 auto;
-    align-items: center;
-    background: transparent;
-    border: 1px solid #555555;
-    color: #ffffff;
-    padding: 6px 10px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  min-width: 22px;
+  min-height: 22px;
+  margin: 6px;
+  padding: 0;
 }
 
-.widget-buttons-grid button:hover,
-.widget-action-buttons button:hover,
 .close-button:hover {
-    background: #444444;
-    border-color: #ffffff;
+  background: #444444;
 }
 
-/* 그리드 내부 flowbox 레이아웃 중앙 정렬 */
-.widget-buttons-grid > flowbox {
-    justify-content: center;
+.notification-group .notification-group-headers,
+.notification-group .notification-group-buttons {
+  margin: 0 8px;
 }
 
-/* 개별 버튼 박스 요소 중앙 정렬 */
-.widget-buttons-grid flowboxchild {
-    padding: 3px;
-    justify-content: center;
+.notification-group .notification-group-header {
+  color: #888888;
 }
 
-/* 슬라이더 트랙 (볼륨, 밝기 등) */
+.notification-group.collapsed .notification-row .notification {
+  background: #141414;
+}
+
+.notification-group.collapsed:hover .notification-row:not(:only-child) .notification {
+  background: #333333;
+}
+
+.widget {
+  margin: 4px 8px;
+  padding: 4px 0;
+  border-radius: 0;
+}
+
+.widget-title > label {
+  font-family: 'Pretendard ExtraBold', sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.widget-title > button {
+  padding: 4px 10px;
+}
+
+.widget-dnd > label {
+  color: #ffffff;
+}
+
+.widget-dnd switch {
+  border-radius: 0;
+  background: #141414;
+  border: 1px solid #444444;
+  min-height: 20px;
+}
+
+.widget-dnd switch:checked {
+  background: #444444;
+}
+
+.widget-dnd switch slider {
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: none;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.widget-backlight > label {
+  color: #888888;
+  margin-right: 8px;
+}
+
 scale trough {
-    background-color: #333333;
-    border: 1px solid #555555;
-    min-height: 8px;
+  background: #141414;
+  border: 1px solid #444444;
+  border-radius: 0;
+  min-height: 6px;
 }
 
 scale highlight {
-    background-color: #ffffff;
+  background: #ffffff;
+  border-radius: 0;
 }
 
-/* 닫기 버튼 */
-.close-button {
-    padding: 2px 6px;
+scale slider {
+  background: #ffffff;
+  border-radius: 0;
+  box-shadow: none;
+  min-width: 10px;
+  min-height: 16px;
+  margin: -6px 0;
+}
+
+.widget-buttons-grid {
+  padding: 4px 0;
+}
+
+.widget-buttons-grid flowboxchild {
+  padding: 0;
+}
+
+.widget-buttons-grid flowboxchild > button {
+  border-radius: 0;
+  margin: 0 2px;
+  padding: 8px 0;
+  min-width: 0;
 }
