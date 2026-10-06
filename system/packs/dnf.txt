@@ -4,7 +4,6 @@ waybar
 rofi
 swaybg
 swayidle
-swaylock
 hyprlock
 SwayNotificationCenter
 xdg-desktop-portal-wlr
