@@ -5,6 +5,7 @@ rofi
 swaybg
 swayidle
 swaylock
+hyprlock
 SwayNotificationCenter
 xdg-desktop-portal-wlr
 xdg-desktop-portal-gnome

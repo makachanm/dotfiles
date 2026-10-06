@@ -34,23 +34,27 @@
       "device": "amdgpu_bl1"
     },
     "buttons-grid#power": {
-      "buttons-per-row": 4,
+      "buttons-per-row": 5,
       "actions": [
         {
-          "label": "EXIT",
-          "command": "niri msg action quit"
+          "label": "",
+          "command": "loginctl lock-session"
         },
         {
-          "label": "SUSP",
+          "label": "",
           "command": "systemctl suspend"
         },
         {
-          "label": "REBT",
-          "command": "systemctl reboot"
+          "label": "",
+          "command": "niri msg action quit"
         },
         {
-          "label": "POFF",
-          "command": "systemctl poweroff"
+          "label": "",
+          "command": "sh -c 'printf \"Cancel\\nRestart\\n\" | rofi -dmenu -no-custom -p \"Restart?\" | grep -qx \"Restart\" && systemctl reboot'"
+        },
+        {
+          "label": "",
+          "command": "sh -c 'printf \"Cancel\\nPoweroff\\n\" | rofi -dmenu -no-custom -p \"Poweroff?\" | grep -qx \"Poweroff\" && systemctl poweroff'"
         }
       ]
     }
