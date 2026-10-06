@@ -15,10 +15,8 @@
   "widgets": [
     "title",
     "dnd",
-    "buttons-grid#tools",
-    "volume",
-    "backlight",
     "notifications",
+    "backlight",
     "buttons-grid#power"
   ],
   "widget-config": {
@@ -30,32 +28,9 @@
     "dnd": {
       "text": "Do Not Disturb"
     },
-    "volume": {
-      "label": "VOL"
-    },
     "backlight": {
       "label": "BRI",
       "device": "amdgpu_bl1"
-    },
-    "buttons-grid#tools": {
-      "actions": [
-        {
-          "label": "NET",
-          "command": "nm-connection-editor"
-        },
-        {
-          "label": "BLT",
-          "command": "blueman-manager"
-        },
-	{
-          "label": "MIX",
-          "command": "pavucontrol"
-        },
-	{
-	  "label": "REC",
-	  "command": "pkill wf-recorder || wf-recorder -g \"$(slurp)\" -f ~/Videos/recording_$(date +%Y%m%d_%H%M%S).mp4"
-	}
-      ]
     },
     "buttons-grid#power": {
       "actions": [

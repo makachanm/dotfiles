@@ -5,7 +5,7 @@
     "spacing": 4,
     "modules-left": ["niri/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "cpu", "battery", "power-profiles-daemon", "custom/notification"],
+    "modules-right": ["tray", "power-profiles-daemon", "cpu", "battery", "custom/notification"],
     
     "sway/workspaces": {
         "disable-scroll": true,
@@ -38,7 +38,7 @@
    },
     "clock": {
         "format": "{:%Y-%m-%d %a %H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>"
+        "tooltip-format": "<tt><big>{calendar}</big></tt>"
     },
     "battery": {
     	"states": {
@@ -68,7 +68,7 @@
     },
     "custom/notification": {
         "tooltip": false,
-        "format": "NOTI",
+        "format": "⁝⁝",
         "on-click": "swaync-client -t -sw",
         "escape": true
     },
