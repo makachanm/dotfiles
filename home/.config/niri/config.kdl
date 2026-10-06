@@ -4,7 +4,10 @@ spawn-at-startup "swaync"
 spawn-at-startup "swaybg" "-i" "/home/maka/Pictures/wallpaper/vvvv.png" "-m" "fill"
 spawn-at-startup "swayidle" "-w" \
     "timeout" "250" "niri msg action power-off-monitors" \
-    "timeout" "1000" "systemctl suspend"
+    "timeout" "255" "loginctl lock-session" \
+    "timeout" "1000" "systemctl suspend" \
+    "before-sleep" "loginctl lock-session; sleep 1" \
+    "lock" "pidof hyprlock || hyprlock &"
 spawn-at-startup "/usr/libexec/xfce-polkit"
 spawn-at-startup "blueman-applet"
 spawn-at-startup "nm-applet"
@@ -68,6 +71,7 @@ binds {
     Mod+F { spawn-sh "grim -g \"$(slurp)\" - | wl-copy"; }
     Ctrl+Shift+Escape { spawn "xfce4-taskmanager"; }
 
+    Mod+L { spawn "loginctl" "lock-session"; }
     Mod+Escape { close-window; }
     Mod+Shift+Escape { quit; }
 

@@ -231,6 +231,18 @@ scale slider {
 .widget-buttons-grid flowboxchild > button {
   border-radius: 0;
   margin: 0 2px;
-  padding: 8px 0;
-  min-width: 0;
+  padding: 10px 0;
+  min-width: 58px;
+}
+
+.widget-buttons-grid flowboxchild > button label {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 15px;
+}
+
+.widget-buttons-grid flowboxchild:nth-child(4) > button:hover,
+.widget-buttons-grid flowboxchild:nth-child(5) > button:hover {
+  background: #a00000;
+  border-color: #a00000;
 }
