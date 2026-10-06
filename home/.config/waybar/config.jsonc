@@ -21,7 +21,7 @@
     },
     "clock": {
         "format": "<span color='#888888'>{0:%Y.%m.%d %a}</span> {0:%H:%M}",
-        "tooltip-format": "<tt>{calendar}</tt>",
+        "tooltip-format": "<span font_family='Noto Sans Mono' size='16pt'>{calendar}</span>",
         "calendar": {
             "mode": "month",
             "format": {
