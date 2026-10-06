@@ -1,6 +1,6 @@
 configuration {
     modi: "drun,run,window";
-    font: "monospace 11";
+    font: "Pretendard SemiBold 10";
     show-icons: false;
     terminal: "foot";
     drun-display-format: "{name}";
@@ -11,11 +11,12 @@ configuration {
 @theme "/dev/null"
 
 * {
-    bg: #1e1e1ed9;
+    bg: #000000;
+    bg-input: rgba(20, 20, 20, 0.9);
     bg-selected: #444444;
     fg: #ffffff;
     fg-dim: #888888;
-    border-col: #444444;
+    border-col: #555555;
 
     background-color: transparent;
     text-color: @fg;
@@ -39,6 +40,7 @@ mainbox {
 
 inputbar {
     children: [ prompt, entry ];
+    background-color: @bg-input;
     border: 1px;
     border-color: @border-col;
     border-radius: 0px;
