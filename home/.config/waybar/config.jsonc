@@ -29,9 +29,9 @@
         "tooltip-format": "Profile: {profile}\nDriver: {driver}",
         "format-icons": {
             "default": "BAL",
-            "performance": "PERF",
+            "performance": "POW",
             "balanced": "BAL",
-            "power-saver": "SAVE"
+            "power-saver": "SAV"
         }
     },
     "cpu": {
