@@ -1,16 +1,17 @@
 // ============================================================================
 // 자동 실행 (Autostart 데몬)
 // ============================================================================
+spawn-at-startup "kime"
 spawn-at-startup "waybar"
 spawn-at-startup "swaync"
-spawn-at-startup "swaybg" "-i" "/home/maka/Pictures/wallpaper/147887248_p0.png" "-m" "fill"
+spawn-at-startup "swaybg" "-i" "/home/maka/Pictures/wallpaper/vvvv.png" "-m" "fill"
 spawn-at-startup "swayidle" "-w" \
     "timeout" "250" "niri msg action power-off-monitoris" \
     "timeout" "1000" "systemctl suspend"
 spawn-at-startup "/usr/libexec/xfce-polkit"
-spawn-at-startup "kime"
-//spawn-at-startup "kdeconnectd"
-//spawn-at-startup "kdeconnect-indicator"
+spawn-at-startup "blueman-applet"
+spawn-at-startup "nm-applet"
+//spawn-sh-at-startup "pasystray --notify=none"
 spawn-at-startup "tailscale" "systray"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 
