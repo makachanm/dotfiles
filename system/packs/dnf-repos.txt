@@ -4,7 +4,6 @@ copr:copr.fedorainfracloud.org:alternateved:keyd
 copr:copr.fedorainfracloud.org:erikreider:SwayNotificationCenter
 copr:copr.fedorainfracloud.org:lionheartp:Hyprland
 copr:copr.fedorainfracloud.org:toroidalfox:kime
-coprdep:copr.fedorainfracloud.org:avengemedia:danklinux
 fedora
 fedora-cisco-openh264
 google-chrome
