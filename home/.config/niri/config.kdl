@@ -11,6 +11,7 @@ spawn-at-startup "swayidle" "-w" \
 spawn-at-startup "/usr/libexec/xfce-polkit"
 spawn-at-startup "blueman-applet"
 spawn-at-startup "nm-applet"
+spawn-at-startup "pasystray" "--notify=none"
 spawn-at-startup "tailscale" "systray"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 
@@ -54,8 +55,13 @@ gestures {
     }
 }
 
+window-rule { 
+    clip-to-geometry true
+    geometry-corner-radius 12
+}
+
 layout {
-    gaps 0
+    gaps 10
     default-column-width { proportion 0.5; }
     focus-ring {
         off
