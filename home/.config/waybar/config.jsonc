@@ -20,7 +20,7 @@
         "spacing": 12
     },
     "clock": {
-        "format": "<span color='#888888'>{0:%m.%d %a}</span> {0:%H:%M}",
+        "format": "<span color='#888888'>{0:%Y.%m.%d %a}</span> {0:%H:%M}",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
             "mode": "month",
