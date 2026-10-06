@@ -3,6 +3,7 @@
     border-radius: 0;
     font-family: 'Pretendard SemiBold', sans-serif;
     font-size: 13px;
+    font-feature-settings: "tnum";
     min-height: 0;
 }
 
@@ -21,46 +22,81 @@ tooltip label {
     padding: 2px 4px;
 }
 
-#workspaces button,
-#clock,
-#tray,
-#power-profiles-daemon,
-#cpu,
-#battery,
-#custom-notification {
-    padding: 0 5px;
-    margin: 3px 2px;
+#workspaces button {
+    min-width: 24px;
+    padding: 0 4px;
+    margin: 3px 1px;
     background-color: transparent;
     color: #ffffff;
 }
 
-#tray > .passive,
-#tray > .active,
-#tray > .needs-attention,
-#tray button,
-#tray image {
-    margin: 0 6px;
-    padding: 0 2px;
+#workspaces button.empty {
+    color: #888888;
 }
 
-#workspaces button:hover,
-#power-profiles-daemon:hover,
-#custom-notification:hover {
+#workspaces button:hover {
     background-color: #333333;
 }
 
 #workspaces button.focused {
     background-color: #444444;
+    color: #ffffff;
 }
 
 #workspaces button.urgent {
     background-color: #a00000;
+    color: #ffffff;
 }
 
-#battery.warning {
+#clock {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: bold;
+    padding: 0 8px;
+}
+
+#tray {
+    padding: 0 12px;
+    margin: 6px 4px 6px 0;
+    border-right: 1px solid #444444;
+}
+
+#tray > .needs-attention {
+    background-color: #a00000;
+}
+
+#power-profiles-daemon,
+#cpu,
+#battery,
+#custom-notification {
+    padding: 0 8px;
+    margin: 3px 1px;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#power-profiles-daemon:hover,
+#custom-notification:hover {
+    background-color: #333333;
+}
+
+#battery.warning:not(.charging) {
     color: #ffaa00;
 }
 
 #battery.critical:not(.charging) {
     color: #ff4444;
+}
+
+#custom-notification.none,
+#custom-notification.dnd-none,
+#custom-notification.inhibited-none,
+#custom-notification.dnd-inhibited-none {
+    color: #888888;
+}
+
+#custom-notification.dnd-notification,
+#custom-notification.dnd-none,
+#custom-notification.dnd-inhibited-notification,
+#custom-notification.dnd-inhibited-none {
+    background-color: #444444;
 }
