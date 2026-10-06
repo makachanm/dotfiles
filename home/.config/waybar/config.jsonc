@@ -2,42 +2,58 @@
     "layer": "top",
     "position": "top",
     "height": 32,
-    "spacing": 4,
+    "spacing": 0,
     "modules-left": ["niri/workspaces"],
     "modules-center": ["clock"],
     "modules-right": ["tray", "power-profiles-daemon", "cpu", "battery", "custom/notification"],
 
+    "tray": {
+        "spacing": 12
+    },
     "clock": {
-        "format": "{:%Y-%m-%d %a %H:%M}",
+        "format": "<span color='#888888'>{0:%Y-%m-%d %a}</span>  {0:%H:%M}",
         "tooltip-format": "<tt><big>{calendar}</big></tt>"
     },
     "power-profiles-daemon": {
-        "format": "{icon}",
+        "format": "<span color='#888888'>MODE</span> {icon}",
         "tooltip": true,
         "tooltip-format": "Profile: {profile}\nDriver: {driver}",
         "format-icons": {
             "default": "BAL",
-            "performance": "POW",
+            "performance": "PERF",
             "balanced": "BAL",
-            "power-saver": "SAV"
+            "power-saver": "SAVE"
         }
     },
     "cpu": {
-        "format": "CPU {usage}%"
+        "format": "<span color='#888888'>CPU</span> {usage:>2}%"
     },
     "battery": {
         "states": {
             "warning": 30,
             "critical": 15
         },
-        "format": "BAT {capacity}%",
-        "format-charging": "CHG {capacity}%",
-        "format-plugged": "PLG {capacity}%"
+        "format": "<span color='#888888'>BAT</span> {capacity}%",
+        "format-charging": "<span color='#888888'>CHG</span> {capacity}%",
+        "format-plugged": "<span color='#888888'>PLG</span> {capacity}%"
     },
     "custom/notification": {
-        "format": "⁝⁝",
+        "exec": "swaync-client -swb",
+        "return-type": "json",
+        "format": "{icon} {text}",
+        "format-icons": {
+            "notification": "NOTI",
+            "none": "NOTI",
+            "dnd-notification": "DND",
+            "dnd-none": "DND",
+            "inhibited-notification": "NOTI",
+            "inhibited-none": "NOTI",
+            "dnd-inhibited-notification": "DND",
+            "dnd-inhibited-none": "DND"
+        },
         "tooltip": false,
         "escape": true,
-        "on-click": "swaync-client -t -sw"
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw"
     }
 }

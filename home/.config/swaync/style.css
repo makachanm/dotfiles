@@ -95,7 +95,8 @@ button:checked {
 }
 
 .notification-content .text-box .summary {
-  font-family: 'Pretendard Bold', sans-serif;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: bold;
   color: #ffffff;
 }
 
