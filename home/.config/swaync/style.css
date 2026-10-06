@@ -38,7 +38,7 @@
 
 /* 위젯 패널 및 버튼 그리드 */
 .widget-title {
-    font-family: 'Pretendard ExtraBold', sans-serif
+    font-family: 'Pretendard ExtraBold', sans-serif;
     color: #888888;
     margin-bottom: 8px;
 }
