@@ -50,11 +50,11 @@
         },
         {
           "label": "",
-          "command": "sh -c 'printf \"Cancel\\nRestart\\n\" | rofi -dmenu -no-custom -p \"Restart?\" | grep -qx \"Restart\" && systemctl reboot'"
+          "command": "printf 'Cancel\\nRestart\\n' | rofi -dmenu -no-custom -p 'Restart?' | grep -qx Restart && systemctl reboot"
         },
         {
           "label": "",
-          "command": "sh -c 'printf \"Cancel\\nPoweroff\\n\" | rofi -dmenu -no-custom -p \"Poweroff?\" | grep -qx \"Poweroff\" && systemctl poweroff'"
+          "command": "printf 'Cancel\\nPoweroff\\n' | rofi -dmenu -no-custom -p 'Poweroff?' | grep -qx Poweroff && systemctl poweroff"
         }
       ]
     }
