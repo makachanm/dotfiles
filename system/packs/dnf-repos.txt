@@ -6,7 +6,6 @@ copr:copr.fedorainfracloud.org:lionheartp:Hyprland
 copr:copr.fedorainfracloud.org:toroidalfox:kime
 fedora
 fedora-cisco-openh264
-google-chrome
 repository
 rpmfusion-free
 rpmfusion-free-updates
