@@ -3,10 +3,19 @@
     "position": "top",
     "height": 32,
     "spacing": 0,
-    "modules-left": ["niri/workspaces"],
-    "modules-center": ["clock"],
-    "modules-right": ["tray", "power-profiles-daemon", "cpu", "battery", "custom/notification"],
-
+    "modules-left": [
+        "niri/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "tray",
+        "power-profiles-daemon",
+        "cpu",
+        "battery",
+        "custom/notification"
+    ],
     "tray": {
         "spacing": 12
     },
@@ -38,21 +47,8 @@
         "format-plugged": "<span color='#888888'>PLG</span> {capacity}%"
     },
     "custom/notification": {
-        "exec": "swaync-client -swb",
-        "return-type": "json",
-        "format": "{icon} {text}",
-        "format-icons": {
-            "notification": "NOTI",
-            "none": "NOTI",
-            "dnd-notification": "DND",
-            "dnd-none": "DND",
-            "inhibited-notification": "NOTI",
-            "inhibited-none": "NOTI",
-            "dnd-inhibited-notification": "DND",
-            "dnd-inhibited-none": "DND"
-        },
+        "format": "⁝⁝",
         "tooltip": false,
-        "escape": true,
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw"
     }

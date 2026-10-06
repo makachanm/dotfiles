@@ -66,16 +66,14 @@ tooltip label {
 
 #power-profiles-daemon,
 #cpu,
-#battery,
-#custom-notification {
+#battery {
     padding: 0 8px;
     margin: 3px 1px;
     background-color: transparent;
     color: #ffffff;
 }
 
-#power-profiles-daemon:hover,
-#custom-notification:hover {
+#power-profiles-daemon:hover {
     background-color: #333333;
 }
 
@@ -87,16 +85,15 @@ tooltip label {
     color: #ff4444;
 }
 
-#custom-notification.none,
-#custom-notification.dnd-none,
-#custom-notification.inhibited-none,
-#custom-notification.dnd-inhibited-none {
+#custom-notification {
+    font-size: 11px;
+    padding: 0 4px;
+    margin: 0 0 0 4px;
     color: #888888;
+    border-left: 1px solid #444444;
 }
 
-#custom-notification.dnd-notification,
-#custom-notification.dnd-none,
-#custom-notification.dnd-inhibited-notification,
-#custom-notification.dnd-inhibited-none {
-    background-color: #444444;
+#custom-notification:hover {
+    background-color: #333333;
+    color: #ffffff;
 }
