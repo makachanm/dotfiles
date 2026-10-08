@@ -21,24 +21,20 @@ tuned-ppd
 
 ## 데스크탑 유틸
 blueman
-pavucontrol
 pasystray
 
 ## Qt 통합
 lxqt-qtplugin
 lxqt-config
 
-## MATE 도구
-mate-polkit
-caja
-engrampa
-pluma
-eom
-mate-calc
-mate-system-monitor
-
-## Xfce 도구
-parole
+## LXQt / Qt 도구
+lxqt-policykit
+pcmanfm-qt
+lxqt-archiver
+featherpad
+lximage-qt
+qalculate-qt
+pavucontrol-qt
 
 ## 한글 입력기
 kime
@@ -108,8 +104,9 @@ darktable
 obs-studio
 audacity
 audacious
-transmission-gtk
-baobab
+haruna
+transmission-qt
+qdirstat
 
 ## 멀티미디어 코덱
 gstreamer1-plugins-bad-freeworld
