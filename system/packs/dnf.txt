@@ -31,6 +31,7 @@ tumbler
 xarchiver
 mousepad
 ristretto
+parole
 galculator
 xfce4-taskmanager
 
@@ -102,7 +103,6 @@ darktable
 obs-studio
 audacity
 audacious
-celluloid
 transmission-gtk
 baobab
 
