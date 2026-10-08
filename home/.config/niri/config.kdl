@@ -70,7 +70,7 @@ layout {
 
 binds {
     Mod+R { spawn "alacritty"; }
-    Mod+Space { spawn "rofi" "-show" "apps" "-show-icons"; }
+    Mod+Space { spawn-sh "~/.config/rofi/scripts/launcher"; }
     Mod+N { spawn "swaync-client" "-t" "-sw"; }
     //Mod+R { spawn-sh "cliphist list | rofi -dmenu -i -p clipboard | cliphist decode | wl-copy"; }
     //Mod+Shift+R { spawn-sh "cliphist wipe"; }
