@@ -102,7 +102,6 @@ audacity
 audacious
 vlc
 transmission-gtk
-simple-scan
 qdirstat
 
 ## 멀티미디어 코덱
