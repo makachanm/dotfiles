@@ -3,8 +3,8 @@ spawn-at-startup "waybar"
 spawn-at-startup "swaync"
 spawn-at-startup "swaybg" "-i" "/home/maka/Pictures/wallpaper/vvvv.png" "-m" "fill"
 spawn-at-startup "swayidle" "-w" \
-    "timeout" "250" "niri msg action power-off-monitors" \
-    "timeout" "255" "loginctl lock-session" \
+    "timeout" "400" "niri msg action power-off-monitors" \
+    "timeout" "405" "loginctl lock-session" \
     "timeout" "1000" "systemctl suspend" \
     "before-sleep" "loginctl lock-session; sleep 1" \
     "lock" "pidof hyprlock || hyprlock &"
@@ -26,13 +26,13 @@ environment {
 
 output "eDP-1" {
     mode "2240x1400"
-    scale 1.15
+    scale 1.2
     position x=0 y=0
 }
 
 output "DP-1" {
     mode "3840x2160"
-    scale 1.4
+    scale 1.5
     position x=1920 y=0
 }
 
@@ -69,11 +69,11 @@ layout {
 }
 
 binds {
-    Mod+T { spawn "alacritty"; }
-    Mod+Space { spawn "rofi" "-show" "drun" "-show-icons"; }
+    Mod+R { spawn "alacritty"; }
+    Mod+Space { spawn "rofi" "-show" "apps" "-show-icons"; }
     Mod+N { spawn "swaync-client" "-t" "-sw"; }
-    Mod+R { spawn-sh "cliphist list | rofi -dmenu -i -p clipboard | cliphist decode | wl-copy"; }
-    Mod+Shift+R { spawn-sh "cliphist wipe"; }
+    //Mod+R { spawn-sh "cliphist list | rofi -dmenu -i -p clipboard | cliphist decode | wl-copy"; }
+    //Mod+Shift+R { spawn-sh "cliphist wipe"; }
     Mod+F { spawn-sh "grim -g \"$(slurp)\" - | wl-copy"; }
     Ctrl+Shift+Escape { spawn "xfce4-taskmanager"; }
 
