@@ -1,6 +1,5 @@
 configuration {
-    modi: "apps:~/.config/rofi/scripts/apps,drun,run,window";
-    kb-custom-1: "Alt+p";
+    modi: "drun,run,window";
     font: "Pretendard SemiBold 10";
     show-icons: false;
     terminal: "foot";
@@ -35,7 +34,7 @@ window {
 }
 
 mainbox {
-    children: [ inputbar, message, listview ];
+    children: [ inputbar, listview ];
     spacing: 8px;
 }
 
@@ -79,29 +78,6 @@ element selected {
 element-text {
     text-color: inherit;
 }
-
-message {
-    padding: 0px 2px;
-}
-
-textbox {
-    text-color: @fg-dim;
-}
-
-element normal.active,
-element alternate.active {
-    border: 0px 0px 0px 2px;
-    border-color: @fg;
-    text-color: @fg;
-}
-
-element selected.active {
-    border: 0px 0px 0px 2px;
-    border-color: @fg;
-    background-color: @bg-selected;
-    text-color: @fg;
-}
-
 
 element-icon {
     margin: 0px 8px 0px 0px;
