@@ -18,6 +18,7 @@ sddm
 qt5-qtgraphicaleffects
 keyd
 tuned-ppd
+thermald
 
 ## 데스크탑 유틸
 blueman
