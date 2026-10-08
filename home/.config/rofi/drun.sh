@@ -1,20 +1,19 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-pinned=(
-    zen-browser
-    thorium-browser
-    Alacritty
-    thunar
-    code
-    slack
-    vesktop
-    com.ayugram.desktop
-    io.github.nolight132.sonora
-)
-
+pins="${XDG_CONFIG_HOME:-$HOME/.config}/rofi/pinned"
 cache="${XDG_CACHE_HOME:-$HOME/.cache}/rofi3.druncache"
 base=1000000
+min_lines=8
+
+pinned=()
+if [ -f "$pins" ]; then
+    while IFS= read -r line || [ -n "$line" ]; do
+        line="${line%%#*}"
+        line="$(printf '%s' "$line" | tr -d '[:space:]')"
+        [ -n "$line" ] && pinned+=("$line")
+    done < "$pins"
+fi
 
 mkdir -p "$(dirname "$cache")"
 for i in "${!pinned[@]}"; do
@@ -22,4 +21,6 @@ for i in "${!pinned[@]}"; do
 done > "$cache.tmp"
 mv "$cache.tmp" "$cache"
 
-exec rofi -show drun "$@"
+lines=$(( ${#pinned[@]} > min_lines ? ${#pinned[@]} : min_lines ))
+
+exec rofi -show drun -theme-str "listview { lines: $lines; }" "$@"
