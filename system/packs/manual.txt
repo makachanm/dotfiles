@@ -1,0 +1,2 @@
+# 이름	출처	설치 위치	설정 명령
+batctl	https://github.com/Ooooze/batctl	/usr/bin/batctl	sudo batctl set --start 30 --stop 85 && sudo batctl persist enable
