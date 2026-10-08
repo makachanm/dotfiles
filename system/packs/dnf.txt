@@ -24,16 +24,17 @@ blueman
 pavucontrol
 pasystray
 
+## MATE 도구
+mate-polkit
+caja
+engrampa
+pluma
+eom
+mate-calc
+mate-system-monitor
+
 ## Xfce 도구
-xfce-polkit
-Thunar
-tumbler
-xarchiver
-mousepad
-ristretto
 parole
-galculator
-xfce4-taskmanager
 
 ## 한글 입력기
 kime
