@@ -43,10 +43,13 @@ printf '\0no-custom\037true\n'
 
 {
     if [ -f "$pins" ]; then
-        grep -v '^[[:space:]]*\(#\|$\)' "$pins" | sed 's/[[:space:]]*$//; /\.desktop$/!s/$/.desktop/' |
-        while read -r id; do
-            printf '%s\n' "$apps" | awk -F'\t' -v id="$id" '$1 == id { print; exit }'
-        done
+        while IFS= read -r pin || [ -n "$pin" ]; do
+            pin="$(printf '%s' "$pin" | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')"
+            case "$pin" in ''|'#'*) continue ;; esac
+            printf '%s\n' "$apps" | awk -F'\t' -v pin="$pin" '
+                tolower($1) == tolower(pin) || tolower($1) == tolower(pin ".desktop") || tolower($2) == tolower(pin) { print; exit }
+            '
+        done < "$pins"
     fi
     printf '%s\n' "$apps" | sort -t$'\t' -k2,2f
 } | awk -F'\t' '$1 != "" && !seen[$1]++ { printf "%s\0icon\037%s\037info\037%s\n", $2, $3, $1 }'
