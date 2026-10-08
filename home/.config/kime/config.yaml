@@ -6,7 +6,7 @@ daemon:
 indicator:
   icon_color: White
 log:
-  global_level: DEBUG
+  global_level: WARN
 engine:
   translation_layer: null
   default_category: Latin

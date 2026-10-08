@@ -24,6 +24,10 @@ blueman
 pavucontrol
 pasystray
 
+## Qt 통합
+lxqt-qtplugin
+lxqt-config
+
 ## MATE 도구
 mate-polkit
 caja
