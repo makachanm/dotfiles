@@ -27,6 +27,7 @@ pasystray
 ## Qt 통합
 lxqt-qtplugin
 lxqt-config
+papirus-icon-theme-dark
 
 ## LXQt / Qt 도구
 lxqt-policykit
