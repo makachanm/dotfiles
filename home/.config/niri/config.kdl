@@ -15,8 +15,6 @@ spawn-at-startup "pasystray" "--notify=none"
 spawn-at-startup "tailscale" "systray"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 
-prefer-no-csd
-
 environment {
     GTK_IM_MODULE "kime"
     QT_IM_MODULE "kime"
