@@ -34,9 +34,6 @@ qpwgraph
 
 ## 한글 입력기
 kime
-fcitx5
-fcitx5-hangul
-fcitx5-configtool
 
 ## 셸
 zsh
@@ -83,7 +80,6 @@ libvirt-daemon-kvm
 libvirt-daemon-config-network
 
 ## 인터넷
-librewolf
 zen-browser
 thorium-browser
 thunderbird
