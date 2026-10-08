@@ -2,7 +2,7 @@ configuration {
     modi: "drun,run,window";
     font: "Pretendard SemiBold 10";
     show-icons: false;
-    terminal: "foot";
+    terminal: "alacritty";
     drun-display-format: "{name}";
     location: 0;
     disable-history: false;
