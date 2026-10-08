@@ -8,7 +8,7 @@ spawn-at-startup "swayidle" "-w" \
     "timeout" "1000" "systemctl suspend" \
     "before-sleep" "loginctl lock-session; sleep 1" \
     "lock" "pidof hyprlock || hyprlock &"
-spawn-at-startup "/usr/libexec/xfce-polkit"
+spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
 spawn-at-startup "blueman-applet"
 spawn-at-startup "nm-applet"
 spawn-at-startup "pasystray" "--notify=none"
@@ -75,7 +75,7 @@ binds {
     //Mod+R { spawn-sh "cliphist list | rofi -dmenu -i -p clipboard | cliphist decode | wl-copy"; }
     //Mod+Shift+R { spawn-sh "cliphist wipe"; }
     Mod+F { spawn-sh "grim -g \"$(slurp)\" - | wl-copy"; }
-    Ctrl+Shift+Escape { spawn "xfce4-taskmanager"; }
+    Ctrl+Shift+Escape { spawn "mate-system-monitor"; }
 
     Mod+L { spawn "loginctl" "lock-session"; }
     Mod+Escape { close-window; }
