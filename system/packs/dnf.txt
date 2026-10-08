@@ -96,13 +96,13 @@ tailscale
 
 ## 멀티미디어
 gimp
-kdenlive
+flowblade
 obs-studio
 audacity
 audacious
-vlc
+celluloid
 transmission-gtk
-qdirstat
+baobab
 
 ## 멀티미디어 코덱
 gstreamer1-plugins-bad-freeworld
