@@ -97,6 +97,7 @@ tailscale
 ## 멀티미디어
 gimp
 flowblade
+python3-setuptools
 obs-studio
 audacity
 audacious
