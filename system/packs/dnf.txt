@@ -27,8 +27,6 @@ pasystray
 ## Qt 통합
 qt6ct
 papirus-icon-theme-dark
-plasma-breeze-qt6
-breeze-gtk
 
 ## LXQt / Qt 도구
 pcmanfm-qt
