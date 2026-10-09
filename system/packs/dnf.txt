@@ -25,18 +25,20 @@ blueman
 pasystray
 
 ## Qt 통합
-lxqt-qtplugin
-lxqt-config
+qt6ct
 papirus-icon-theme-dark
+plasma-breeze-qt6
+breeze-gtk
 
 ## LXQt / Qt 도구
-lxqt-policykit
 pcmanfm-qt
-lxqt-archiver
+qimgv
+peazip-qt6
 featherpad
-lximage-qt
 qalculate-qt
 pavucontrol-qt
+udiskie
+hyprpolkitagent
 
 ## 한글 입력기
 kime
