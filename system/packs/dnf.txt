@@ -37,6 +37,8 @@ qalculate-qt
 pavucontrol-qt
 udiskie
 hyprpolkitagent
+gparted
+lxqt-policykit
 
 ## 한글 입력기
 kime
