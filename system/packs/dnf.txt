@@ -92,7 +92,6 @@ libvirt-daemon-config-network
 ## 인터넷
 zen-browser
 thorium-browser
-thunderbird
 slack
 vesktop
 ayugram-desktop
