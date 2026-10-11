@@ -82,6 +82,7 @@ texlive-collection-latexrecommended
 texlive-collection-xetex
 texlive-collection-langkorean
 latexmk
+vim
 
 ## 가상화
 moby-engine
