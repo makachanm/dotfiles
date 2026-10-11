@@ -96,8 +96,8 @@ binds {
     Mod+X { toggle-window-floating; }
     Mod+Shift+Q { focus-workspace-up; }
     Mod+Shift+W { focus-workspace-down; }
-    Mod+Tab { focus-workspace-down; }
-    Mod+Shift+Tab { focus-workspace-up; }
+    Mod+Tab { spawn-sh "~/.config/niri/scripts/ws-cycle next"; }
+    Mod+Shift+Tab { spawn-sh "~/.config/niri/scripts/ws-cycle prev"; }
     Mod+Ctrl+Q { focus-monitor-left; }
     Mod+Ctrl+W { focus-monitor-right; }
     Mod+Shift+A { move-column-to-workspace-up; }
