@@ -94,15 +94,9 @@ binds {
     Mod+D { set-column-width "-10%"; }
     Mod+Z { maximize-column; }
     Mod+X { toggle-window-floating; }
-    Mod+Shift+Q { focus-workspace-up; }
-    Mod+Shift+W { focus-workspace-down; }
     Mod+Tab { spawn-sh "~/.config/niri/scripts/ws-cycle next"; }
     Mod+Shift+Tab { spawn-sh "~/.config/niri/scripts/ws-cycle move"; }
     Mod+Ctrl+Tab { move-column-to-monitor-next; }
-    Mod+Shift+A { move-column-to-workspace-up; }
-    Mod+Shift+S { move-column-to-workspace-down; }
-    Mod+Ctrl+A { move-column-to-monitor-left; }
-    Mod+Ctrl+S { move-column-to-monitor-right; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
