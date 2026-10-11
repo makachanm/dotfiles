@@ -99,8 +99,6 @@ binds {
     Mod+Tab { spawn-sh "~/.config/niri/scripts/ws-cycle next"; }
     Mod+Shift+Tab { spawn-sh "~/.config/niri/scripts/ws-cycle move"; }
     Mod+Ctrl+Tab { move-column-to-monitor-next; }
-    Mod+Ctrl+Q { focus-monitor-left; }
-    Mod+Ctrl+W { focus-monitor-right; }
     Mod+Shift+A { move-column-to-workspace-up; }
     Mod+Shift+S { move-column-to-workspace-down; }
     Mod+Ctrl+A { move-column-to-monitor-left; }
