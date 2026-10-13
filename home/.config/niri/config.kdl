@@ -1,7 +1,7 @@
 spawn-at-startup "kime"
 spawn-at-startup "waybar"
 spawn-at-startup "swaync"
-spawn-at-startup "swaybg" "-i" "/home/maka/Pictures/wallpaper/rei-bg.png" "-m" "fill"
+spawn-at-startup "swaybg" "-i" "/home/maka/Pictures/wallpaper/vvvv.png" "-m" "fill"
 spawn-at-startup "swayidle" "-w" \
     "timeout" "400" "niri msg action power-off-monitors" \
     "timeout" "405" "loginctl lock-session" \
@@ -15,8 +15,6 @@ spawn-at-startup "pasystray" "--notify=none"
 spawn-at-startup "tailscale" "systray"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 spawn-at-startup "udiskie"
-spawn-sh-at-startup "mpvpaper -s -a full -o 'no-audio loop video-pan-y=0.013' eDP-1 /home/maka/Pictures/wallpaper/rei.mp4"
-spawn-sh-at-startup "mpvpaper -s -a full -o 'no-audio loop video-pan-y=0.007' DP-1 /home/maka/Pictures/wallpaper/rei.mp4"
 
 environment {
     GTK_IM_MODULE "kime"
