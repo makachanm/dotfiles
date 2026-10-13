@@ -1,11 +1,12 @@
 zen-browser
 thorium-browser
 org.kde.konsole
-org.kde.konqueror
-code
+konqbrowser
+com.microsoft.VSCode
 slack
 vesktop
 com.ayugram.desktop
 io.github.nolight132.sonora
+vlc
 org.prismlauncher.PrismLauncher
 steam
