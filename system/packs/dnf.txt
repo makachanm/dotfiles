@@ -13,7 +13,7 @@ grim
 slurp
 wf-recorder
 brightnessctl
-alacritty
+konsole
 sddm
 qt5-qtgraphicaleffects
 keyd
@@ -24,19 +24,25 @@ thermald
 blueman
 pasystray
 
-## Qt 통합
-qt6ct
+## Qt 통합 (KDE 플랫폼 테마)
+plasma-integration
+plasma-breeze
 papirus-icon-theme-dark
 
+## KDE: Konqueror + 임베드 부품 (파일/이미지/압축)
+konqueror
+dolphin
+gwenview
+ark
+
+## KDE 유틸
+kate
+kcalc
+filelight
+
 ## LXQt / Qt 도구
-pcmanfm-qt
-qimgv
-peazip-qt6
-featherpad
-qalculate-qt
 pavucontrol-qt
 udiskie
-gparted
 lxqt-policykit
 
 ## 한글 입력기
@@ -71,7 +77,6 @@ libasan
 libubsan
 valgrind
 perf
-massif-visualizer
 golang
 cargo
 nodejs22
@@ -106,10 +111,8 @@ kdenlive
 darktable
 obs-studio
 audacity
-audacious
-haruna
+vlc
 transmission-qt
-qdirstat
 
 ## 멀티미디어 코덱
 gstreamer1-plugins-bad-freeworld

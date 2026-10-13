@@ -3,7 +3,7 @@ configuration {
     font: "Pretendard SemiBold 10";
     show-icons: false;
     icon-theme: "Papirus-Dark";
-    terminal: "alacritty";
+    terminal: "konsole";
     drun-display-format: "{name}";
     disable-history: false;
 }

@@ -26,7 +26,8 @@ environment {
     INPUT_METHOD "kime"
     GLFW_IM_MODULE "kime"
     QT_IM_MODULES "wayland;kime"
-    QT_QPA_PLATFORMTHEME "qt6ct"
+    QT_QPA_PLATFORMTHEME "kde"
+    QT_QUICK_CONTROLS_STYLE "org.kde.desktop"
 }
 
 output "eDP-1" {
@@ -74,13 +75,13 @@ layout {
 }
 
 binds {
-    Mod+R { spawn "alacritty"; }
+    Mod+R { spawn "konsole"; }
     Mod+Space { spawn-sh "~/.config/rofi/drun.sh -show-icons"; }
     Mod+N { spawn "swaync-client" "-t" "-sw"; }
     //Mod+R { spawn-sh "cliphist list | rofi -dmenu -i -p clipboard | cliphist decode | wl-copy"; }
     //Mod+Shift+R { spawn-sh "cliphist wipe"; }
     Mod+F { spawn-sh "grim -g \"$(slurp)\" - | wl-copy"; }
-    Ctrl+Shift+Escape { spawn "alacritty" "-e" "htop"; }
+    Ctrl+Shift+Escape { spawn "konsole" "-e" "htop"; }
 
     Mod+L { spawn "loginctl" "lock-session"; }
     Mod+Escape { close-window; }
