@@ -1,3 +1,4 @@
 toroidalfox/kime   
 lionheartp/Hyprland
 sneexy/zen-browser
+kraxarn/spotify-qt

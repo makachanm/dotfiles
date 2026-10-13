@@ -73,6 +73,7 @@ libfl-static
 glibc-static
 libstdc++-static
 openssl-devel
+alsa-lib-devel
 libasan
 libubsan
 valgrind
@@ -112,6 +113,7 @@ darktable
 obs-studio
 audacity
 vlc
+spotify-qt
 transmission-qt
 
 ## 멀티미디어 코덱

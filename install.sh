@@ -82,7 +82,7 @@ run "flatpak override --user --filesystem=xdg-config/gtk-3.0:ro --filesystem=xdg
 
 if [[ -s "$REPO/system/packs/cargo.txt" ]]; then
   info "cargo 툴 설치 (packs/cargo.txt)"
-  run "cargo install \$(grep -v '^#' $REPO/system/packs/cargo.txt | sed '/^\s*\$/d')"
+  run "cargo install --locked \$(grep -v '^#' $REPO/system/packs/cargo.txt | sed '/^\s*\$/d')"
 fi
 
 # ---------- 3. 홈 설정 ----------
