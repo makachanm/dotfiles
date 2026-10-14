@@ -33,11 +33,12 @@ papirus-icon-theme-dark
 konqueror
 dolphin
 gwenview
+okular
 ark
 
 ## KDE 유틸
-kate
-kcalc
+featherpad
+qalculate-qt
 filelight
 
 ## LXQt / Qt 도구
@@ -112,7 +113,8 @@ kdenlive
 darktable
 obs-studio
 audacity
-vlc
+haruna
+fooyin
 spotify-qt
 transmission-qt
 
