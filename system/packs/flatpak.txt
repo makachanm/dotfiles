@@ -1,3 +1,4 @@
 io.github.nolight132.sonora
 org.prismlauncher.PrismLauncher
 dev.diegovsky.Riff
+net.pcsx2.PCSX2
