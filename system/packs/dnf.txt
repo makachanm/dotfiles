@@ -115,7 +115,6 @@ obs-studio
 audacity
 haruna
 fooyin
-spotify-qt
 transmission-qt
 
 ## 멀티미디어 코덱
