@@ -1,4 +1,5 @@
 [EmbedSettings]
+embed-application/pdf=true
 embed-application/gzip=true
 embed-application/vnd.debian.binary-package=true
 embed-application/vnd.efi.iso=true
