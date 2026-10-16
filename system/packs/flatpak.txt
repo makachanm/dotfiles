@@ -1,3 +1,4 @@
 org.prismlauncher.PrismLauncher
 dev.diegovsky.Riff
 net.pcsx2.PCSX2
+io.missioncenter.MissionCenter

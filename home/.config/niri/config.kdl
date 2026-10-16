@@ -73,13 +73,13 @@ layout {
 }
 
 binds {
-    Mod+R { spawn "konsole"; }
+    Mod+R { spawn "sakura"; }
     Mod+Space { spawn-sh "~/.config/rofi/drun.sh -show-icons"; }
     Mod+N { spawn "swaync-client" "-t" "-sw"; }
     //Mod+R { spawn-sh "cliphist list | rofi -dmenu -i -p clipboard | cliphist decode | wl-copy"; }
     //Mod+Shift+R { spawn-sh "cliphist wipe"; }
     Mod+F { spawn-sh "grim -g \"$(slurp)\" - | wl-copy"; }
-    Ctrl+Shift+Escape { spawn "konsole" "-e" "htop"; }
+    Ctrl+Shift+Escape { spawn "flatpak" "run" "io.missioncenter.MissionCenter"; }
 
     Mod+L { spawn "loginctl" "lock-session"; }
     Mod+Escape { close-window; }
