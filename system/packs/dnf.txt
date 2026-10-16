@@ -13,7 +13,6 @@ grim
 slurp
 wf-recorder
 brightnessctl
-konsole
 sddm
 qt5-qtgraphicaleffects
 keyd
@@ -29,22 +28,22 @@ plasma-integration
 plasma-breeze
 papirus-icon-theme-dark
 
-## KDE: Konqueror + 임베드 부품 (파일/이미지/압축)
-konqueror
-dolphin
-gwenview
-okular
-ark
-
-## KDE 유틸
-featherpad
-qalculate-qt
-filelight
-
-## LXQt / Qt 도구
-pavucontrol-qt
+## LXQt 도구
 udiskie
 lxqt-policykit
+
+## GNOME 앱 (libadwaita)
+nautilus
+sakura
+loupe
+gnome-text-editor
+gnome-calculator
+celluloid
+baobab
+transmission-gtk
+file-roller
+pavucontrol
+adw-gtk3-theme
 
 ## 한글 입력기
 kime
@@ -52,10 +51,10 @@ kime
 ## 셸
 zsh
 git
-htop
 fastfetch
 yt-dlp
 unrar
+unar
 
 ## 개발
 gcc
@@ -113,9 +112,6 @@ kdenlive
 darktable
 obs-studio
 audacity
-haruna
-fooyin
-transmission-qt
 
 ## 멀티미디어 코덱
 gstreamer1-plugins-bad-freeworld

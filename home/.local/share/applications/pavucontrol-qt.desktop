@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=PulseAudio Volume Control
-Exec=pavucontrol-qt
-Icon=multimedia-volume-control
-NoDisplay=true
