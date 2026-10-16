@@ -36,7 +36,7 @@ lxqt-policykit
 nautilus
 sakura
 loupe
-gnome-text-editor
+geany
 qalculate-gtk
 gnome-commander
 celluloid
@@ -109,7 +109,7 @@ tailscale
 ## 멀티미디어
 gimp
 krita
-kdenlive
+flowblade
 darktable
 obs-studio
 audacity
