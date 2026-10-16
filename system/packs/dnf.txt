@@ -38,6 +38,8 @@ sakura
 loupe
 gnome-text-editor
 gnome-calculator
+qalculate-gtk
+gnome-commander
 celluloid
 baobab
 transmission-gtk
