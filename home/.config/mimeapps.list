@@ -4,7 +4,7 @@ x-scheme-handler/https=zen-browser.desktop
 text/html=zen-browser.desktop
 application/xhtml+xml=zen-browser.desktop
 application/pdf=zen-browser.desktop
-inode/directory=org.gnome.Nautilus.desktop
+inode/directory=org.gnome.gnome-commander.desktop
 application/ogg=io.github.celluloid_player.Celluloid.desktop
 application/x-ogg=io.github.celluloid_player.Celluloid.desktop
 audio/aac=io.github.celluloid_player.Celluloid.desktop
@@ -262,5 +262,5 @@ text/markdown=org.gnome.TextEditor.desktop;com.microsoft.VSCode.desktop;
 application/json=org.gnome.TextEditor.desktop;zen-browser.desktop;com.microsoft.VSCode.desktop;
 image/png=org.gnome.Loupe.desktop;gimp.desktop;
 image/jpeg=org.gnome.Loupe.desktop;gimp.desktop;org.darktable.darktable.desktop;
-inode/directory=org.gnome.Nautilus.desktop;com.microsoft.VSCode.desktop;
+inode/directory=org.gnome.gnome-commander.desktop;org.gnome.Nautilus.desktop;com.microsoft.VSCode.desktop;
 
