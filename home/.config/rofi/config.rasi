@@ -25,8 +25,8 @@ configuration {
 }
 
 window {
-    location: north;
-    anchor: north;
+    location: center;
+    anchor: center;
     background-color: @bg;
     border: 1px;
     border-color: @border-col;
