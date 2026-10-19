@@ -4,9 +4,9 @@ enable_sounds = false
 [bar.default]
 border_width = 0.0
 capsule = false
-center = [ "clock" ]
+center = [ "clock", "notifications" ]
 concave_edge_corners = false
-end = [ "notifications", "session", "bar", "battery", "tray" ]
+end = [ "tray", "battery", "session" ]
 font_weight = 600
 margin_edge = 0
 margin_ends = 0
@@ -18,6 +18,9 @@ shadow = false
 start = [ "workspaces" ]
 thickness = 32
 widget_spacing = 10
+
+[battery]
+warning_threshold = 5
 
 [brightness]
 sync_all_monitors = true
@@ -169,7 +172,7 @@ nightlight = false
 privacy = false
 
 [plugins]
-enabled = [ "dotnetrob/cat", "oldirtty/color_picker", "aristides/udiskie", "rylos/tailnet" ]
+enabled = [ "dotnetrob/cat", "oldirtty/color_picker", "aristides/udiskie" ]
 
 [shell]
 font_family = "IBM Plex Sans KR"
@@ -250,9 +253,6 @@ transition = []
 
 [weather]
 enabled = false
-
-[widget.bar]
-type = "rylos/tailnet:bar"
 
 [widget.battery]
 display_mode = "glyph"
