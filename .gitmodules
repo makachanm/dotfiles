@@ -1,3 +1,0 @@
-[submodule "system/usr/share/sddm/themes/voidsddm"]
-	path = system/usr/share/sddm/themes/voidsddm
-	url = https://github.com/talyamm/voidsddm.git

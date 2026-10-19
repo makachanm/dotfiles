@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Sound
-Exec=mate-volume-control
-Icon=multimedia-volume-control
-NoDisplay=true
