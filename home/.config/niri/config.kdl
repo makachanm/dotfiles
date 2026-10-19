@@ -4,17 +4,8 @@ spawn-at-startup "noctalia"
 spawn-at-startup "tailscale" "systray"
 spawn-at-startup "udiskie"
 
-environment {
-    GTK_IM_MODULE "kime"
-    QT_IM_MODULE "kime"
-    XMODIFIERS "@im=kime"
-    SDL_IM_MODULE "kime"
-    INPUT_METHOD "kime"
-    GLFW_IM_MODULE "kime"
-    QT_IM_MODULES "wayland;kime"
-    QT_QPA_PLATFORMTHEME "kde"
-    QT_QUICK_CONTROLS_STYLE "org.kde.desktop"
-}
+// 입력기(kime)·Qt 테마 환경 변수는 ~/.config/environment.d/50-kde-theme.conf에서 설정한다.
+// niri가 systemd 사용자 서비스로 돌기 때문에 niri와 D-Bus로 뜨는 앱 모두에 적용된다.
 
 output "eDP-1" {
     mode "2240x1400"
