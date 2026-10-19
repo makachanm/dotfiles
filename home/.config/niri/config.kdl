@@ -1,11 +1,7 @@
 spawn-at-startup "kime"
-// 바, 알림, 배경화면, 잠금·자동 잠금, 클립보드, 권한 확인 창, 네트워크·블루투스·음량
 spawn-at-startup "noctalia"
 spawn-at-startup "tailscale" "systray"
 spawn-at-startup "udiskie"
-
-// 입력기(kime)·Qt 테마 환경 변수는 ~/.config/environment.d/50-kde-theme.conf에서 설정한다.
-// niri가 systemd 사용자 서비스로 돌기 때문에 niri와 D-Bus로 뜨는 앱 모두에 적용된다.
 
 output "eDP-1" {
     mode "2240x1400"
@@ -49,7 +45,6 @@ window-rule {
 }
 
 debug {
-    // Noctalia 알림 동작이나 창 활성화 요청이 동작하도록
     honor-xdg-activation-with-invalid-serial
 }
 

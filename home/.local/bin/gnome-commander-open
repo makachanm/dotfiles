@@ -1,7 +1,4 @@
 #!/usr/bin/env python3
-# 폴더(경로나 file:// URI)를 Gnome Commander 왼쪽 창에 새 창으로 연다.
-# 파일을 받으면 그 파일이 있는 폴더를 연다.
-# 이미 떠 있는 창에는 폴더를 넘길 수 없어서, allow-multiple-instances를 켜 두고 새로 띄운다.
 import os
 import subprocess
 import sys
