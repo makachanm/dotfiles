@@ -68,7 +68,7 @@ binds {
 
     Mod+L { spawn "noctalia" "msg" "session" "lock"; }
     Mod+Escape { close-window; }
-    Mod+Shift+Escape { quit; }
+    Mod+Shift+Escape { spawn "noctalia" "msg" "panel-toggle" "session"; }
 
     Mod+Q { focus-column-left; }
     Mod+W { focus-column-right; }

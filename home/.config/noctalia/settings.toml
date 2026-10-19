@@ -6,7 +6,7 @@ border_width = 0.0
 capsule = false
 center = [ "clock", "notifications" ]
 concave_edge_corners = false
-end = [ "tray", "network", "volume", "brightness", "battery" ]
+end = [ "tray", "network", "volume", "brightness", "session", "battery" ]
 font_weight = 600
 margin_edge = 0
 margin_ends = 0
@@ -29,9 +29,11 @@ sync_all_monitors = true
 
 [control_center]
 hidden_tabs = [ "media", "system", "weather", "screen-time", "power" ]
+sidebar = "none"
+sidebar_section = "none"
 
     [control_center.calendar]
-    show_events_card = false
+    show_events_card = true
 
 [idle]
 behavior_order = [ "screen-off", "lock", "lock-and-suspend" ]
@@ -276,6 +278,9 @@ setup_wizard_enabled = false
     action = "lock"
 
     [[shell.session.actions]]
+    action = "logout"
+
+    [[shell.session.actions]]
     action = "reboot"
 
     [[shell.session.actions]]
@@ -334,7 +339,7 @@ show_label = false
 scale = 0.90000000000000002
 
 [widget.session]
-glyph = "dots-vertical"
+glyph = "shutdown"
 
 [widget.usb]
 hide_when_empty = true
