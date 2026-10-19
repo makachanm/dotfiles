@@ -7,6 +7,17 @@ setup_wizard_enabled = false
     [shell.greeter_sync]
     auto_sync = true
 
+    # 전원 메뉴·잠금 화면·로그인 화면 공통 버튼: 잠금(잠금 화면에선 자동으로 빠짐), 재시작, 종료
+    [[shell.session.actions]]
+    action = "lock"
+
+    [[shell.session.actions]]
+    action = "reboot"
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    variant = "destructive"
+
 [idle]
 behavior_order = [ "screen-off", "lock", "lock-and-suspend" ]
 
@@ -24,6 +35,10 @@ behavior_order = [ "screen-off", "lock", "lock-and-suspend" ]
     action = "lock_and_suspend"
     enabled = true
     timeout = 1000.0
+
+# 잠금 화면: 배경화면 대신 완전 검정 이미지
+[lockscreen]
+wallpaper = "/home/maka/Pictures/wallpaper/black.png"
 
 [wallpaper]
 directory = "/home/maka/Pictures/wallpaper"

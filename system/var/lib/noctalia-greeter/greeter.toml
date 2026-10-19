@@ -1,0 +1,25 @@
+# Noctalia Greeter: 검은 배경에 시계, 암호 입력, 재시작·종료만
+# 색·글꼴은 Noctalia 셸에서 동기화(sync.toml)된 값을 쓴다.
+
+[session]
+default = "niri"
+
+[user]
+# 바로 maka 암호 입력 단계로 연다 (사용자 선택 화면 생략)
+default = "maka"
+
+[appearance]
+hide_logo = true
+scheme_selector_position = "hidden"
+power_buttons_position = "bottom-right"
+
+[appearance.wallpaper]
+# ~/Pictures/wallpaper/black.png 사본 (greetd 계정은 홈 폴더를 읽지 못함)
+path = "/var/lib/noctalia-greeter/black.png"
+fill_mode = "crop"
+
+[clock]
+enabled = true
+position = "above-panel"
+time_format = "{:%H:%M}"
+date_format = ""
