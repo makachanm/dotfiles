@@ -1,17 +1,19 @@
 [session]
 default = "niri"
 
-[user]
-default = "maka"
-
 [appearance]
 hide_logo = true
 scheme_selector_position = "hidden"
 power_buttons_position = "bottom-right"
 
 [appearance.wallpaper]
-path = "/var/lib/noctalia-greeter/black.png"
-fill_mode = "crop"
+path = "color:#000000"
+
+[appearance.wallpapers.eDP-1]
+path = "color:#000000"
+
+[appearance.wallpapers.DP-1]
+path = "color:#000000"
 
 [clock]
 enabled = true
