@@ -6,7 +6,7 @@ border_width = 0.0
 capsule = false
 center = [ "clock", "notifications" ]
 concave_edge_corners = false
-end = [ "tray", "network", "volume", "brightness", "session", "battery" ]
+end = [ "tray", "bluetooth", "network", "volume", "brightness", "battery" ]
 font_weight = 600
 margin_edge = 0
 margin_ends = 0
@@ -227,7 +227,7 @@ nightlight = false
 privacy = false
 
 [plugins]
-enabled = [ "prponkshe/mango-displays" ]
+enabled = [ "prponkshe/mango-displays", "noctalia/bongocat" ]
 
 [shell]
 font_family = "IBM Plex Sans KR"
@@ -235,7 +235,8 @@ polkit_agent = true
 setup_wizard_enabled = false
 
     [shell.animation]
-    enabled = false
+    enabled = true
+    speed = 2.0000000298023224
 
     [shell.greeter_sync]
     auto_sync = true
@@ -267,6 +268,7 @@ setup_wizard_enabled = false
         global = true
 
     [shell.panel]
+    control_center_placement = "floating"
     open_near_click_control_center = true
     session_placement = "floating"
     session_position = "center"
@@ -279,6 +281,9 @@ setup_wizard_enabled = false
 
     [[shell.session.actions]]
     action = "logout"
+
+    [[shell.session.actions]]
+    action = "suspend"
 
     [[shell.session.actions]]
     action = "reboot"
@@ -323,9 +328,10 @@ scale = 0.90000000000000013
 show_label = true
 
 [widget.bluetooth]
-show_label = true
+show_label = false
 
 [widget.brightness]
+show_label = false
 show_when_unavailable = true
 
 [widget.clock]
