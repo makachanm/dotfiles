@@ -3,11 +3,9 @@ font_family = "IBM Plex Sans KR"
 polkit_agent = true
 setup_wizard_enabled = false
 
-    # 배경화면·팔레트·글꼴이 바뀌면 로그인 화면(Greeter)에도 자동으로 반영
     [shell.greeter_sync]
     auto_sync = true
 
-    # 전원 메뉴·잠금 화면·로그인 화면 공통 버튼: 잠금(잠금 화면에선 자동으로 빠짐), 재시작, 종료
     [[shell.session.actions]]
     action = "lock"
 
@@ -36,7 +34,6 @@ behavior_order = [ "screen-off", "lock", "lock-and-suspend" ]
     enabled = true
     timeout = 1000.0
 
-# 잠금 화면: 배경화면 대신 완전 검정 이미지
 [lockscreen]
 wallpaper = "/home/maka/Pictures/wallpaper/black.png"
 
@@ -46,12 +43,11 @@ directory = "/home/maka/Pictures/wallpaper"
 [theme]
 mode = "dark"
 source = "custom"
-custom_palette = "Mono"  # palettes/Mono.json: 검정 배경, 흰 글자, 회색 강조
+custom_palette = "Mono"
 
     [theme.templates]
     builtin_ids = [ "gtk3", "gtk4", "kcolorscheme", "niri" ]
 
-# 예전 waybar 배치: 왼쪽 워크스페이스 / 가운데 날짜·시간 / 오른쪽 트레이·배터리·알림·전원 메뉴
 [bar.default]
 position = "top"
 thickness = 32
@@ -74,7 +70,6 @@ end = [ "tray", "battery", "notifications", "session" ]
 style = "regular"
 show_labels = true
 label_source = "id"
-# 회색 계열로 차분하게: 지금 워크스페이스만 밝게
 focused_color = "outline"
 occupied_color = "surface_variant"
 empty_color = "surface"
@@ -83,12 +78,10 @@ empty_color = "surface"
 format = "{:%Y.%m.%d %a %H:%M}"
 tooltip_format = "{:%Y년 %m월 %d일 %A}"
 
-
 [widget.battery]
 display_mode = "glyph"
 show_label = true
 
-# 제어 센터: 홈, 오디오, 모니터, 달력, 알림, 네트워크(Wi-Fi), 블루투스만 남김
 [control_center]
 hidden_tabs = [ "media", "system", "weather", "screen-time", "power" ]
 
