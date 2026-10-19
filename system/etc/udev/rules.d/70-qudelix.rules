@@ -1,0 +1,1 @@
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1fc9", ATTRS{idProduct}=="7300", MODE="0666", TAG+="uaccess"

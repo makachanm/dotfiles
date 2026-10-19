@@ -103,6 +103,7 @@ while IFS= read -r -d '' src; do
   run "sudo cp -v \"$src\" \"$dest\""
 done < <(find "$REPO/system/etc" -type f -print0)
 run "sudo systemd-hwdb update"
+run "sudo udevadm control --reload"
 
 info "로그인 화면 설정 (system/var/lib/noctalia-greeter)"
 run "sudo /usr/share/noctalia-greeter/setup_greeter_system.sh"
@@ -130,13 +131,6 @@ if [[ -d "$REPO/dconf" ]]; then
   done
 fi
 
-# ---------- 7. 수동 항목 안내 ----------
+# ---------- 7. 마무리 ----------
 ok "설치 완료"
-echo
-warn "수동 처리 필요 (packs/manual.txt):"
-while IFS=$'\t' read -r name src dest cmd; do
-  [[ -z "$name" || "$name" == \#* ]] && continue
-  echo "  - $name (${src})"
-done < "$REPO/system/packs/manual.txt"
-echo
 warn "재부팅하면 greetd(Noctalia Greeter) 로그인 화면으로 시작합니다."
