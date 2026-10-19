@@ -107,9 +107,6 @@ run "sudo systemd-hwdb update"
 info "로그인 화면 설정 (system/var/lib/noctalia-greeter)"
 run "sudo /usr/share/noctalia-greeter/setup_greeter_system.sh"
 run "sudo install -o greetd -g greetd -m 0644 \"$REPO/system/var/lib/noctalia-greeter/greeter.toml\" /var/lib/noctalia-greeter/greeter.toml"
-if [[ -f "$HOME/Pictures/wallpaper/black.png" ]]; then
-  run "sudo install -o greetd -g greetd -m 0644 \"$HOME/Pictures/wallpaper/black.png\" /var/lib/noctalia-greeter/black.png"
-fi
 if compgen -G "$HOME/.local/share/fonts/IBMPlexSansKR-*.ttf" >/dev/null; then
   run "sudo install -d /usr/local/share/fonts/ibm-plex-sans-kr"
   run "sudo install -m 0644 $HOME/.local/share/fonts/IBMPlexSansKR-*.ttf /usr/local/share/fonts/ibm-plex-sans-kr/"
