@@ -1,28 +1,32 @@
-[shell]
-font_family = "IBM Plex Sans KR"
-polkit_agent = true
-setup_wizard_enabled = false
+[audio]
+enable_sounds = false
 
-    [shell.greeter_sync]
-    auto_sync = true
+[bar.default]
+border_width = 0.0
+capsule = false
+center = [ "clock" ]
+concave_edge_corners = false
+end = [ "notifications", "session", "bar", "battery", "tray" ]
+font_weight = 600
+margin_edge = 0
+margin_ends = 0
+margin_opposite_edge = 0
+padding = 8
+position = "top"
+radius = 0
+shadow = false
+start = [ "workspaces" ]
+thickness = 32
+widget_spacing = 10
 
-    [[shell.session.actions]]
-    action = "lock"
+[brightness]
+sync_all_monitors = true
 
-    [[shell.session.actions]]
-    action = "reboot"
-
-    [[shell.session.actions]]
-    action = "shutdown"
-    variant = "destructive"
+[control_center]
+hidden_tabs = [ "media", "system", "weather", "screen-time", "power" ]
 
 [idle]
 behavior_order = [ "screen-off", "lock", "lock-and-suspend" ]
-
-    [idle.behavior.screen-off]
-    action = "screen_off"
-    enabled = true
-    timeout = 400.0
 
     [idle.behavior.lock]
     action = "lock"
@@ -34,56 +38,238 @@ behavior_order = [ "screen-off", "lock", "lock-and-suspend" ]
     enabled = true
     timeout = 1000.0
 
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 400.0
+
 [lockscreen]
+fingerprint = false
+transition = []
 wallpaper = "/home/maka/Pictures/wallpaper/black.png"
 
-[wallpaper]
-directory = "/home/maka/Pictures/wallpaper"
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [
+    "lockscreen-login-box@eDP-1",
+    "lockscreen-login-box@DP-1",
+    "lockscreen-widget-0000000000000001",
+    "lockscreen-widget-0000000000000002"
+]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+    box_height = 128.0
+    box_width = 810.0
+    cx = 1280.0
+    cy = 1258.0
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = false
+        show_keyboard_layout = false
+        show_login_button = false
+        show_media = false
+        show_password_reveal = false
+        show_session_buttons = true
+        show_unlock_hint = false
+        show_weather = false
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 128.0
+    box_width = 810.0
+    cx = 934.0
+    cy = 985.0
+    output = "eDP-1"
+    placement_height = 1167.0
+    placement_width = 1867.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = false
+        show_keyboard_layout = false
+        show_login_button = false
+        show_media = false
+        show_password_reveal = false
+        show_session_buttons = true
+        show_unlock_hint = false
+        show_weather = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 160.0
+    box_width = 520.0
+    cx = 934.0
+    cy = 460.0
+    output = "eDP-1"
+    placement_height = 1167.0
+    placement_width = 1867.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        center_text = true
+        clock_style = "digital"
+        color = "on_surface"
+        format = "{:%H:%M}"
+        shadow = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 200.0
+    box_width = 640.0
+    cx = 1280.0
+    cy = 580.0
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
+        center_text = true
+        clock_style = "digital"
+        color = "on_surface"
+        format = "{:%H:%M}"
+        shadow = false
+
+[notification]
+show_actions = false
+
+[osd.kinds]
+caffeine = false
+dnd = false
+keyboard_backlight = false
+keyboard_layout = false
+lock_keys = false
+media = false
+nightlight = false
+privacy = false
+
+[plugins]
+enabled = [ "dotnetrob/cat", "oldirtty/color_picker", "aristides/udiskie", "rylos/tailnet" ]
+
+[shell]
+font_family = "IBM Plex Sans KR"
+polkit_agent = true
+setup_wizard_enabled = false
+
+    [shell.animation]
+    enabled = false
+
+    [shell.greeter_sync]
+    auto_sync = true
+
+    [shell.launcher]
+    category_icons_only = true
+    compact = true
+    default_view = "pinned"
+    layout = "simple"
+    pinned = [
+        "zen-browser",
+        "thorium-browser",
+        "dev.diegovsky.Riff",
+        "com.microsoft.VSCode",
+        "org.gnome.gnome-commander",
+        "slack",
+        "vesktop",
+        "com.ayugram.desktop",
+        "steam",
+        "org.prismlauncher.PrismLauncher",
+        "com.obsproject.Studio"
+    ]
+    show_app_origin_indicator = false
+    show_session_button = false
+    track_usage = false
+    width = 820
+
+        [shell.launcher.providers.calculator]
+        global = true
+
+    [shell.panel]
+    session_placement = "floating"
+    session_position = "center"
+
+    [shell.screenshot]
+    directory = "/home/maka/Pictures/Screenshots"
+
+    [[shell.session.actions]]
+    action = "lock"
+
+    [[shell.session.actions]]
+    action = "reboot"
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    variant = "destructive"
 
 [theme]
-mode = "dark"
-source = "custom"
+builtin = "Ayu"
 custom_palette = "Mono"
+mode = "dark"
+shell_mode = "dark"
+source = "custom"
 
     [theme.templates]
     builtin_ids = [ "gtk3", "gtk4", "kcolorscheme", "niri" ]
 
-[bar.default]
-position = "top"
-thickness = 32
-margin_ends = 0
-margin_edge = 0
-margin_opposite_edge = 0
-radius = 0
-concave_edge_corners = false
-capsule = false
-shadow = false
-border_width = 0.0
-padding = 8
-widget_spacing = 10
-font_weight = 600
-start = [ "workspaces" ]
-center = [ "clock" ]
-end = [ "tray", "battery", "notifications", "session" ]
+[wallpaper]
+directory = "/home/maka/Pictures/wallpaper"
+transition = []
 
-[widget.workspaces]
-style = "regular"
-show_labels = true
-label_source = "id"
-focused_color = "outline"
-occupied_color = "surface_variant"
-empty_color = "surface"
+    [wallpaper.default]
+    path = "/home/maka/Pictures/wallpaper/vvvv.png"
 
-[widget.clock]
-format = "{:%Y.%m.%d %a %H:%M}"
-tooltip_format = "{:%Y년 %m월 %d일 %A}"
+    [wallpaper.last]
+    path = "/home/maka/Pictures/wallpaper/vvvv.png"
+
+    [wallpaper.monitors.DP-1]
+    path = "/home/maka/Pictures/wallpaper/vvvv.png"
+
+[weather]
+enabled = false
+
+[widget.bar]
+type = "rylos/tailnet:bar"
 
 [widget.battery]
 display_mode = "glyph"
 show_label = true
 
-[control_center]
-hidden_tabs = [ "media", "system", "weather", "screen-time", "power" ]
+[widget.clock]
+format = "{:%Y.%m.%d %a %H:%M}"
+tooltip_format = "{:%Y년 %m월 %d일 %A}"
 
-[weather]
-enabled = false
+[widget.usb]
+hide_when_empty = true
+type = "aristides/udiskie:status"
+
+[widget.workspaces]
+empty_color = "surface"
+focused_color = "outline"
+label_source = "id"
+occupied_color = "surface_variant"
+show_labels = true
+style = "regular"

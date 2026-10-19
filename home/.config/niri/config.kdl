@@ -1,7 +1,6 @@
 spawn-at-startup "kime"
 spawn-at-startup "noctalia"
-spawn-at-startup "tailscale" "systray"
-spawn-at-startup "udiskie"
+spawn-at-startup "udiskie" "--automount" "--no-notify" "--no-tray"
 
 output "eDP-1" {
     mode "2240x1400"

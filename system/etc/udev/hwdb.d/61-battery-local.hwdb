@@ -1,0 +1,2 @@
+battery:BAT0:*:dmi:*
+ CHARGE_LIMIT=_,85
