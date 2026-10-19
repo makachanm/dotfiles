@@ -99,22 +99,37 @@ info "시스템 설정 적용 (system/etc -> /etc)"
 while IFS= read -r -d '' src; do
   rel="${src#$REPO/system/etc/}"
   dest="/etc/$rel"
-  mkdir -p "$(dirname "$dest")"
-  cp -rv "$src" "$dest"
-done < <(find "$REPO/system/etc" -type f ! -path '*sddm/themes*' -print0)
+  run "sudo mkdir -p \"$(dirname "$dest")\""
+  run "sudo cp -v \"$src\" \"$dest\""
+done < <(find "$REPO/system/etc" -type f -print0)
+run "sudo systemd-hwdb update"
+
+info "로그인 화면 설정 (system/var/lib/noctalia-greeter)"
+run "sudo /usr/share/noctalia-greeter/setup_greeter_system.sh"
+run "sudo install -o greetd -g greetd -m 0644 \"$REPO/system/var/lib/noctalia-greeter/greeter.toml\" /var/lib/noctalia-greeter/greeter.toml"
+if [[ -f "$HOME/Pictures/wallpaper/black.png" ]]; then
+  run "sudo install -o greetd -g greetd -m 0644 \"$HOME/Pictures/wallpaper/black.png\" /var/lib/noctalia-greeter/black.png"
+fi
+if compgen -G "$HOME/.local/share/fonts/IBMPlexSansKR-*.ttf" >/dev/null; then
+  run "sudo install -d /usr/local/share/fonts/ibm-plex-sans-kr"
+  run "sudo install -m 0644 $HOME/.local/share/fonts/IBMPlexSansKR-*.ttf /usr/local/share/fonts/ibm-plex-sans-kr/"
+  run "sudo fc-cache -f /usr/local/share/fonts"
+fi
 
 # ---------- 5. 서비스 ----------
 info "서비스 활성화"
 run "sudo systemctl enable --now keyd.service"
-run "sudo systemctl enable --now sddm"
+run "sudo systemctl enable greetd.service"
 run "sudo systemctl enable systemd-resolved 2>/dev/null || true"
+run "busctl call --system org.freedesktop.UPower /org/freedesktop/UPower/devices/battery_BAT0 org.freedesktop.UPower.Device EnableChargeThreshold b true" || true
 
 # ---------- 6. dconf ----------
 if [[ -d "$REPO/dconf" ]]; then
   info "dconf 설정 적용"
   for f in "$REPO"/dconf/*.ini; do
     [[ -f "$f" ]] || continue
-    run "dconf load / < \"$f\""
+    path="/$(basename "$f" .ini | tr . /)/"
+    run "dconf load \"$path\" < \"$f\""
   done
 fi
 
@@ -127,10 +142,4 @@ while IFS=$'\t' read -r name src dest cmd; do
   echo "  - $name (${src})"
 done < "$REPO/system/packs/manual.txt"
 echo
-warn "SDDM 테마(voidsddm) 설치:"
-echo "  sudo ${REPO}/system/usr/share/sddm/themes/voidsddm/install.sh"
-echo
-warn "systemctl로 마무리:"
-echo "  sudo systemctl enable --now batctl.service batctl-resume.service"
-echo "  sudo batctl set --start 30 --stop 85 && sudo batctl persist enable"
-echo "  sudo systemctl restart keyd sddm"
+warn "재부팅하면 greetd(Noctalia Greeter) 로그인 화면으로 시작합니다."

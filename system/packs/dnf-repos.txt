@@ -1,7 +1,4 @@
 code
-copr:copr.fedorainfracloud.org:alebastr:sway-extras
-copr:copr.fedorainfracloud.org:alternateved:keyd
-copr:copr.fedorainfracloud.org:erikreider:SwayNotificationCenter
 copr:copr.fedorainfracloud.org:lionheartp:Hyprland
 copr:copr.fedorainfracloud.org:toroidalfox:kime
 fedora
