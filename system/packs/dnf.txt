@@ -1,36 +1,26 @@
 ## 데스크탑
 niri
-waybar
-rofi
-swaybg
-swayidle
-hyprlock
-SwayNotificationCenter
 xdg-desktop-portal-wlr
 xdg-desktop-portal-gnome
-cliphist
 grim
 slurp
 wf-recorder
 brightnessctl
-sddm
+noctalia
+greetd
+noctalia-greeter-git
 qt5-qtgraphicaleffects
 keyd
 tuned-ppd
 thermald
-
-## 데스크탑 유틸
-blueman
-pasystray
 
 ## Qt 통합 (KDE 플랫폼 테마)
 plasma-integration
 plasma-breeze
 papirus-icon-theme-dark
 
-## LXQt 도구
+## 데스크탑 유틸
 udiskie
-lxqt-policykit
 
 ## GNOME 앱 (libadwaita)
 nautilus
