@@ -1,19 +1,7 @@
 spawn-at-startup "kime"
-spawn-at-startup "waybar"
-spawn-at-startup "swaync"
-spawn-at-startup "swaybg" "-i" "/home/maka/Pictures/wallpaper/vvvv.png" "-m" "fill"
-spawn-at-startup "swayidle" "-w" \
-    "timeout" "400" "niri msg action power-off-monitors" \
-    "timeout" "405" "loginctl lock-session" \
-    "timeout" "1000" "systemctl suspend" \
-    "before-sleep" "loginctl lock-session; sleep 1" \
-    "lock" "pidof hyprlock || hyprlock &"
-spawn-at-startup "/usr/libexec/lxqt-policykit-agent"
-spawn-at-startup "blueman-applet"
-spawn-at-startup "nm-applet"
-spawn-at-startup "pasystray" "--notify=none"
+// 바, 알림, 배경화면, 잠금·자동 잠금, 클립보드, 권한 확인 창, 네트워크·블루투스·음량
+spawn-at-startup "noctalia"
 spawn-at-startup "tailscale" "systray"
-spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 spawn-at-startup "udiskie"
 
 environment {
@@ -59,9 +47,19 @@ gestures {
     }
 }
 
-window-rule { 
+window-rule {
     clip-to-geometry true
     geometry-corner-radius 12
+}
+
+window-rule {
+    match app-id="^dev\\.noctalia\\.Noctalia$"
+    open-floating true
+}
+
+debug {
+    // Noctalia 알림 동작이나 창 활성화 요청이 동작하도록
+    honor-xdg-activation-with-invalid-serial
 }
 
 layout {
@@ -74,14 +72,15 @@ layout {
 
 binds {
     Mod+R { spawn "sakura"; }
-    Mod+Space { spawn-sh "~/.config/rofi/drun.sh -show-icons"; }
-    Mod+N { spawn "swaync-client" "-t" "-sw"; }
-    //Mod+R { spawn-sh "cliphist list | rofi -dmenu -i -p clipboard | cliphist decode | wl-copy"; }
-    //Mod+Shift+R { spawn-sh "cliphist wipe"; }
-    Mod+F { spawn-sh "grim -g \"$(slurp)\" - | wl-copy"; }
+    Mod+Space { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+    Mod+N { spawn "noctalia" "msg" "panel-toggle" "control-center" "notifications"; }
+    Mod+V { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
+    Mod+Comma { spawn "noctalia" "msg" "settings-toggle"; }
+    Mod+F { spawn "noctalia" "msg" "screenshot-region"; }
+    Mod+Shift+F { spawn "noctalia" "msg" "screenshot-fullscreen"; }
     Ctrl+Shift+Escape { spawn "flatpak" "run" "io.missioncenter.MissionCenter"; }
 
-    Mod+L { spawn "loginctl" "lock-session"; }
+    Mod+L { spawn "noctalia" "msg" "session" "lock"; }
     Mod+Escape { close-window; }
     Mod+Shift+Escape { quit; }
 
@@ -97,9 +96,11 @@ binds {
     Mod+Shift+Tab { spawn-sh "~/.config/niri/scripts/ws-cycle move"; }
     Mod+Ctrl+Tab { move-column-to-monitor-next; }
 
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
-    XF86AudioMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "set" "10%+"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "10%-"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "noctalia" "msg" "volume-up"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "noctalia" "msg" "volume-down"; }
+    XF86AudioMute allow-when-locked=true { spawn "noctalia" "msg" "volume-mute"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "noctalia" "msg" "brightness-up"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "noctalia" "msg" "brightness-down"; }
 }
+
+include "noctalia.kdl"
