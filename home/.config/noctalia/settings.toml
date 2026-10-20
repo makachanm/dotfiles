@@ -337,7 +337,7 @@ display_mode = "graphic"
 font_family = "IBM Plex Sans"
 font_scale = 1.1000000000000001
 font_weight = 300
-scale = 0.90000000000000013
+scale = 1.0
 show_label = true
 
 [widget.bluetooth]
@@ -358,7 +358,7 @@ glyph = "menu-2"
 show_label = false
 
 [widget.notifications]
-scale = 0.90000000000000002
+scale = 1.0
 
 [widget.session]
 glyph = "shutdown"
@@ -378,6 +378,6 @@ focused_color = "outline"
 font_weight = 600
 label_source = "id"
 occupied_color = "surface_variant"
-scale = 1.25
+scale = 1.0
 show_labels = true
 style = "regular"
