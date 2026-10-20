@@ -111,3 +111,5 @@ libheif-freeworld
 ## 게임 / 호환성
 steam
 wine-common
+ansible-core
+ansible-collection-community-general
