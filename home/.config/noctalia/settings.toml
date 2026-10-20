@@ -16,7 +16,7 @@ position = "top"
 radius = 0
 shadow = false
 start = [ "launcher", "workspaces" ]
-thickness = 32
+thickness = 38
 widget_spacing = 10
 
     [bar.default.dead_zone.actions]
@@ -81,11 +81,11 @@ widget_order = [
     [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
     box_height = 128.0
     box_width = 810.0
-    cx = 1280.0001220703125
-    cy = 790.00006103515625
+    cx = 1238.5001220703125
+    cy = 764.763916015625
     output = "DP-1"
-    placement_height = 1440.0
-    placement_width = 2560.0
+    placement_height = 1394.0
+    placement_width = 2477.0
     rotation = 0.0
     type = "login_box"
 
@@ -137,11 +137,11 @@ widget_order = [
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
     box_height = 128.0
     box_width = 810.0
-    cx = 861.96142578125
-    cy = 590.642578125
+    cx = 933.99993896484375
+    cy = 639.9998779296875
     output = "eDP-1"
-    placement_height = 1077.0
-    placement_width = 1723.0
+    placement_height = 1167.0
+    placement_width = 1867.0
     rotation = 0.0
     type = "login_box"
 
@@ -165,11 +165,11 @@ widget_order = [
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
     box_height = 160.0
     box_width = 520.0
-    cx = 861.96142578125
-    cy = 442.98199462890625
+    cx = 933.99993896484375
+    cy = 480.0
     output = "eDP-1"
-    placement_height = 1077.0
-    placement_width = 1723.0
+    placement_height = 1167.0
+    placement_width = 1867.0
     rotation = 0.0
     type = "clock"
 
@@ -183,11 +183,11 @@ widget_order = [
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
     box_height = 200.0
     box_width = 640.0
-    cx = 1280.0001220703125
-    cy = 610.00006103515625
+    cx = 1238.5001220703125
+    cy = 590.513916015625
     output = "DP-1"
-    placement_height = 1440.0
-    placement_width = 2560.0
+    placement_height = 1394.0
+    placement_width = 2477.0
     rotation = 0.0
     type = "clock"
 
@@ -337,7 +337,7 @@ display_mode = "graphic"
 font_family = "IBM Plex Sans"
 font_scale = 1.1000000000000001
 font_weight = 300
-scale = 0.90000000000000013
+scale = 0.80000000000000004
 show_label = true
 
 [widget.bluetooth]
@@ -353,6 +353,7 @@ tooltip_format = "{:%Y년 %m월 %d일 %A}"
 
 [widget.launcher]
 glyph = "menu-2"
+scale = 1.25
 
 [widget.network]
 show_label = false
