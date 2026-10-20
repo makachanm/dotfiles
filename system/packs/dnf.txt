@@ -78,6 +78,7 @@ texlive-collection-langkorean
 latexmk
 vim-enhanced
 wl-clipboard
+btop
 
 ## 가상화
 moby-engine
