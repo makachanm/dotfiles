@@ -371,6 +371,10 @@ show_label = false
 [widget.session]
 glyph = "shutdown"
 
+[widget.tray]
+drawer = true
+pinned = [ "kime" ]
+
 [widget.usb]
 hide_when_empty = true
 type = "aristides/udiskie:status"
