@@ -24,7 +24,6 @@ udiskie
 nautilus
 sakura
 loupe
-geany
 qalculate-gtk
 gnome-commander
 celluloid
@@ -78,6 +77,7 @@ texlive-collection-xetex
 texlive-collection-langkorean
 latexmk
 vim-enhanced
+wl-clipboard
 
 ## 가상화
 moby-engine

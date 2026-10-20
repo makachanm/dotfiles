@@ -69,6 +69,9 @@ info "dnf 패키지 설치 (packs/dnf.txt)"
 PKG_LIST=$(grep -v '^#' "$REPO/system/packs/dnf.txt" | sed '/^\s*$/d' | grep -v '^io\.' | grep -v '^org\.')
 run "sudo dnf -y install $PKG_LIST"
 
+info "기본 편집기를 Vim으로 (nano-default-editor -> vim-default-editor)"
+run "sudo dnf -y swap nano-default-editor vim-default-editor" || true
+
 info "flatpak 활성화 + 앱 설치 (packs/flatpak.txt)"
 run "sudo dnf -y install flatpak"
 run "flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.repo" || true

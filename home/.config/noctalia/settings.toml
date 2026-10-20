@@ -4,7 +4,7 @@ enable_sounds = false
 [bar.default]
 border_width = 0.0
 capsule = false
-center = [ "clock", "notifications" ]
+center = [ "bar", "clock", "notifications" ]
 concave_edge_corners = false
 end = [ "tray", "bluetooth", "network", "volume", "brightness", "battery" ]
 font_weight = 600
@@ -15,9 +15,12 @@ padding = 8
 position = "top"
 radius = 0
 shadow = false
-start = [ "workspaces" ]
+start = [ "launcher", "workspaces" ]
 thickness = 32
 widget_spacing = 10
+
+    [bar.default.dead_zone.actions]
+    right = "none"
 
 [battery]
 warning_threshold = 5
@@ -226,8 +229,13 @@ media = false
 nightlight = false
 privacy = false
 
+[plugin_settings."ahmedhossamdev/sticky-notes"]
+file_format = "txt"
+panel_placement = "floating"
+show_count = false
+
 [plugins]
-enabled = [ "prponkshe/mango-displays", "noctalia/bongocat" ]
+enabled = [ "prponkshe/mango-displays", "noctalia/bongocat", "ahmedhossamdev/sticky-notes" ]
 
 [shell]
 font_family = "IBM Plex Sans KR"
@@ -236,16 +244,16 @@ setup_wizard_enabled = false
 
     [shell.animation]
     enabled = true
-    speed = 2.0000000298023224
+    speed = 1.5000000223517418
 
     [shell.greeter_sync]
     auto_sync = true
 
     [shell.launcher]
-    category_icons_only = true
+    category_icons_only = false
     compact = true
     default_view = "pinned"
-    layout = "simple"
+    layout = "full"
     pinned = [
         "zen-browser",
         "thorium-browser",
@@ -257,12 +265,14 @@ setup_wizard_enabled = false
         "com.ayugram.desktop",
         "steam",
         "org.prismlauncher.PrismLauncher",
-        "com.obsproject.Studio"
+        "com.obsproject.Studio",
+        "gimp",
+        "qalculate-gtk"
     ]
     show_app_origin_indicator = false
     show_session_button = false
     track_usage = false
-    width = 820
+    width = 800
 
         [shell.launcher.providers.calculator]
         global = true
@@ -318,6 +328,9 @@ transition = []
 [weather]
 enabled = false
 
+[widget.bar]
+type = "ahmedhossamdev/sticky-notes:bar"
+
 [widget.battery]
 anchor = true
 display_mode = "graphic"
@@ -337,6 +350,9 @@ show_when_unavailable = true
 [widget.clock]
 format = "{:%Y.%m.%d %a %H:%M}"
 tooltip_format = "{:%Y년 %m월 %d일 %A}"
+
+[widget.launcher]
+glyph = "menu-2"
 
 [widget.network]
 show_label = false
