@@ -17,9 +17,10 @@ order = [ "default" ]
     padding = 10
     position = "top"
     radius = 0
+    scale = 1.0800000000000001
     shadow = true
     start = [ "launcher", "gap", "workspaces" ]
-    thickness = 30
+    thickness = 33
     widget_spacing = 8
 
         [bar.default.dead_zone.actions]
@@ -336,6 +337,8 @@ type = "ahmedhossamdev/sticky-notes:bar"
 
 [widget.battery]
 anchor = true
+display_mode = "graphic"
+scale = 0.85000000000000009
 show_label = true
 
 [widget.bluetooth]
@@ -348,10 +351,11 @@ show_when_unavailable = true
 [widget.clock]
 font_scale = 0.94999999999999996
 font_weight = 500
-format = "{:%m.%d %a  %H:%M}"
+format = "{:%Y %m.%d %a  %H:%M}"
 tooltip_format = "{:%Y년 %m월 %d일 %A}"
 
 [widget.gap]
+enabled = false
 length = 12
 type = "spacer"
 
