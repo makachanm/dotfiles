@@ -351,7 +351,7 @@ show_when_unavailable = true
 [widget.clock]
 font_scale = 0.94999999999999996
 font_weight = 500
-format = "{:%Y %m.%d %a  %H:%M}"
+format = "{:%Y %m.%d %a %H:%M}"
 tooltip_format = "{:%Y년 %m월 %d일 %A}"
 
 [widget.gap]
