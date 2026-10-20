@@ -337,7 +337,7 @@ display_mode = "graphic"
 font_family = "IBM Plex Sans"
 font_scale = 1.1000000000000001
 font_weight = 300
-scale = 0.90000000000000002
+scale = 0.84999999999999998
 show_label = true
 
 [widget.bluetooth]
@@ -354,6 +354,7 @@ tooltip_format = "{:%Y년 %m월 %d일 %A}"
 
 [widget.launcher]
 glyph = "menu-2"
+scale = 1.3
 
 [widget.network]
 scale = 1.1499999999999999
