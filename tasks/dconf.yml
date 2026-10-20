@@ -1,0 +1,21 @@
+# dconf/<경로를 점으로 쓴 이름>.ini 파일의 키만 맞춘다. 파일에 없는 키는 건드리지 않는다.
+- name: dconf settings
+  ansible.builtin.shell: |
+    set -eu
+    dir="/{{ item | basename | regex_replace('\.ini$', '') | replace('.', '/') }}/"
+    changed=0
+    while IFS= read -r line; do
+      case "$line" in ''|'['*) continue ;; esac
+      key="${line%%=*}"; value="${line#*=}"
+      if [ "$(dconf read "$dir$key")" != "$value" ]; then
+        [ "{{ ansible_check_mode }}" = "True" ] || dconf write "$dir$key" "$value"
+        changed=1
+      fi
+    done < "{{ item }}"
+    [ "$changed" = 1 ] && echo changed || true
+  args:
+    executable: /bin/bash
+  loop: "{{ query('fileglob', repo ~ '/dconf/*.ini') }}"
+  register: dconf_result
+  changed_when: "'changed' in dconf_result.stdout"
+  check_mode: false

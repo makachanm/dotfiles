@@ -1,0 +1,33 @@
+- name: Prepare Noctalia Greeter (PAM, paths)
+  ansible.builtin.command: /usr/share/noctalia-greeter/setup_greeter_system.sh
+  args:
+    creates: /var/lib/noctalia-greeter/greeter.toml
+  become: true
+
+- name: Greeter appearance
+  ansible.builtin.copy:
+    src: "{{ repo }}/system/var/lib/noctalia-greeter/greeter.toml"
+    dest: /var/lib/noctalia-greeter/greeter.toml
+    owner: greetd
+    group: greetd
+    mode: "0644"
+  become: true
+
+# 로그인 화면은 greetd 사용자로 돌아서 ~/.local/share/fonts를 못 읽는다
+- name: Font directory for the login screen
+  ansible.builtin.file:
+    path: /usr/local/share/fonts/ibm-plex-sans-kr
+    state: directory
+    mode: "0755"
+  become: true
+
+- name: IBM Plex Sans KR for the login screen
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: /usr/local/share/fonts/ibm-plex-sans-kr/
+    owner: root
+    group: root
+    mode: "0644"
+  with_fileglob: "{{ user_home }}/.local/share/fonts/IBMPlexSansKR-*.ttf"
+  become: true
+  notify: Refresh font cache

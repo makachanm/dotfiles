@@ -1,0 +1,5 @@
+- name: Home config (home/ -> ~)
+  ansible.builtin.copy:
+    src: "{{ repo }}/home/"
+    dest: "{{ user_home }}/"
+    mode: preserve

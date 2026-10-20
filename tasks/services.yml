@@ -1,0 +1,19 @@
+- name: keyd
+  ansible.builtin.systemd_service:
+    name: keyd
+    enabled: true
+    state: started
+  become: true
+
+# 지금 세션을 끊지 않도록 켜기만 하고 시작하지는 않는다
+- name: greetd
+  ansible.builtin.systemd_service:
+    name: greetd
+    enabled: true
+  become: true
+
+- name: systemd-resolved
+  ansible.builtin.systemd_service:
+    name: systemd-resolved
+    enabled: true
+  become: true
