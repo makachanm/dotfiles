@@ -1,0 +1,1 @@
+SUBSYSTEM=="power_supply", KERNEL=="BAT0", ACTION=="add", ATTR{charge_control_start_threshold}="0"
