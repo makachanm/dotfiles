@@ -44,13 +44,6 @@ window-rule {
     open-floating true
 }
 
-window-rule {
-    match app-id="^sakura$" title="^btop$"
-    open-floating true
-    default-column-width { proportion 0.8; }
-    default-window-height { proportion 0.8; }
-}
-
 debug {
     honor-xdg-activation-with-invalid-serial
 }
