@@ -354,7 +354,7 @@ tooltip_format = "{:%Y년 %m월 %d일 %A}"
 
 [widget.launcher]
 glyph = "menu-2"
-scale = 1.1000000000000001
+scale = 1.25
 
 [widget.network]
 show_label = false
@@ -380,6 +380,6 @@ focused_color = "outline"
 font_weight = 600
 label_source = "id"
 occupied_color = "surface_variant"
-scale = 1.1000000000000001
+scale = 1.25
 show_labels = true
 style = "regular"
