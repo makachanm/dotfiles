@@ -14,13 +14,13 @@ order = [ "default" ]
     margin_edge = 0
     margin_ends = 0
     margin_opposite_edge = 0
-    padding = 14
+    padding = 10
     position = "top"
     radius = 0
     shadow = true
     start = [ "launcher", "workspaces" ]
-    thickness = 34
-    widget_spacing = 6
+    thickness = 30
+    widget_spacing = 8
 
         [bar.default.dead_zone.actions]
         right = "none"
