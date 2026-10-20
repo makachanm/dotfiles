@@ -11,7 +11,7 @@ output "eDP-1" {
 
 output "DP-1" {
     mode "3840x2160"
-    scale 1.5
+    scale 1.55
     position x=1866 y=0
 }
 
@@ -52,22 +52,20 @@ layout {
     gaps 10
     default-column-width { proportion 0.5; }
     focus-ring {
-        off
+        on
     }
 }
 
 binds {
     Mod+R { spawn "sakura"; }
     Mod+Space { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
-    Mod+N { spawn "noctalia" "msg" "panel-toggle" "control-center" "notifications"; }
-    Mod+V { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
+    Mod+C { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
     Mod+Comma { spawn "noctalia" "msg" "settings-toggle"; }
     Mod+F { spawn "noctalia" "msg" "screenshot-region"; }
     Mod+Shift+F { spawn "noctalia" "msg" "screenshot-fullscreen"; }
     Ctrl+Shift+Escape { spawn "flatpak" "run" "io.missioncenter.MissionCenter"; }
 
     Mod+L { spawn "noctalia" "msg" "session" "lock"; }
-    Mod+Escape { close-window; }
     Mod+Shift+Escape { spawn "noctalia" "msg" "panel-toggle" "session"; }
 
     Mod+Q { focus-column-left; }
@@ -90,3 +88,4 @@ binds {
 }
 
 include "noctalia.kdl"
+include "focus-ring.kdl"
