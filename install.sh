@@ -102,7 +102,6 @@ while IFS= read -r -d '' src; do
   run "sudo mkdir -p \"$(dirname "$dest")\""
   run "sudo cp -v \"$src\" \"$dest\""
 done < <(find "$REPO/system/etc" -type f -print0)
-run "sudo systemd-hwdb update"
 run "sudo udevadm control --reload"
 
 info "로그인 화면 설정 (system/var/lib/noctalia-greeter)"
@@ -119,7 +118,6 @@ info "서비스 활성화"
 run "sudo systemctl enable --now keyd.service"
 run "sudo systemctl enable greetd.service"
 run "sudo systemctl enable systemd-resolved 2>/dev/null || true"
-run "busctl call --system org.freedesktop.UPower /org/freedesktop/UPower/devices/battery_BAT0 org.freedesktop.UPower.Device EnableChargeThreshold b true" || true
 
 # ---------- 6. dconf ----------
 if [[ -d "$REPO/dconf" ]]; then
