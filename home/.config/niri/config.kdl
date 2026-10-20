@@ -44,6 +44,13 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    match app-id="^sakura$" title="^btop$"
+    open-floating true
+    default-column-width { proportion 0.8; }
+    default-window-height { proportion 0.8; }
+}
+
 debug {
     honor-xdg-activation-with-invalid-serial
 }
@@ -63,7 +70,7 @@ binds {
     Mod+Comma { spawn "noctalia" "msg" "settings-toggle"; }
     Mod+F { spawn "noctalia" "msg" "screenshot-region"; }
     Mod+Shift+F { spawn "noctalia" "msg" "screenshot-fullscreen"; }
-    Ctrl+Shift+Escape { spawn "flatpak" "run" "io.missioncenter.MissionCenter"; }
+    Ctrl+Shift+Escape { spawn "sakura" "-t" "btop" "-e" "btop"; }
 
     Mod+L { spawn "noctalia" "msg" "session" "lock"; }
     Mod+Shift+Escape { spawn "noctalia" "msg" "panel-toggle" "session"; }
