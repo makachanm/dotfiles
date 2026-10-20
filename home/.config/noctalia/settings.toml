@@ -341,6 +341,7 @@ scale = 0.90000000000000002
 show_label = true
 
 [widget.bluetooth]
+scale = 1.1499999999999999
 show_label = false
 
 [widget.brightness]
@@ -355,6 +356,7 @@ tooltip_format = "{:%Y년 %m월 %d일 %A}"
 glyph = "menu-2"
 
 [widget.network]
+scale = 1.1499999999999999
 show_label = false
 
 [widget.notifications]
@@ -369,6 +371,7 @@ type = "aristides/udiskie:status"
 
 [widget.volume]
 mute_color = "secondary"
+scale = 1.1499999999999999
 show_label = false
 
 [widget.workspaces]
