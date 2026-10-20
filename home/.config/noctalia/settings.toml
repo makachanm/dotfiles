@@ -7,6 +7,7 @@ capsule = false
 center = [ "bar", "clock", "notifications" ]
 concave_edge_corners = false
 end = [ "tray", "bluetooth", "network", "volume", "brightness", "battery" ]
+font_scale = 1.1000000000000001
 font_weight = 600
 margin_edge = 0
 margin_ends = 0
@@ -81,11 +82,11 @@ widget_order = [
     [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
     box_height = 128.0
     box_width = 810.0
-    cx = 1238.5001220703125
-    cy = 764.763916015625
+    cx = 1280.0001220703125
+    cy = 790.0
     output = "DP-1"
-    placement_height = 1394.0
-    placement_width = 2477.0
+    placement_height = 1440.0
+    placement_width = 2560.0
     rotation = 0.0
     type = "login_box"
 
@@ -183,11 +184,11 @@ widget_order = [
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
     box_height = 200.0
     box_width = 640.0
-    cx = 1238.5001220703125
-    cy = 590.513916015625
+    cx = 1280.0001220703125
+    cy = 610.0
     output = "DP-1"
-    placement_height = 1394.0
-    placement_width = 2477.0
+    placement_height = 1440.0
+    placement_width = 2560.0
     rotation = 0.0
     type = "clock"
 
