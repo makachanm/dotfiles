@@ -7,9 +7,9 @@ order = [ "default" ]
     [bar.default]
     border_width = 0.0
     capsule = false
-    center = [ "bar", "gap", "clock", "gap", "notifications" ]
+    center = [ "gap", "clock", "gap" ]
     concave_edge_corners = true
-    end = [ "tray", "network", "bluetooth", "volume", "brightness", "battery" ]
+    end = [ "tray", "network", "bluetooth", "volume", "brightness", "notifications", "battery" ]
     font_weight = 500
     margin_edge = 0
     margin_ends = 0
@@ -19,7 +19,7 @@ order = [ "default" ]
     radius = 0
     scale = 1.0800000000000001
     shadow = true
-    start = [ "launcher", "gap", "workspaces" ]
+    start = [ "bar", "launcher", "gap", "workspaces" ]
     thickness = 33
     widget_spacing = 8
 
@@ -360,6 +360,7 @@ length = 12
 type = "spacer"
 
 [widget.launcher]
+enabled = false
 glyph = "menu-2"
 scale = 1.25
 
