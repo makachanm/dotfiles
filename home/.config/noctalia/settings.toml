@@ -1,27 +1,29 @@
 [audio]
 enable_sounds = false
 
-[bar.default]
-border_width = 0.0
-capsule = false
-center = [ "bar", "clock", "notifications" ]
-concave_edge_corners = false
-end = [ "tray", "bluetooth", "network", "volume", "brightness", "battery" ]
-font_weight = 500
-margin_edge = 0
-margin_ends = 0
-margin_opposite_edge = 0
-padding = 8
-position = "top"
-radius = 0
-scale = 1.1000000000000001
-shadow = false
-start = [ "launcher", "workspaces" ]
-thickness = 32
-widget_spacing = 10
+[bar]
+order = [ "default" ]
 
-    [bar.default.dead_zone.actions]
-    right = "none"
+    [bar.default]
+    border_width = 0.0
+    capsule = false
+    center = [ "bar", "clock", "notifications" ]
+    concave_edge_corners = true
+    end = [ "tray", "network", "bluetooth", "volume", "brightness", "battery" ]
+    font_weight = 500
+    margin_edge = 0
+    margin_ends = 0
+    margin_opposite_edge = 0
+    padding = 14
+    position = "top"
+    radius = 0
+    shadow = true
+    start = [ "launcher", "workspaces" ]
+    thickness = 34
+    widget_spacing = 6
+
+        [bar.default.dead_zone.actions]
+        right = "none"
 
 [battery]
 warning_threshold = 5
