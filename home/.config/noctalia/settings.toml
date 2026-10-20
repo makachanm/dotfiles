@@ -7,9 +7,9 @@ order = [ "default" ]
     [bar.default]
     border_width = 0.0
     capsule = false
-    center = [ "gap", "clock", "gap" ]
+    center = [ "bar", "gap", "clock", "gap", "notifications" ]
     concave_edge_corners = true
-    end = [ "tray", "network", "bluetooth", "volume", "brightness", "notifications", "battery" ]
+    end = [ "tray", "network", "bluetooth", "volume", "brightness", "battery" ]
     font_weight = 500
     margin_edge = 0
     margin_ends = 0
@@ -19,7 +19,7 @@ order = [ "default" ]
     radius = 0
     scale = 1.0800000000000001
     shadow = true
-    start = [ "bar", "launcher", "gap", "workspaces" ]
+    start = [ "launcher", "workspaces" ]
     thickness = 33
     widget_spacing = 8
 
@@ -355,7 +355,7 @@ format = "{:%Y %m.%d %a  %H:%M}"
 tooltip_format = "{:%Y년 %m월 %d일 %A}"
 
 [widget.gap]
-enabled = false
+enabled = true
 length = 12
 type = "spacer"
 
