@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Vim
+GenericName=Text Editor
+Comment=Edit text files in Vim
+Icon=gvim
+TryExec=vim
+Exec=sakura -e vim %F
+Terminal=false
+Categories=Utility;TextEditor;
+MimeType=text/plain;text/markdown;text/csv;text/x-log;text/x-csrc;text/x-chdr;text/x-c++src;text/x-c++hdr;text/x-python;text/x-shellscript;text/x-makefile;text/x-tex;text/x-toml;application/json;application/xml;application/x-yaml;application/toml;application/x-shellscript;
+Keywords=vi;vim;editor;text;

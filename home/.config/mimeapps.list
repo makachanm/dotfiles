@@ -106,10 +106,10 @@ application/x-zpaq=org.gnome.FileRoller.desktop
 application/x-zstd-compressed-tar=org.gnome.FileRoller.desktop
 application/zip=org.gnome.FileRoller.desktop
 application/zstd=org.gnome.FileRoller.desktop
-text/plain=geany.desktop
-text/markdown=geany.desktop
-text/csv=geany.desktop
-application/json=geany.desktop
+text/plain=vim.desktop
+text/markdown=vim.desktop
+text/csv=vim.desktop
+application/json=vim.desktop
 application/msword=libreoffice-writer.desktop
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=libreoffice-calc.desktop
 application/vnd.ms-excel=libreoffice-calc.desktop
@@ -257,9 +257,9 @@ application/x-chrome-extension=org.gnome.FileRoller.desktop
 application/x-xar=org.gnome.FileRoller.desktop
 
 [Added Associations]
-text/plain=geany.desktop;libreoffice-writer.desktop;com.microsoft.VSCode.desktop;
-text/markdown=geany.desktop;com.microsoft.VSCode.desktop;
-application/json=geany.desktop;zen-browser.desktop;com.microsoft.VSCode.desktop;
+text/plain=vim.desktop;libreoffice-writer.desktop;com.microsoft.VSCode.desktop;
+text/markdown=vim.desktop;com.microsoft.VSCode.desktop;
+application/json=vim.desktop;zen-browser.desktop;com.microsoft.VSCode.desktop;
 image/png=org.gnome.Loupe.desktop;gimp.desktop;
 image/jpeg=org.gnome.Loupe.desktop;gimp.desktop;org.darktable.darktable.desktop;
 inode/directory=org.gnome.gnome-commander.desktop;org.gnome.Nautilus.desktop;com.microsoft.VSCode.desktop;

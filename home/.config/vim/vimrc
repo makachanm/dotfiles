@@ -1,0 +1,160 @@
+" ~/.config/vim/vimrc
+
+" Vim 기본 권장값(문법 강조, 파일 형식 감지, 마지막 커서 위치 복원 등)
+unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
+
+" ---------- 파일과 인코딩 ----------
+set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,cp949,latin1
+set hidden
+set autoread
+
+" 스왑, 백업, 되돌리기 기록, viminfo는 ~/.local/state/vim에 모음
+let s:state = expand('~/.local/state/vim')
+for s:dir in ['swap', 'backup', 'undo']
+  call mkdir(s:state . '/' . s:dir, 'p', 0700)
+endfor
+let &directory = s:state . '/swap//'
+let &backupdir = s:state . '/backup//'
+let &undodir = s:state . '/undo//'
+let &viminfofile = s:state . '/viminfo'
+set backup
+set undofile
+
+" ---------- 화면 ----------
+set number
+set cursorline
+set cursorlineopt=number
+set laststatus=2
+set noshowmode
+set wrap linebreak breakindent
+set showbreak=↪\
+set list
+set listchars=tab:»\ ,trail:·,nbsp:␣
+set splitbelow splitright
+set belloff=all
+set shortmess+=I
+set ttimeoutlen=20
+
+" 입력 모드에서는 막대 커서, 바꾸기 모드에서는 밑줄 커서
+let &t_SI = "\e[6 q"
+let &t_SR = "\e[4 q"
+let &t_EI = "\e[2 q"
+
+set termguicolors
+set background=dark
+colorscheme quiet
+highlight LineNr guifg=#555555
+highlight CursorLineNr guifg=#ffffff gui=bold
+highlight SpecialKey guifg=#444444
+highlight NonText guifg=#444444
+
+" 상태 줄: 모드 | 파일 [수정됨] ... 형식 인코딩 줄:칸 비율
+let s:modes = {'n': 'NORMAL', 'i': 'INSERT', 'R': 'REPLACE', 'v': 'VISUAL',
+      \ 'V': 'V-LINE', "\<C-v>": 'V-BLOCK', 'c': 'COMMAND', 't': 'TERMINAL'}
+function! StatusMode() abort
+  return get(s:modes, mode(), mode())
+endfunction
+set statusline=\ %{StatusMode()}\ \|\ %f%(\ %m%r%)%=%y\ %{&fenc}\ %l:%c\ %p%%\
+
+" ---------- 들여쓰기 ----------
+set expandtab
+set shiftwidth=4
+set softtabstop=-1
+set shiftround
+set autoindent
+
+augroup indent_by_type
+  autocmd!
+  autocmd FileType html,css,javascript,typescript,json,yaml,toml,lua,kdl,vim,tex,markdown
+        \ setlocal shiftwidth=2
+  autocmd FileType make,go setlocal noexpandtab shiftwidth=0
+augroup END
+
+" ---------- 검색과 자동 완성 ----------
+set ignorecase smartcase
+set hlsearch
+set path+=**
+set wildoptions=pum,fuzzy
+set wildignore+=*.o,*.pyc,*/.git/*,*/node_modules/*,*/target/*
+set completeopt=menuone,noselect,popup
+
+" ---------- 기본 동봉 패키지 ----------
+packadd! comment       " gcc / gc{동작}: 주석 넣고 빼기
+packadd! editorconfig  " .editorconfig 따르기
+packadd! matchit       " %로 if/endif, 태그 짝 이동
+packadd! hlyank        " 복사한 범위 잠깐 강조
+packadd! nohlsearch    " 커서를 움직이면 검색 강조 끄기
+
+" 파일 탐색기(netrw)
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_home = s:state
+
+" ---------- 시스템 클립보드 (Wayland, wl-clipboard) ----------
+if executable('wl-copy') && executable('wl-paste')
+  function! s:ClipCopy(reg, type, lines) abort
+    let l:primary = a:reg ==# '*' ? ' --primary' : ''
+    " 줄 단위로 복사했으면 끝에 줄바꿈을 붙임
+    let l:lines = a:type ==# 'V' ? a:lines + [''] : a:lines
+    silent call system('wl-copy --type text/plain' . l:primary, l:lines)
+  endfunction
+  function! s:ClipPaste(reg) abort
+    let l:primary = a:reg ==# '*' ? ' --primary' : ''
+    silent let l:text = system('wl-paste --no-newline' . l:primary)
+    if v:shell_error
+      return ['', []]
+    endif
+    " 줄바꿈으로 끝나면 줄 단위로 붙여넣음
+    let l:type = l:text =~# '\n$' ? 'V' : 'v'
+    return [l:type, split(l:text, '\n', 1)[: l:type ==# 'V' ? -2 : -1]]
+  endfunction
+  let v:clipproviders['wl-clipboard'] = {
+        \ 'available': {-> !empty($WAYLAND_DISPLAY)},
+        \ 'copy': {'+': function('s:ClipCopy'), '*': function('s:ClipCopy')},
+        \ 'paste': {'+': function('s:ClipPaste'), '*': function('s:ClipPaste')},
+        \ }
+  set clipmethod^=wl-clipboard
+endif
+
+" ---------- 단축키 (리더: 스페이스) ----------
+let mapleader = ' '
+
+nnoremap <Leader>w <Cmd>update<CR>
+nnoremap <Leader>q <Cmd>quit<CR>
+nnoremap <Leader>e <Cmd>Explore<CR>
+nnoremap <Leader>f :find<Space>
+nnoremap <Leader>b :buffer<Space>
+nnoremap <Leader>g :vimgrep //j **<Left><Left><Left><Left><Left><Left>
+nnoremap <Leader>c <Cmd>copen<CR>
+
+" 시스템 클립보드로 복사, 붙여넣기
+nnoremap <Leader>y "+y
+xnoremap <Leader>y "+y
+nnoremap <Leader>Y "+y$
+nnoremap <Leader>p "+p
+xnoremap <Leader>p "+p
+nnoremap <Leader>P "+P
+
+" 줄바꿈된 긴 줄도 화면 줄 단위로 이동
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
+
+" 들여쓰기 후에도 선택 유지, 선택한 줄 위아래로 옮기기
+xnoremap < <gv
+xnoremap > >gv
+xnoremap J :move '>+1<CR>gv=gv
+xnoremap K :move '<-2<CR>gv=gv
+
+" 창 이동
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" 버퍼, 빠른 수정 목록 넘기기
+nnoremap [b <Cmd>bprevious<CR>
+nnoremap ]b <Cmd>bnext<CR>
+nnoremap [q <Cmd>cprevious<CR>
+nnoremap ]q <Cmd>cnext<CR>
