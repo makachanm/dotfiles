@@ -16,7 +16,7 @@ position = "top"
 radius = 0
 shadow = false
 start = [ "launcher", "workspaces" ]
-thickness = 38
+thickness = 32
 widget_spacing = 10
 
     [bar.default.dead_zone.actions]
