@@ -1,0 +1,37 @@
+- name: Flathub remote
+  community.general.flatpak_remote:
+    name: flathub
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    method: user
+    state: present
+
+- name: Read installed flatpak apps (user and system)
+  ansible.builtin.command: flatpak list --app --columns=application
+  register: flatpak_installed
+  changed_when: false
+  check_mode: false
+
+# 시스템 쪽에 이미 있는 앱은 사용자 쪽에 한 번 더 깔지 않는다
+- name: flatpak apps (packs/flatpak.txt)
+  community.general.flatpak:
+    name: "{{ flatpaks | reject('in', flatpak_installed.stdout_lines) | list }}"
+    remote: flathub
+    method: user
+    state: present
+  when: flatpaks | reject('in', flatpak_installed.stdout_lines) | list | length > 0
+
+- name: Read flatpak overrides
+  ansible.builtin.command: flatpak override --user --show
+  register: flatpak_override
+  changed_when: false
+  check_mode: false
+
+- name: Let flatpak apps read GTK settings, fonts and icons
+  ansible.builtin.command: flatpak override --user {{ flatpak_filesystems | map('regex_replace', '^', '--filesystem=') | join(' ') }}
+  vars:
+    flatpak_filesystems:
+      - xdg-config/gtk-3.0:ro
+      - xdg-config/gtk-4.0:ro
+      - xdg-config/fontconfig:ro
+      - /usr/share/icons:ro
+  when: flatpak_filesystems | reject('in', flatpak_override.stdout) | list | length > 0

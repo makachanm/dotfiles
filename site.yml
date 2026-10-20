@@ -1,0 +1,77 @@
+# 이 컴퓨터를 레포에 적힌 상태로 맞춘다.
+#   ansible-playbook site.yml                  전체 적용 (sudo 비밀번호를 한 번 물음)
+#   ansible-playbook site.yml --check --diff   바뀔 내용만 미리 보기
+#   ansible-playbook site.yml --tags home      일부만 적용 (repos, packages, flatpak, home, system, greeter, services, dconf)
+- name: Fedora workstation
+  hosts: localhost
+  gather_facts: true
+
+  vars:
+    repo: "{{ playbook_dir }}"
+    user_home: "{{ lookup('env', 'HOME') }}"
+    # 목록 파일에서 빈 줄과 # 주석을 뺀다
+    list_filter: "^\\s*(#.*)?$"
+    dnf_packages: "{{ lookup('file', repo ~ '/system/packs/dnf.txt').splitlines() | map('trim') | reject('match', list_filter) | list }}"
+    dnf_repos: "{{ lookup('file', repo ~ '/system/packs/dnf-repos.txt').splitlines() | map('trim') | reject('match', list_filter) | list }}"
+    coprs: "{{ lookup('file', repo ~ '/system/packs/copr.txt').splitlines() | map('trim') | reject('match', list_filter) | list }}"
+    flatpaks: "{{ lookup('file', repo ~ '/system/packs/flatpak.txt').splitlines() | map('trim') | reject('match', list_filter) | list }}"
+    cargo_crates: "{{ lookup('file', repo ~ '/system/packs/cargo.txt').splitlines() | map('trim') | reject('match', list_filter) | list }}"
+
+  pre_tasks:
+    - name: Run as the desktop user, not root
+      ansible.builtin.assert:
+        that: ansible_facts.user_id != 'root'
+        fail_msg: "root가 아니라 일반 사용자로 실행하세요. sudo 비밀번호는 실행 중에 묻습니다."
+      tags: always
+
+  tasks:
+    - name: Repositories
+      ansible.builtin.import_tasks: tasks/repos.yml
+      tags: repos
+
+    - name: Packages
+      ansible.builtin.import_tasks: tasks/packages.yml
+      tags: packages
+
+    - name: Flatpak
+      ansible.builtin.import_tasks: tasks/flatpak.yml
+      tags: flatpak
+
+    - name: Home config
+      ansible.builtin.import_tasks: tasks/home.yml
+      tags: home
+
+    - name: System config
+      ansible.builtin.import_tasks: tasks/system.yml
+      tags: system
+
+    - name: Login screen
+      ansible.builtin.import_tasks: tasks/greeter.yml
+      tags: greeter
+
+    - name: Services
+      ansible.builtin.import_tasks: tasks/services.yml
+      tags: services
+
+    - name: dconf
+      ansible.builtin.import_tasks: tasks/dconf.yml
+      tags: dconf
+
+  handlers:
+    - name: Reload udev rules
+      ansible.builtin.shell: udevadm control --reload && udevadm trigger --action=add --subsystem-match=power_supply
+      become: true
+
+    - name: Restart keyd
+      ansible.builtin.systemd_service:
+        name: keyd
+        state: restarted
+      become: true
+
+    - name: Rebuild grub config
+      ansible.builtin.command: grub2-mkconfig -o /boot/grub2/grub.cfg
+      become: true
+
+    - name: Refresh font cache
+      ansible.builtin.command: fc-cache -f /usr/local/share/fonts
+      become: true

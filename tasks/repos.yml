@@ -1,0 +1,44 @@
+- name: Check RPM Fusion release packages
+  ansible.builtin.command: rpm -q rpmfusion-free-release rpmfusion-nonfree-release
+  register: rpmfusion_installed
+  changed_when: false
+  failed_when: false
+  check_mode: false
+
+- name: RPM Fusion release packages
+  when: rpmfusion_installed.rc != 0
+  ansible.builtin.dnf:
+    name:
+      - "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_facts.distribution_major_version }}.noarch.rpm"
+      - "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_facts.distribution_major_version }}.noarch.rpm"
+    state: present
+    # release 패키지는 저장소 키를 들여오는 패키지라 아직 키가 없다
+    disable_gpg_check: true
+  become: true
+
+- name: Third-party repo files (slack, tailscale, vscode, winehq)
+  ansible.builtin.copy:
+    src: "{{ repo }}/system/etc/yum.repos.d/"
+    dest: /etc/yum.repos.d/
+    owner: root
+    group: root
+    mode: "0644"
+  become: true
+
+- name: COPR repositories
+  ansible.builtin.command: dnf -y copr enable {{ item }}
+  args:
+    creates: "/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:{{ item | replace('/', ':') }}.repo"
+  loop: "{{ coprs }}"
+  become: true
+
+- name: Read repository states
+  ansible.builtin.command: dnf repo list --all --json
+  register: repo_list
+  changed_when: false
+  check_mode: false
+
+- name: Enable repositories from dnf-repos.txt
+  ansible.builtin.command: dnf config-manager setopt {{ item }}.enabled=1
+  loop: "{{ repo_list.stdout | from_json | rejectattr('is_enabled') | map(attribute='id') | select('in', dnf_repos) | list }}"
+  become: true
