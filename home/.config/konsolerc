@@ -1,0 +1,23 @@
+[Desktop Entry]
+DefaultProfile=Mono.profile
+
+[General]
+ConfigVersion=1
+
+[KonsoleWindow]
+RememberWindowSize=false
+ShowMenuBarByDefault=false
+
+[MainWindow]
+MenuBar=Disabled
+StatusBar=Disabled
+
+[MainWindow][Toolbar mainToolBar]
+Hidden=true
+
+[MainWindow][Toolbar sessionToolbar]
+Hidden=true
+
+[TabBar]
+CloseTabOnMiddleMouseButton=true
+TabBarVisibility=ShowTabBarWhenNeeded
