@@ -1,0 +1,17 @@
+[window]
+padding = { x = 6, y = 4 }
+decorations_theme_variant = "Dark"
+
+[font]
+normal = { family = "Adwaita Mono" }
+size = 11
+
+[scrolling]
+history = 10000
+
+[cursor]
+style = { blinking = "On" }
+
+[colors.primary]
+background = "#000000"
+foreground = "#c0c0c0"
