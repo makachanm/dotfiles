@@ -63,7 +63,7 @@ binds {
     Mod+Comma { spawn "noctalia" "msg" "settings-toggle"; }
     Mod+F { spawn "noctalia" "msg" "screenshot-region"; }
     Mod+Shift+F { spawn "noctalia" "msg" "screenshot-fullscreen"; }
-    Ctrl+Shift+Escape { spawn "kitty" "--title" "btop" "btop"; }
+    Ctrl+Shift+Escape { spawn "kitty" "--title" "btop" "--session" "btop.session"; }
 
     Mod+L { spawn "noctalia" "msg" "session" "lock"; }
     Mod+Shift+Escape { spawn "noctalia" "msg" "panel-toggle" "session"; }
