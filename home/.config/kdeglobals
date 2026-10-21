@@ -146,6 +146,7 @@ toolBarFont=IBM Plex Sans KR,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 Theme=Papirus-Dark
 
 [KDE]
+AnimationDurationFactor=0
 contrast=4
 widgetStyle=Breeze
 
