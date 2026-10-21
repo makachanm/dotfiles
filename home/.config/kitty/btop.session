@@ -1,5 +1,0 @@
-new_tab 프로세스
-launch btop
-new_tab CPU
-launch sh -c 'exec btop -c "$HOME/.config/btop/cpu.conf"'
-focus_tab 0
