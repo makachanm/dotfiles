@@ -9,7 +9,7 @@ CursorShape=0
 [General]
 Name=Mono
 Parent=FALLBACK/
-TerminalMargin=10
+TerminalMargin=18
 
 [Interaction Options]
 AutoCopySelectedText=true
