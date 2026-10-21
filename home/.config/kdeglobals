@@ -133,8 +133,8 @@ ForegroundVisited=230,230,230
 [General]
 ColorScheme=Noctalia
 Name=noctalia
-TerminalApplication=kitty
-TerminalService=kitty.desktop
+TerminalApplication=konsole
+TerminalService=org.kde.konsole.desktop
 fixed=Nordwand Mono,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 font=IBM Plex Sans KR,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 menuFont=IBM Plex Sans KR,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1

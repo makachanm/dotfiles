@@ -72,8 +72,8 @@ xz=/usr/bin/xz
 zip=/usr/bin/zip
 
 [General]
-Editor=kitty vim
-Terminal=kitty
+Editor=konsole -e vim
+Terminal=konsole
 
 [Konfigurator]
 Window Height=1387
