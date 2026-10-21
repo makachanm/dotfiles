@@ -132,15 +132,15 @@ ForegroundVisited=230,230,230
 
 [General]
 ColorScheme=Noctalia
-TerminalApplication=konsole
-TerminalService=org.kde.konsole.desktop
+Name=noctalia
+TerminalApplication=alacritty
+TerminalService=Alacritty.desktop
 fixed=DejaVu Sans Mono,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 font=IBM Plex Sans KR,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 menuFont=IBM Plex Sans KR,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 shadeSortColumn=true
 smallestReadableFont=IBM Plex Sans KR,8,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 toolBarFont=IBM Plex Sans KR,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-Name=noctalia
 
 [Icons]
 Theme=Papirus-Dark

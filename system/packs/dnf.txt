@@ -22,7 +22,6 @@ udiskie
 
 ## GNOME 앱 (libadwaita)
 nautilus
-sakura
 alacritty
 loupe
 qalculate-gtk
