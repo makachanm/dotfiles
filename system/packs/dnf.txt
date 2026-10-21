@@ -23,6 +23,7 @@ udiskie
 ## GNOME 앱 (libadwaita)
 nautilus
 sakura
+foot
 loupe
 qalculate-gtk
 krusader
@@ -31,6 +32,7 @@ krename
 kf6-ktexteditor
 konsole-part
 md5deep
+okular-part
 vlc
 baobab
 transmission-gtk
