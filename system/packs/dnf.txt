@@ -23,6 +23,7 @@ udiskie
 
 ## Qt 앱 (KDE)
 krusader
+ark
 kdiff3
 krename
 kf6-ktexteditor
