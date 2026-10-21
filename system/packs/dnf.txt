@@ -25,8 +25,8 @@ nautilus
 sakura
 loupe
 qalculate-gtk
-gnome-commander
-celluloid
+krusader
+vlc
 baobab
 transmission-gtk
 file-roller
@@ -97,7 +97,7 @@ tailscale
 
 ## 멀티미디어
 gimp
-flowblade
+kdenlive
 darktable
 obs-studio
 audacity

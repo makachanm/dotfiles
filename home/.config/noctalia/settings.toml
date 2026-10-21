@@ -263,7 +263,7 @@ setup_wizard_enabled = false
         "thorium-browser",
         "dev.diegovsky.Riff",
         "com.microsoft.VSCode",
-        "org.gnome.gnome-commander",
+        "org.kde.krusader",
         "slack",
         "vesktop",
         "com.ayugram.desktop",

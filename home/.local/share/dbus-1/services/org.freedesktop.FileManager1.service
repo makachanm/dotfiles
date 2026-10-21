@@ -1,3 +1,3 @@
 [D-BUS Service]
 Name=org.freedesktop.FileManager1
-Exec=/home/maka/.local/bin/gnome-commander-filemanager1
+Exec=/home/maka/.local/bin/krusader-filemanager1
