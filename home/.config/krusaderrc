@@ -14,12 +14,15 @@ arj=/usr/bin/arj
 bzip2=/usr/bin/bzip2
 checksum utility=/usr/bin/md5sum
 cpio=/usr/bin/cpio
+diff utility=/usr/bin/kdiff3
 gzip=/usr/bin/gzip
+krename=/usr/bin/krename
 lha=/usr/bin/lha
 locate=/usr/bin/locate
 lzma=/usr/bin/lzma
 md5sum=/usr/bin/md5sum
 mount=/usr/bin/mount
+rm=/usr/bin/rm
 rpm=/usr/bin/rpm
 rpm2cpio=/usr/bin/rpm2cpio
 sha1sum=/usr/bin/sha1sum
@@ -38,13 +41,18 @@ xz=/usr/bin/xz
 zip=/usr/bin/zip
 
 [General]
-Editor=foot vim
-Terminal=foot
+Editor=alacritty -e vim
+Terminal=alacritty
 
 [Konfigurator]
 Window Height=1387
 Window Maximized=false
 Window Width=1265
+
+[KrViewerWindow]
+Window Height=1354
+Window Maximized=false
+Window Width=1259
 
 [Look&Feel]
 Back Button Visible=true
