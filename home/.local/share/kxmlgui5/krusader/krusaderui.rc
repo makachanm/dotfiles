@@ -164,7 +164,8 @@
   <text>Main Toolbar</text>
   <Action name="find" />
   <Action name="edit_new_file" />
-  <Action name="compare" />
+  <Action name="pack" />
+  <Action name="unpack" />
   <Separator/>
   <Action name="ftp connect" />
   <Action name="trashbin" />
