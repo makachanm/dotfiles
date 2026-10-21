@@ -26,6 +26,11 @@ sakura
 loupe
 qalculate-gtk
 krusader
+kdiff3
+krename
+kf6-ktexteditor
+konsole-part
+md5deep
 vlc
 baobab
 transmission-gtk
