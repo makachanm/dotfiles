@@ -270,7 +270,7 @@ setup_wizard_enabled = false
         "steam",
         "org.prismlauncher.PrismLauncher",
         "com.obsproject.Studio",
-        "btop",
+        "org.kde.kdenlive",
         "vim"
     ]
     show_app_origin_indicator = false
@@ -363,7 +363,7 @@ tooltip_format = "{:%Y년 %m월 %d일 %A}"
 
 [widget.gap]
 enabled = true
-length = 16
+length = 12
 type = "spacer"
 
 [widget.launcher]
@@ -383,7 +383,7 @@ glyph = "shutdown"
 [widget.tray]
 drawer = true
 pinned = [ "kime" ]
-scale = 0.90000000000000013
+scale = 0.85000000000000009
 
 [widget.usb]
 hide_when_empty = true
