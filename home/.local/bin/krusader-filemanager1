@@ -12,7 +12,7 @@ XML = """
   </interface>
 </node>
 """
-OPEN = os.path.expanduser("~/.local/bin/gnome-commander-open")
+OPEN = os.path.expanduser("~/.local/bin/krusader-open")
 IDLE_EXIT_MS = 60_000
 loop = GLib.MainLoop()
 timer = None
