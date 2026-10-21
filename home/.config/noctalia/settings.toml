@@ -9,7 +9,7 @@ order = [ "default" ]
     capsule = false
     center = [ "bar", "gap", "clock", "gap", "notifications" ]
     concave_edge_corners = true
-    end = [ "tray", "network", "bluetooth", "volume", "brightness", "battery" ]
+    end = [ "cat", "gap", "tray", "network", "bluetooth", "volume", "brightness", "battery" ]
     font_weight = 500
     margin_edge = 0
     margin_ends = 0
@@ -239,7 +239,7 @@ panel_placement = "floating"
 show_count = false
 
 [plugins]
-enabled = [ "prponkshe/mango-displays", "noctalia/bongocat", "ahmedhossamdev/sticky-notes" ]
+enabled = [ "ahmedhossamdev/sticky-notes", "dotnetrob/cat" ]
 
 [shell]
 font_family = "IBM Plex Sans KR"
@@ -270,8 +270,8 @@ setup_wizard_enabled = false
         "steam",
         "org.prismlauncher.PrismLauncher",
         "com.obsproject.Studio",
-        "gimp",
-        "io.github.Qalculate.qalculate-qt"
+        "btop",
+        "vim"
     ]
     show_app_origin_indicator = false
     show_session_button = false
@@ -348,6 +348,13 @@ show_label = false
 show_label = false
 show_when_unavailable = true
 
+[widget.cat]
+cat_color = "primary"
+cat_color_mode = "custom"
+run_threshold = 30
+show_cpu_percent = true
+type = "dotnetrob/cat:cat"
+
 [widget.clock]
 font_scale = 0.94999999999999996
 font_weight = 500
@@ -356,7 +363,7 @@ tooltip_format = "{:%Y년 %m월 %d일 %A}"
 
 [widget.gap]
 enabled = true
-length = 12
+length = 16
 type = "spacer"
 
 [widget.launcher]
@@ -375,6 +382,7 @@ glyph = "shutdown"
 [widget.tray]
 drawer = true
 pinned = [ "kime" ]
+scale = 0.90000000000000013
 
 [widget.usb]
 hide_when_empty = true
