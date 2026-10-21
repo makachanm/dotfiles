@@ -372,6 +372,7 @@ glyph = "menu-2"
 scale = 1.25
 
 [widget.network]
+scale = 1.05
 show_label = false
 
 [widget.notifications]
