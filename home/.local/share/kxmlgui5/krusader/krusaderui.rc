@@ -162,20 +162,11 @@
  </MenuBar>
  <ToolBar iconText="icononly" noMerge="1" name="mainToolBar" fullWidth="true" >
   <text>Main Toolbar</text>
-  <Action name="F3_View" />
-  <Action name="F4_Edit" />
-  <Action name="F2_Rename" />
-  <Action name="F5_Copy" />
-  <Action name="F6_Move" />
-  <Action name="F7_Mkdir" />
-  <Action name="F8_Delete" />
-  <Separator/>
   <Action name="find" />
   <Action name="edit_new_file" />
   <Action name="pack" />
   <Action name="unpack" />
   <Separator/>
-  <Action name="F9_Terminal" />
   <Action name="ftp connect" />
   <Action name="trashbin" />
  </ToolBar>
@@ -185,10 +176,6 @@
  <ToolBar iconText="icononly" noMerge="1" name="jobToolBar" fullWidth="false" >
  </ToolBar>
  <ActionProperties>
-  <Action name="F3_View" icon="document-preview" />
-  <Action name="F4_Edit" icon="document-edit" />
-  <Action name="F5_Copy" icon="edit-copy" />
-  <Action name="F6_Move" icon="edit-move" />
   <Action accel="" name="sysinfo" />
  </ActionProperties>
 </gui>
