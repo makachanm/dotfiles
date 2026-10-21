@@ -8,7 +8,6 @@
   ansible.builtin.dnf:
     name: vim-default-editor
     state: present
-    # nano-default-editor와 충돌하므로 바꿔 끼운다
     allowerasing: true
   become: true
 

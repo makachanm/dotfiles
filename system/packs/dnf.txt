@@ -1,4 +1,3 @@
-## 데스크탑
 niri
 xdg-desktop-portal-wlr
 xdg-desktop-portal-gnome
@@ -13,15 +12,12 @@ keyd
 tuned-ppd
 thermald
 
-## Qt 통합 (KDE 플랫폼 테마)
 plasma-integration
 plasma-breeze
 papirus-icon-theme-dark
 
-## 데스크탑 유틸
 udiskie
 
-## Qt 앱 (KDE)
 krusader
 ark
 kdiff3
@@ -37,10 +33,8 @@ filelight
 transmission-qt
 adw-gtk3-theme
 
-## 한글 입력기
 kime
 
-## 셸
 zsh
 git
 fastfetch
@@ -52,7 +46,6 @@ lhasa
 arj
 unace
 
-## 개발
 gcc
 gcc-c++
 make
@@ -88,14 +81,12 @@ vim-enhanced
 wl-clipboard
 btop
 
-## 가상화
 moby-engine
 docker-compose
 toolbox
 libvirt-daemon-kvm
 libvirt-daemon-config-network
 
-## 인터넷
 zen-browser
 thorium-browser
 slack
@@ -103,20 +94,17 @@ vesktop
 ayugram-desktop
 tailscale
 
-## 멀티미디어
 gimp
 kdenlive
 darktable
 obs-studio
 audacity
 
-## 멀티미디어 코덱
 gstreamer1-plugins-bad-freeworld
 gstreamer1-plugins-ugly
 libavcodec-freeworld
 libheif-freeworld
 
-## 게임 / 호환성
 steam
 wine-common
 ansible-core

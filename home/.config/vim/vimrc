@@ -1,21 +1,15 @@
-" ~/.config/vim/vimrc — 편집기 역할만 하는 간단한 설정
-
-" Vim 기본 권장값(문법 강조, 파일 형식 감지, 마지막 커서 위치 복원 등)
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
-" ---------- 파일 ----------
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp949,latin1
 set autoread
 
-" 스왑 파일과 viminfo는 편집하는 폴더 대신 ~/.local/state/vim에 둠
 let s:state = expand('~/.local/state/vim')
 call mkdir(s:state . '/swap', 'p', 0700)
 let &directory = s:state . '/swap//'
 let &viminfofile = s:state . '/viminfo'
 
-" ---------- 화면 ----------
 set number
 set cursorline
 set cursorlineopt=number
@@ -29,12 +23,10 @@ set belloff=all
 set shortmess+=I
 set ttimeoutlen=20
 
-" 입력 모드에서는 막대 커서, 바꾸기 모드에서는 밑줄 커서
 let &t_SI = "\e[6 q"
 let &t_SR = "\e[4 q"
 let &t_EI = "\e[2 q"
 
-" 색: Alacritty의 검은 바탕에 맞춘 흑백 테마
 set termguicolors
 set background=dark
 colorscheme quiet
@@ -49,7 +41,6 @@ highlight VertSplit guifg=#3c3c3c guibg=NONE
 highlight Visual guibg=#444444
 highlight Search guifg=#000000 guibg=#90b0d0
 
-" 상태 줄: 모드 | 파일 [수정됨] ... 줄:칸 비율
 let s:modes = {'n': 'NORMAL', 'i': 'INSERT', 'R': 'REPLACE', 'v': 'VISUAL',
       \ 'V': 'V-LINE', "\<C-v>": 'V-BLOCK', 'c': 'COMMAND'}
 function! StatusMode() abort
@@ -57,7 +48,6 @@ function! StatusMode() abort
 endfunction
 set statusline=\ %{StatusMode()}\ \|\ %{expand('%:~:.')}%(\ %m%r%)%=%l:%c\ %p%%\ 
 
-" ---------- 입력 ----------
 set expandtab
 set shiftwidth=4
 set softtabstop=-1
@@ -65,11 +55,9 @@ set autoindent
 set ignorecase smartcase
 set hlsearch
 
-" ---------- 시스템 클립보드 (Wayland, wl-clipboard) ----------
 if executable('wl-copy') && executable('wl-paste')
   function! s:ClipCopy(reg, type, lines) abort
     let l:primary = a:reg ==# '*' ? ' --primary' : ''
-    " 줄 단위로 복사했으면 끝에 줄바꿈을 붙임
     let l:lines = a:type ==# 'V' ? a:lines + [''] : a:lines
     silent call system('wl-copy --type text/plain' . l:primary, l:lines)
   endfunction
@@ -79,7 +67,6 @@ if executable('wl-copy') && executable('wl-paste')
     if v:shell_error
       return ['', []]
     endif
-    " 줄바꿈으로 끝나면 줄 단위로 붙여넣음
     let l:type = l:text =~# '\n$' ? 'V' : 'v'
     return [l:type, split(l:text, '\n', 1)[: l:type ==# 'V' ? -2 : -1]]
   endfunction

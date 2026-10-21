@@ -11,7 +11,6 @@
   changed_when: false
   check_mode: false
 
-# 시스템 쪽에 이미 있는 앱은 사용자 쪽에 한 번 더 깔지 않는다
 - name: flatpak apps (packs/flatpak.txt)
   community.general.flatpak:
     name: "{{ flatpaks | reject('in', flatpak_installed.stdout_lines) | list }}"

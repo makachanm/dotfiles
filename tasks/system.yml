@@ -28,12 +28,10 @@
   become: true
   notify: Rebuild grub config
 
-# 로그인 중에 greetd를 다시 띄우면 세션이 끊기므로 재시작하지 않는다. 다음 부팅부터 적용된다.
 - name: greetd config
   ansible.builtin.copy:
     src: "{{ repo }}/system/etc/greetd/config.toml"
     dest: /etc/greetd/config.toml
-    # Noctalia Greeter 설정 스크립트가 greetd 소유로 바꿔 둔다
     owner: greetd
     group: greetd
     mode: "0644"
