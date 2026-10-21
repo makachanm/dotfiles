@@ -1,17 +1,60 @@
 [window]
-padding = { x = 6, y = 4 }
+padding = { x = 14, y = 10 }
+dynamic_padding = true
 decorations_theme_variant = "Dark"
 
 [font]
-normal = { family = "Adwaita Mono" }
+normal = { family = "Nordwand Mono", style = "Regular" }
+bold = { family = "Nordwand Mono", style = "Bold" }
+italic = { family = "Nordwand Mono", style = "Italic" }
+bold_italic = { family = "Nordwand Mono", style = "Bold Italic" }
 size = 11
+offset = { x = 0, y = 3 }
+glyph_offset = { x = 0, y = 1 }
 
 [scrolling]
 history = 10000
 
 [cursor]
-style = { blinking = "On" }
+style = { shape = "Block", blinking = "On" }
+blink_interval = 600
+unfocused_hollow = true
 
+[mouse]
+hide_when_typing = true
+
+[selection]
+save_to_clipboard = true
+
+# Noctalia Mono 팔레트의 터미널 색
 [colors.primary]
 background = "#000000"
-foreground = "#c0c0c0"
+foreground = "#e6e6e6"
+
+[colors.cursor]
+text = "#000000"
+cursor = "#ffffff"
+
+[colors.selection]
+text = "#ffffff"
+background = "#444444"
+
+[colors.normal]
+black = "#141414"
+red = "#c06060"
+green = "#80a080"
+yellow = "#b0a070"
+blue = "#7090b0"
+magenta = "#a080a0"
+cyan = "#70a0a0"
+white = "#c4c4c4"
+
+[colors.bright]
+black = "#666666"
+red = "#d08080"
+green = "#a0c0a0"
+yellow = "#d0c090"
+blue = "#90b0d0"
+magenta = "#c0a0c0"
+cyan = "#90c0c0"
+white = "#ffffff"
