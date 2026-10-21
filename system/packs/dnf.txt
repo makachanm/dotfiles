@@ -43,6 +43,10 @@ fastfetch
 yt-dlp
 unrar
 unar
+xz-lzma-compat
+lhasa
+arj
+unace
 
 ## 개발
 gcc
