@@ -57,13 +57,13 @@ layout {
 }
 
 binds {
-    Mod+R { spawn "alacritty"; }
+    Mod+R { spawn "kitty"; }
     Mod+Space { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
     Mod+C { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
     Mod+Comma { spawn "noctalia" "msg" "settings-toggle"; }
     Mod+F { spawn "noctalia" "msg" "screenshot-region"; }
     Mod+Shift+F { spawn "noctalia" "msg" "screenshot-fullscreen"; }
-    Ctrl+Shift+Escape { spawn "alacritty" "--title" "btop" "-e" "btop"; }
+    Ctrl+Shift+Escape { spawn "kitty" "--title" "btop" "btop"; }
 
     Mod+L { spawn "noctalia" "msg" "session" "lock"; }
     Mod+Shift+Escape { spawn "noctalia" "msg" "panel-toggle" "session"; }
