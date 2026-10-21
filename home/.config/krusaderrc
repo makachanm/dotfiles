@@ -38,7 +38,8 @@ xz=/usr/bin/xz
 zip=/usr/bin/zip
 
 [General]
-Terminal=sakura
+Editor=foot vim
+Terminal=foot
 
 [Konfigurator]
 Window Height=1387
