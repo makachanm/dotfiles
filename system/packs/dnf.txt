@@ -25,7 +25,7 @@ krename
 kf6-ktexteditor
 konsole-part
 md5deep
-alacritty
+kitty
 vlc
 gwenview
 qalculate-qt
