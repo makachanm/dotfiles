@@ -20,22 +20,21 @@ papirus-icon-theme-dark
 ## 데스크탑 유틸
 udiskie
 
-## GNOME 앱 (libadwaita)
-nautilus
-alacritty
-loupe
-qalculate-gtk
+## Qt 앱 (KDE)
 krusader
 kdiff3
 krename
 kf6-ktexteditor
 konsole-part
 md5deep
+alacritty
 vlc
-baobab
-transmission-gtk
-file-roller
-pavucontrol
+gwenview
+qalculate-qt
+filelight
+transmission-qt
+ark
+pavucontrol-qt
 adw-gtk3-theme
 
 ## 한글 입력기

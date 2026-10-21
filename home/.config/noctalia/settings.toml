@@ -261,7 +261,7 @@ setup_wizard_enabled = false
     pinned = [
         "zen-browser",
         "thorium-browser",
-        "dev.diegovsky.Riff",
+        "com.spotify.Client",
         "com.microsoft.VSCode",
         "org.kde.krusader",
         "slack",
@@ -271,7 +271,7 @@ setup_wizard_enabled = false
         "org.prismlauncher.PrismLauncher",
         "com.obsproject.Studio",
         "gimp",
-        "qalculate-gtk"
+        "io.github.Qalculate.qalculate-qt"
     ]
     show_app_origin_indicator = false
     show_session_button = false
