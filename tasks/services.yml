@@ -5,7 +5,6 @@
     state: started
   become: true
 
-# 지금 세션을 끊지 않도록 켜기만 하고 시작하지는 않는다
 - name: greetd
   ansible.builtin.systemd_service:
     name: greetd

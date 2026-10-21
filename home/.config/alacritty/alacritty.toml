@@ -26,7 +26,6 @@ hide_when_typing = true
 [selection]
 save_to_clipboard = true
 
-# Noctalia Mono 팔레트의 터미널 색
 [colors.primary]
 background = "#000000"
 foreground = "#e6e6e6"

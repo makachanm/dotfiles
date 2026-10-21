@@ -13,7 +13,6 @@
     mode: "0644"
   become: true
 
-# 로그인 화면은 greetd 사용자로 돌아서 ~/.local/share/fonts를 못 읽는다
 - name: Font directory for the login screen
   ansible.builtin.file:
     path: /usr/local/share/fonts/ibm-plex-sans-kr

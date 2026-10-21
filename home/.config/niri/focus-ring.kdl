@@ -1,4 +1,3 @@
-// noctalia.kdl의 포커스 링 색을 덮어씀: 밝은 회색에서 어두운 회색으로 흐르고(창마다 따로), 비활성 창은 링 없음
 layout {
     focus-ring {
         width 2
