@@ -2,6 +2,7 @@
 niri
 xdg-desktop-portal-wlr
 xdg-desktop-portal-gnome
+xdg-desktop-portal-kde
 grim
 slurp
 wf-recorder
@@ -33,8 +34,6 @@ gwenview
 qalculate-qt
 filelight
 transmission-qt
-ark
-pavucontrol-qt
 adw-gtk3-theme
 
 ## 한글 입력기
