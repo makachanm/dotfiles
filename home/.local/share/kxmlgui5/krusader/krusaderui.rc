@@ -162,13 +162,6 @@
  </MenuBar>
  <ToolBar iconText="icononly" noMerge="1" name="mainToolBar" fullWidth="true" >
   <text>Main Toolbar</text>
-  <Action name="find" />
-  <Action name="edit_new_file" />
-  <Action name="pack" />
-  <Action name="unpack" />
-  <Separator/>
-  <Action name="ftp connect" />
-  <Action name="trashbin" />
  </ToolBar>
  <ToolBar iconText="icononly" noMerge="1" name="actionsToolBar" fullWidth="false" >
   <text>Actions Toolbar</text>
