@@ -1,26 +1,19 @@
-" ~/.config/vim/vimrc
+" ~/.config/vim/vimrc — 편집기 역할만 하는 간단한 설정
 
 " Vim 기본 권장값(문법 강조, 파일 형식 감지, 마지막 커서 위치 복원 등)
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
-" ---------- 파일과 인코딩 ----------
+" ---------- 파일 ----------
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp949,latin1
-set hidden
 set autoread
 
-" 스왑, 백업, 되돌리기 기록, viminfo는 ~/.local/state/vim에 모음
+" 스왑 파일과 viminfo는 편집하는 폴더 대신 ~/.local/state/vim에 둠
 let s:state = expand('~/.local/state/vim')
-for s:dir in ['swap', 'backup', 'undo']
-  call mkdir(s:state . '/' . s:dir, 'p', 0700)
-endfor
+call mkdir(s:state . '/swap', 'p', 0700)
 let &directory = s:state . '/swap//'
-let &backupdir = s:state . '/backup//'
-let &undodir = s:state . '/undo//'
 let &viminfofile = s:state . '/viminfo'
-set backup
-set undofile
 
 " ---------- 화면 ----------
 set number
@@ -32,7 +25,6 @@ set wrap linebreak breakindent
 set showbreak=↪\
 set list
 set listchars=tab:»\ ,trail:·,nbsp:␣
-set splitbelow splitright
 set belloff=all
 set shortmess+=I
 set ttimeoutlen=20
@@ -42,55 +34,36 @@ let &t_SI = "\e[6 q"
 let &t_SR = "\e[4 q"
 let &t_EI = "\e[2 q"
 
+" 색: Alacritty의 검은 바탕에 맞춘 흑백 테마
 set termguicolors
 set background=dark
 colorscheme quiet
+highlight Normal guibg=NONE
 highlight LineNr guifg=#555555
 highlight CursorLineNr guifg=#ffffff gui=bold
 highlight SpecialKey guifg=#444444
 highlight NonText guifg=#444444
+highlight StatusLine guifg=#e6e6e6 guibg=#242424 gui=NONE
+highlight StatusLineNC guifg=#787878 guibg=#101010 gui=NONE
+highlight VertSplit guifg=#3c3c3c guibg=NONE
+highlight Visual guibg=#444444
+highlight Search guifg=#000000 guibg=#90b0d0
 
-" 상태 줄: 모드 | 파일 [수정됨] ... 형식 인코딩 줄:칸 비율
+" 상태 줄: 모드 | 파일 [수정됨] ... 줄:칸 비율
 let s:modes = {'n': 'NORMAL', 'i': 'INSERT', 'R': 'REPLACE', 'v': 'VISUAL',
-      \ 'V': 'V-LINE', "\<C-v>": 'V-BLOCK', 'c': 'COMMAND', 't': 'TERMINAL'}
+      \ 'V': 'V-LINE', "\<C-v>": 'V-BLOCK', 'c': 'COMMAND'}
 function! StatusMode() abort
   return get(s:modes, mode(), mode())
 endfunction
-set statusline=\ %{StatusMode()}\ \|\ %f%(\ %m%r%)%=%y\ %{&fenc}\ %l:%c\ %p%%\
+set statusline=\ %{StatusMode()}\ \|\ %{expand('%:~:.')}%(\ %m%r%)%=%l:%c\ %p%%\ 
 
-" ---------- 들여쓰기 ----------
+" ---------- 입력 ----------
 set expandtab
 set shiftwidth=4
 set softtabstop=-1
-set shiftround
 set autoindent
-
-augroup indent_by_type
-  autocmd!
-  autocmd FileType html,css,javascript,typescript,json,yaml,toml,lua,kdl,vim,tex,markdown
-        \ setlocal shiftwidth=2
-  autocmd FileType make,go setlocal noexpandtab shiftwidth=0
-augroup END
-
-" ---------- 검색과 자동 완성 ----------
 set ignorecase smartcase
 set hlsearch
-set path+=**
-set wildoptions=pum,fuzzy
-set wildignore+=*.o,*.pyc,*/.git/*,*/node_modules/*,*/target/*
-set completeopt=menuone,noselect,popup
-
-" ---------- 기본 동봉 패키지 ----------
-packadd! comment       " gcc / gc{동작}: 주석 넣고 빼기
-packadd! editorconfig  " .editorconfig 따르기
-packadd! matchit       " %로 if/endif, 태그 짝 이동
-packadd! hlyank        " 복사한 범위 잠깐 강조
-packadd! nohlsearch    " 커서를 움직이면 검색 강조 끄기
-
-" 파일 탐색기(netrw)
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_home = s:state
 
 " ---------- 시스템 클립보드 (Wayland, wl-clipboard) ----------
 if executable('wl-copy') && executable('wl-paste')
