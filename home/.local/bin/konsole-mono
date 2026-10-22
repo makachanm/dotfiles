@@ -1,0 +1,2 @@
+#!/bin/sh
+exec konsole -stylesheet "$HOME/.local/share/konsole/Mono.qss" "$@"

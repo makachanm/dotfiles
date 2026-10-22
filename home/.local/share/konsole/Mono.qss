@@ -1,0 +1,4 @@
+Konsole--TerminalScrollBar { width: 1px; background: transparent; border: none; margin: 0; }
+Konsole--TerminalScrollBar::handle { background: transparent; border: none; }
+Konsole--TerminalScrollBar::add-line, Konsole--TerminalScrollBar::sub-line { height: 0; border: none; background: none; }
+Konsole--TerminalScrollBar::add-page, Konsole--TerminalScrollBar::sub-page { background: none; }

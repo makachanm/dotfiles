@@ -57,13 +57,13 @@ layout {
 }
 
 binds {
-    Mod+R { spawn "konsole"; }
+    Mod+R { spawn "/home/maka/.local/bin/konsole-mono"; }
     Mod+Space { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
     Mod+C { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
     Mod+Comma { spawn "noctalia" "msg" "settings-toggle"; }
     Mod+F { spawn "noctalia" "msg" "screenshot-region"; }
     Mod+Shift+F { spawn "noctalia" "msg" "screenshot-fullscreen"; }
-    Ctrl+Shift+Escape { spawn "konsole" "-e" "btop"; }
+    Ctrl+Shift+Escape { spawn "/home/maka/.local/bin/konsole-mono" "-e" "btop"; }
 
     Mod+L { spawn "noctalia" "msg" "session" "lock"; }
     Mod+Shift+Escape { spawn "noctalia" "msg" "panel-toggle" "session"; }
