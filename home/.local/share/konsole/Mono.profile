@@ -14,7 +14,7 @@ TerminalMargin=10
 [Interaction Options]
 AutoCopySelectedText=true
 TextEditorCmd=6
-TextEditorCmdCustom=konsole -e vim PATH:LINE
+TextEditorCmdCustom=/home/maka/.local/bin/konsole-mono -e vim PATH:LINE
 
 [Scrolling]
 HistoryMode=1
