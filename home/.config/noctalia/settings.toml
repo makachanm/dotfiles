@@ -9,7 +9,7 @@ order = [ "default" ]
     capsule = false
     center = [ "bar", "gap", "clock", "gap", "notifications" ]
     concave_edge_corners = true
-    end = [ "cat", "gap", "tray", "network", "bluetooth", "volume", "brightness", "battery" ]
+    end = [ "cat_2", "tray", "caffeine", "bluetooth", "brightness", "volume", "network", "gap", "battery" ]
     font_weight = 500
     margin_edge = 0
     margin_ends = 0
@@ -19,7 +19,7 @@ order = [ "default" ]
     radius = 0
     scale = 1.0800000000000001
     shadow = true
-    start = [ "launcher", "workspaces" ]
+    start = [ "workspaces" ]
     thickness = 33
     widget_spacing = 8
 
@@ -308,10 +308,12 @@ setup_wizard_enabled = false
 
 [theme]
 builtin = "Ayu"
+community_palette = "Oxocarbon"
 custom_palette = "Mono"
 mode = "dark"
 shell_mode = "dark"
 source = "custom"
+wallpaper_scheme = "m3-content"
 
     [theme.templates]
     builtin_ids = [ "gtk3", "gtk4", "kcolorscheme", "niri" ]
@@ -321,13 +323,16 @@ directory = "/home/maka/Pictures/wallpaper"
 transition = []
 
     [wallpaper.default]
-    path = "/home/maka/Pictures/wallpaper/vvvv.png"
+    path = "/home/maka/Pictures/wallpaper/PIA26702~orig.png"
 
     [wallpaper.last]
-    path = "/home/maka/Pictures/wallpaper/vvvv.png"
+    path = "/home/maka/Pictures/wallpaper/PIA26702~orig.png"
 
     [wallpaper.monitors.DP-1]
-    path = "/home/maka/Pictures/wallpaper/vvvv.png"
+    path = "/home/maka/Pictures/wallpaper/PIA26702~orig.png"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/maka/Pictures/wallpaper/PIA26702~orig.png"
 
 [weather]
 enabled = false
@@ -337,14 +342,27 @@ type = "ahmedhossamdev/sticky-notes:bar"
 
 [widget.battery]
 anchor = true
+capsule = false
+capsule_fill = "on_primary"
+capsule_padding = 1
+capsule_radius = 0
 display_mode = "graphic"
 scale = 0.85000000000000009
 show_label = true
 
 [widget.bluetooth]
+capsule = false
+capsule_fill = "on_primary"
+capsule_padding = 1
+capsule_radius = 0
+scale = 1.1000000000000001
 show_label = false
 
 [widget.brightness]
+capsule = false
+capsule_fill = "on_primary"
+capsule_padding = 1
+capsule_radius = 0
 show_label = false
 show_when_unavailable = true
 
@@ -352,6 +370,15 @@ show_when_unavailable = true
 cat_color = "primary"
 cat_color_mode = "custom"
 run_threshold = 30
+show_cpu_percent = true
+type = "dotnetrob/cat:cat"
+
+[widget.cat_2]
+cat_color = "primary"
+cat_color_mode = "custom"
+cat_size = 28
+font_family = "IBM Plex Sans"
+font_weight = 700
 show_cpu_percent = true
 type = "dotnetrob/cat:cat"
 
@@ -363,7 +390,7 @@ tooltip_format = "{:%Y년 %m월 %d일 %A}"
 
 [widget.gap]
 enabled = true
-length = 12
+length = 8
 type = "spacer"
 
 [widget.launcher]
@@ -372,7 +399,11 @@ glyph = "menu-2"
 scale = 1.25
 
 [widget.network]
-scale = 1.05
+capsule = false
+capsule_fill = "on_primary"
+capsule_padding = 1
+capsule_radius = 0
+scale = 1.1000000000000001
 show_label = false
 
 [widget.notifications]
@@ -381,6 +412,10 @@ show_label = false
 glyph = "shutdown"
 
 [widget.tray]
+capsule = true
+capsule_fill = "on_primary"
+capsule_padding = 2
+capsule_radius = 0
 drawer = true
 pinned = [ "kime" ]
 scale = 0.85000000000000009
@@ -390,8 +425,13 @@ hide_when_empty = true
 type = "aristides/udiskie:status"
 
 [widget.volume]
+capsule = true
+capsule_padding = 0
+capsule_radius = 0
+color = "on_primary"
 mute_color = "secondary"
 show_label = false
+show_tooltip = false
 
 [widget.workspaces]
 active_pill_size = 1.0
