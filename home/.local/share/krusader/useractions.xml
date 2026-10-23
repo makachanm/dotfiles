@@ -9,8 +9,16 @@
   <command>%aPanelSize("50")%</command>
   <defaultshortcut>Alt+Ctrl+Equal</defaultshortcut>
  </action>
+ <action name="filename_to_clipboard">
+  <title>Copy file path of current item (escaping spaces)</title>
+  <icon>edit-paste</icon>
+  <category>Samples</category>
+  <command>%_Clipboard("%aCurrent%")%</command>
+  <defaultshortcut>Alt+Ctrl+C</defaultshortcut>
+ </action>
  <action name="filepath_to_clipboard">
   <title>Copy file path of current item</title>
+  <icon>edit-copy</icon>
   <category>Samples</category>
   <command>%_Clipboard("%aCurrent(, "No")%")%</command>
  </action>

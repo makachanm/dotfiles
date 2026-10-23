@@ -159,6 +159,22 @@
  </MenuBar>
  <ToolBar iconText="icononly" noMerge="1" name="mainToolBar" fullWidth="true" >
   <text>Main Toolbar</text>
+  <Action name="swap panels" />
+  <Separator/>
+  <Action name="find" />
+  <Action name="toggle hidden files" />
+  <Action name="terminal@home" />
+  <Separator/>
+  <Action name="pack" />
+  <Action name="unpack" />
+  <Action name="compare dirs" />
+  <Action name="sync dirs" />
+  <Action name="disk usage" />
+  <Action name="multirename" />
+  <Action name="create checksum" />
+  <Separator/>
+  <Action name="filepath_to_clipboard" />
+  <Action name="trashbin" />
  </ToolBar>
  <ToolBar iconText="icononly" noMerge="1" name="actionsToolBar" fullWidth="false" >
   <text>Actions Toolbar</text>
@@ -167,5 +183,7 @@
  </ToolBar>
  <ActionProperties>
   <Action accel="" name="sysinfo" />
+  <Action icon="exchange-positions" name="swap panels" />
+  <Action icon="view-hidden" name="toggle hidden files" />
  </ActionProperties>
 </gui>
