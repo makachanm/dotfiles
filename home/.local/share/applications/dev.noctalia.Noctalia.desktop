@@ -1,9 +1,8 @@
 [Desktop Entry]
-NoDisplay=true
 Type=Application
-Name=Noctalia
-Comment=A sleek, customizable desktop shell crafted for Wayland.
-Exec=noctalia --daemon
+Name=Noctalia Settings
+Comment=Bar, wallpaper, colors and other shell settings
+Exec=sh -c "noctalia msg settings-open || { noctalia --daemon && noctalia msg settings-open; }"
 Icon=noctalia
 Terminal=false
 Categories=Settings;DesktopSettings;
