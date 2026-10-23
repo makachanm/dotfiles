@@ -238,8 +238,11 @@ file_format = "txt"
 panel_placement = "floating"
 show_count = false
 
+[plugin_settings."dotnetrob/cat"]
+panel_placement = "floating"
+
 [plugins]
-enabled = [ "ahmedhossamdev/sticky-notes", "dotnetrob/cat" ]
+enabled = [ "ahmedhossamdev/sticky-notes", "dotnetrob/cat", "noctalia/wallpaper_depth" ]
 
 [shell]
 font_family = "IBM Plex Sans KR"
@@ -254,10 +257,10 @@ setup_wizard_enabled = false
     auto_sync = true
 
     [shell.launcher]
-    category_icons_only = false
+    category_icons_only = true
     compact = true
     default_view = "pinned"
-    layout = "full"
+    layout = "simple"
     pinned = [
         "zen-browser",
         "thorium-browser",
@@ -274,6 +277,7 @@ setup_wizard_enabled = false
         "vim"
     ]
     show_app_origin_indicator = false
+    show_icons = false
     show_session_button = false
     track_usage = false
     width = 800
