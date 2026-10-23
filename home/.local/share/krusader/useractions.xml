@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE KrusaderUserActions>
+<KrusaderUserActions>
+ <action name="sample_panesize">
+  <title>Equal panel-size</title>
+  <tooltip>Sets the ratio between the two panels to 50/50</tooltip>
+  <icon>view-split-left-right</icon>
+  <category>Samples</category>
+  <command>%aPanelSize("50")%</command>
+  <defaultshortcut>Alt+Ctrl+Equal</defaultshortcut>
+ </action>
+ <action name="filepath_to_clipboard">
+  <title>Copy file path of current item</title>
+  <category>Samples</category>
+  <command>%_Clipboard("%aCurrent(, "No")%")%</command>
+ </action>
+ <action name="filepaths_to_clipboard">
+  <title>Copy file path(s) of selected item(s)</title>
+  <category>Samples</category>
+  <command>%_Clipboard("%aList("Selected", "\n", , , "No")%")%</command>
+ </action>
+ <action name="backup_current">
+  <title>Backup current</title>
+  <tooltip>Backup current file in current folder</tooltip>
+  <icon>document-save-as</icon>
+  <category>System</category>
+  <description>Backs current file up in current folder and asks the user for a new filename. By default ".old" is appended to the original filename.</description>
+  <command>%_Copy("%aCurrent("", "No")%", "%_Ask("New filename", "%aCurrent%.old")%")%</command>
+  <defaultshortcut>Meta+F5</defaultshortcut>
+ </action>
+ <action name="vlc_play">
+  <title>Play in VLC</title>
+  <tooltip>Play selected item(s) in VLC</tooltip>
+  <icon>vlc</icon>
+  <category>Multimedia</category>
+  <description same_as="tooltip" />
+  <command>vlc --one-instance %aList("Selected")%</command>
+ </action>
+ <action name="vlc_enqueue">
+  <title>Enqueue in VLC</title>
+  <tooltip>Append selected item(s) to VLC playlist</tooltip>
+  <icon>vlc</icon>
+  <category>Multimedia</category>
+  <description same_as="tooltip" />
+  <command>vlc --one-instance --playlist-enqueue %aList("Selected")%</command>
+ </action>
+</KrusaderUserActions>
