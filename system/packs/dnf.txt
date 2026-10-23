@@ -19,7 +19,6 @@ papirus-icon-theme-dark
 udiskie
 
 krusader
-ark
 kdiff3
 krename
 kf6-ktexteditor
@@ -28,6 +27,7 @@ md5deep
 konsole
 vlc
 gwenview
+qimgv
 qalculate-qt
 filelight
 transmission-qt
