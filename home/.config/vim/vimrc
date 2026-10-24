@@ -77,3 +77,32 @@ if executable('wl-copy') && executable('wl-paste')
         \ }
   set clipmethod^=wl-clipboard
 endif
+
+function! s:SaveAs() abort
+  let l:dir = getcwd() . '/'
+  let l:name = ''
+  if executable('zenity') && !empty($WAYLAND_DISPLAY)
+    let l:name = trim(system('zenity --file-selection --save --title="Save As" --filename=' . shellescape(l:dir) . ' 2>/dev/null'))
+    redraw!
+  else
+    let l:name = input('Save as: ', l:dir, 'file')
+  endif
+  if empty(l:name) || isdirectory(l:name)
+    return
+  endif
+  call mkdir(fnamemodify(l:name, ':h'), 'p')
+  execute 'saveas! ' . fnameescape(l:name)
+endfunction
+
+function! s:Save() abort
+  if empty(bufname('%'))
+    call s:SaveAs()
+  else
+    update
+  endif
+endfunction
+
+command! SaveAs call s:SaveAs()
+nnoremap <silent> <C-s> :call <SID>Save()<CR>
+inoremap <silent> <C-s> <C-o>:call <SID>Save()<CR>
+cnoreabbrev <expr> w getcmdtype() ==# ':' && getcmdline() ==# 'w' && empty(bufname('%')) ? 'SaveAs' : 'w'
