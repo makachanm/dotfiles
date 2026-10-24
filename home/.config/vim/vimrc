@@ -1,14 +1,8 @@
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
-set encoding=utf-8
-set fileencodings=ucs-bom,utf-8,cp949,latin1
-set autoread
-
-let s:state = expand('~/.local/state/vim')
-call mkdir(s:state . '/swap', 'p', 0700)
-let &directory = s:state . '/swap//'
-let &viminfofile = s:state . '/viminfo'
+set noswapfile
+set mouse=a
 
 set number
 set cursorline
@@ -48,13 +42,6 @@ function! StatusMode() abort
 endfunction
 set statusline=\ %{StatusMode()}\ \|\ %{expand('%:~:.')}%(\ %m%r%)%=%l:%c\ %p%%\ 
 
-set expandtab
-set shiftwidth=4
-set softtabstop=-1
-set autoindent
-set ignorecase smartcase
-set hlsearch
-
 if executable('wl-copy') && executable('wl-paste')
   function! s:ClipCopy(reg, type, lines) abort
     let l:primary = a:reg ==# '*' ? ' --primary' : ''
@@ -76,6 +63,7 @@ if executable('wl-copy') && executable('wl-paste')
         \ 'paste': {'+': function('s:ClipPaste'), '*': function('s:ClipPaste')},
         \ }
   set clipmethod^=wl-clipboard
+  xnoremap <silent> <LeftRelease> "+ygv
 endif
 
 function! s:SaveAs() abort
