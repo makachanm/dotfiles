@@ -1,8 +1,15 @@
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
+set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,cp949,latin1
 set noswapfile
 set mouse=a
+
+set expandtab
+set shiftwidth=4
+set softtabstop=-1
+set autoindent
 
 set number
 set cursorline
