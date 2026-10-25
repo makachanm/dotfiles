@@ -19,7 +19,6 @@ papirus-icon-theme-dark
 udiskie
 
 pcmanfm
-xarchiver
 konsole-part
 konsole
 htop
