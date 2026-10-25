@@ -11,5 +11,4 @@ rpmfusion-nonfree-steam
 rpmfusion-nonfree-updates
 tailscale-stable
 updates
-WineHQ
 copr:copr.fedorainfracloud.org:sneexy:zen-browser
