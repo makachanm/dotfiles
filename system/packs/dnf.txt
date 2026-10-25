@@ -19,8 +19,7 @@ papirus-icon-theme-dark
 udiskie
 
 pcmanfm-qt
-konsole-part
-konsole
+qterminal
 htop
 vlc
 qimgv
