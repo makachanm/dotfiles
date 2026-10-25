@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Action
+Name=Compress…
+Name[ko]=압축하기…
+Icon=lxqt-archiver
+Profiles=main;
+
+[X-Action-Profile main]
+MimeTypes=all/all;
+Exec=lxqt-archiver --add %F
