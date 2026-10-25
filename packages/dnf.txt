@@ -1,5 +1,4 @@
 niri
-xdg-desktop-portal-wlr
 xdg-desktop-portal-gnome
 xdg-desktop-portal-kde
 grim
@@ -33,6 +32,7 @@ kime
 
 zsh
 git
+ripgrep
 fastfetch
 yt-dlp
 unrar
@@ -45,6 +45,7 @@ unace
 gcc
 gcc-c++
 make
+patch
 cmake
 meson
 ninja-build
@@ -101,6 +102,5 @@ libavcodec-freeworld
 libheif-freeworld
 
 steam
-wine-common
 ansible-core
 ansible-collection-community-general
