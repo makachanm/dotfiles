@@ -16,8 +16,3 @@
     name: "{{ cargo_crates }}"
     locked: true
   when: cargo_crates | length > 0
-
-- name: xtop (xtop-cli/xtop from git)
-  ansible.builtin.command: cargo install --locked --git https://github.com/xtop-cli/xtop
-  args:
-    creates: "{{ user_home }}/.cargo/bin/xtop"
