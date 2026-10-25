@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Action
+Name=Compress…
+Name[ko]=압축하기…
+Icon=io.github.peazip.PeaZip
+Profiles=main;
+
+[X-Action-Profile main]
+MimeTypes=all/all;
+Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=peazip io.github.peazip.PeaZip -add2archive %F
