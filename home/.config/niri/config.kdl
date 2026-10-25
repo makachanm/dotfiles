@@ -63,7 +63,7 @@ binds {
     Mod+Comma { spawn "noctalia" "msg" "settings-toggle"; }
     Mod+F { spawn "noctalia" "msg" "screenshot-region"; }
     Mod+Shift+F { spawn "noctalia" "msg" "screenshot-fullscreen"; }
-    Ctrl+Shift+Escape { spawn "/home/maka/.local/bin/konsole-mono" "-e" "xtop"; }
+    Ctrl+Shift+Escape { spawn "/home/maka/.local/bin/konsole-mono" "-e" "htop"; }
 
     Mod+L { spawn "noctalia" "msg" "session" "lock"; }
     Mod+Shift+Escape { spawn "noctalia" "msg" "panel-toggle" "session"; }

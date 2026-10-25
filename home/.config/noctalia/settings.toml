@@ -266,7 +266,7 @@ setup_wizard_enabled = false
         "thorium-browser",
         "com.spotify.Client",
         "com.microsoft.VSCode",
-        "org.kde.krusader",
+        "pcmanfm",
         "slack",
         "vesktop",
         "com.ayugram.desktop",
@@ -432,7 +432,7 @@ type = "aristides/udiskie:status"
 capsule = true
 capsule_padding = 0
 capsule_radius = 0
-color = "on_primary"
+color = "primary"
 mute_color = "secondary"
 show_label = false
 show_tooltip = false

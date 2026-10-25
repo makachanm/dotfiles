@@ -18,15 +18,12 @@ papirus-icon-theme-dark
 
 udiskie
 
-krusader
-kdiff3
-krename
-kf6-ktexteditor
+pcmanfm
+xarchiver
 konsole-part
-md5deep
 konsole
+htop
 vlc
-gwenview
 qimgv
 qalculate-qt
 filelight
