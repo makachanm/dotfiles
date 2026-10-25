@@ -266,7 +266,7 @@ setup_wizard_enabled = false
         "thorium-browser",
         "com.spotify.Client",
         "com.microsoft.VSCode",
-        "pcmanfm",
+        "pcmanfm-qt",
         "slack",
         "vesktop",
         "com.ayugram.desktop",
