@@ -1,0 +1,17 @@
+{
+    "name": "CPU Mem Proc",
+    "root": {
+        "direction": "vertical",
+        "areas": [
+            {
+                "direction": "horizontal",
+                "size": 13,
+                "areas": [
+                    { "widget": "cpu", "size": "50%" },
+                    { "widget": "memory", "size": "*" }
+                ]
+            },
+            { "widget": "processes", "size": "*" }
+        ]
+    }
+}
