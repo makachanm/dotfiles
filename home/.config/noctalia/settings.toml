@@ -266,15 +266,14 @@ setup_wizard_enabled = false
         "thorium-browser",
         "com.spotify.Client",
         "com.microsoft.VSCode",
-        "pcmanfm-qt",
         "slack",
         "vesktop",
         "com.ayugram.desktop",
         "steam",
         "org.prismlauncher.PrismLauncher",
-        "com.obsproject.Studio",
-        "org.kde.kdenlive",
-        "vim"
+        "vim",
+        "org.speedcrunch.SpeedCrunch",
+        "pcmanfm-qt"
     ]
     show_app_origin_indicator = false
     show_icons = false
