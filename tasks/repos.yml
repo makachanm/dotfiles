@@ -17,7 +17,7 @@
 
 - name: Third-party repo files (slack, tailscale, vscode, winehq)
   ansible.builtin.copy:
-    src: "{{ repo }}/system/etc/yum.repos.d/"
+    src: "{{ repo }}/packages/yum.repos.d/"
     dest: /etc/yum.repos.d/
     owner: root
     group: root

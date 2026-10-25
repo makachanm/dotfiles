@@ -11,7 +11,7 @@
   changed_when: false
   check_mode: false
 
-- name: flatpak apps (packs/flatpak.txt)
+- name: flatpak apps (packages/flatpak.txt)
   community.general.flatpak:
     name: "{{ flatpaks | reject('in', flatpak_installed.stdout_lines) | list }}"
     remote: flathub

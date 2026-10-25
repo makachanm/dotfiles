@@ -1,4 +1,4 @@
-- name: dnf packages (packs/dnf.txt)
+- name: dnf packages (packages/dnf.txt)
   ansible.builtin.dnf:
     name: "{{ dnf_packages }}"
     state: present
@@ -11,7 +11,7 @@
     allowerasing: true
   become: true
 
-- name: cargo tools (packs/cargo.txt)
+- name: cargo tools (packages/cargo.txt)
   community.general.cargo:
     name: "{{ cargo_crates }}"
     locked: true
