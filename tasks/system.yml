@@ -1,6 +1,6 @@
 - name: udev rules
   ansible.builtin.copy:
-    src: "{{ repo }}/system/etc/udev/rules.d/"
+    src: "{{ repo }}/system/udev/"
     dest: /etc/udev/rules.d/
     owner: root
     group: root
@@ -10,7 +10,7 @@
 
 - name: keyd config
   ansible.builtin.copy:
-    src: "{{ repo }}/system/etc/keyd/default.conf"
+    src: "{{ repo }}/system/keyd.conf"
     dest: /etc/keyd/default.conf
     owner: root
     group: root
@@ -20,7 +20,7 @@
 
 - name: GRUB defaults
   ansible.builtin.copy:
-    src: "{{ repo }}/system/etc/default/grub"
+    src: "{{ repo }}/system/grub"
     dest: /etc/default/grub
     owner: root
     group: root
@@ -30,7 +30,7 @@
 
 - name: greetd config
   ansible.builtin.copy:
-    src: "{{ repo }}/system/etc/greetd/config.toml"
+    src: "{{ repo }}/system/greetd.toml"
     dest: /etc/greetd/config.toml
     owner: greetd
     group: greetd

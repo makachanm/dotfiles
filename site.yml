@@ -1,16 +1,18 @@
 - name: Fedora workstation
   hosts: localhost
   gather_facts: true
+  vars_files:
+    - dotfiles.yml
 
   vars:
     repo: "{{ playbook_dir }}"
     user_home: "{{ lookup('env', 'HOME') }}"
     list_filter: "^\\s*(#.*)?$"
-    dnf_packages: "{{ lookup('file', repo ~ '/system/packs/dnf.txt').splitlines() | map('trim') | reject('match', list_filter) | list }}"
-    dnf_repos: "{{ lookup('file', repo ~ '/system/packs/dnf-repos.txt').splitlines() | map('trim') | reject('match', list_filter) | list }}"
-    coprs: "{{ lookup('file', repo ~ '/system/packs/copr.txt').splitlines() | map('trim') | reject('match', list_filter) | list }}"
-    flatpaks: "{{ lookup('file', repo ~ '/system/packs/flatpak.txt').splitlines() | map('trim') | reject('match', list_filter) | list }}"
-    cargo_crates: "{{ lookup('file', repo ~ '/system/packs/cargo.txt').splitlines() | map('trim') | reject('match', list_filter) | list }}"
+    dnf_packages: "{{ lookup('file', repo ~ '/packages/dnf.txt').splitlines() | map('trim') | reject('match', list_filter) | list }}"
+    dnf_repos: "{{ lookup('file', repo ~ '/packages/repos.txt').splitlines() | map('trim') | reject('match', list_filter) | list }}"
+    coprs: "{{ lookup('file', repo ~ '/packages/copr.txt').splitlines() | map('trim') | reject('match', list_filter) | list }}"
+    flatpaks: "{{ lookup('file', repo ~ '/packages/flatpak.txt').splitlines() | map('trim') | reject('match', list_filter) | list }}"
+    cargo_crates: "{{ lookup('file', repo ~ '/packages/cargo.txt').splitlines() | map('trim') | reject('match', list_filter) | list }}"
 
   pre_tasks:
     - name: Run as the desktop user, not root

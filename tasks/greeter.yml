@@ -6,7 +6,7 @@
 
 - name: Greeter appearance
   ansible.builtin.copy:
-    src: "{{ repo }}/system/var/lib/noctalia-greeter/greeter.toml"
+    src: "{{ repo }}/system/noctalia-greeter.toml"
     dest: /var/lib/noctalia-greeter/greeter.toml
     owner: greetd
     group: greetd

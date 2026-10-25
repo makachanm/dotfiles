@@ -1,5 +1,16 @@
-- name: Home config (home/ -> ~)
+- name: Config directories
+  ansible.builtin.file:
+    path: "{{ user_home }}/{{ item.dest | dirname }}"
+    state: directory
+  loop: "{{ dotfiles }}"
+  loop_control:
+    label: "{{ item.dest }}"
+
+- name: Config files (dotfiles.yml)
   ansible.builtin.copy:
-    src: "{{ repo }}/home/"
-    dest: "{{ user_home }}/"
+    src: "{{ repo }}/{{ item.src }}"
+    dest: "{{ user_home }}/{{ item.dest }}"
     mode: preserve
+  loop: "{{ dotfiles }}"
+  loop_control:
+    label: "{{ item.dest }}"
