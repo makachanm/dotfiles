@@ -58,7 +58,7 @@ layout {
 
 binds {
     Mod+R { spawn "qterminal"; }
-    Mod+Grave { spawn "qterminal" "--drop"; }
+    Mod+Shift+R { spawn "qterminal" "--drop"; }
     Mod+Space { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
     Mod+C { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
     Mod+Comma { spawn "noctalia" "msg" "settings-toggle"; }
