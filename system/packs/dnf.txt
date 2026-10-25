@@ -25,6 +25,7 @@ htop
 vlc
 qimgv
 qalculate-qt
+speedcrunch
 filelight
 transmission-qt
 adw-gtk3-theme
