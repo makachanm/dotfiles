@@ -24,7 +24,7 @@ konsole
 htop
 vlc
 qimgv
-qalculate-qt
+lxqt-archiver
 speedcrunch
 filelight
 transmission-qt
