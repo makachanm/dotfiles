@@ -4,6 +4,27 @@
     state: present
   become: true
 
+- name: Check Zoom
+  ansible.builtin.command: rpm -q zoom
+  register: zoom_installed
+  changed_when: false
+  failed_when: false
+  check_mode: false
+
+- name: Zoom signing key
+  ansible.builtin.rpm_key:
+    key: https://zoom.us/linux/download/pubkey?version=6-3-10
+    fingerprint: AE44 6BAB 33EA 9862 AA29  FC3D DDE0 E622 2047 091F
+  become: true
+  when: zoom_installed.rc != 0
+
+- name: Zoom (zoom.us RPM)
+  ansible.builtin.dnf:
+    name: https://zoom.us/client/latest/zoom_x86_64.rpm
+    state: present
+  become: true
+  when: zoom_installed.rc != 0
+
 - name: Vim as the system default editor
   ansible.builtin.dnf:
     name: vim-default-editor

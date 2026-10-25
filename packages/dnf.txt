@@ -95,6 +95,9 @@ kdenlive
 darktable
 obs-studio
 audacity
+libreoffice-writer
+libreoffice-calc
+libreoffice-impress
 
 gstreamer1-plugins-bad-freeworld
 gstreamer1-plugins-ugly
