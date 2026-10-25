@@ -36,6 +36,10 @@
       ansible.builtin.import_tasks: tasks/home.yml
       tags: home
 
+    - name: Shell
+      ansible.builtin.import_tasks: tasks/shell.yml
+      tags: shell
+
     - name: System config
       ansible.builtin.import_tasks: tasks/system.yml
       tags: system

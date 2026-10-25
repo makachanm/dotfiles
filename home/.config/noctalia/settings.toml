@@ -424,10 +424,6 @@ drawer = true
 pinned = [ "kime" ]
 scale = 0.85000000000000009
 
-[widget.usb]
-hide_when_empty = true
-type = "aristides/udiskie:status"
-
 [widget.volume]
 capsule = true
 capsule_padding = 0
