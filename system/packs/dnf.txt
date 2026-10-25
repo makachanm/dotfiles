@@ -79,7 +79,6 @@ texlive-collection-langkorean
 latexmk
 vim-enhanced
 wl-clipboard
-btop
 
 moby-engine
 docker-compose
