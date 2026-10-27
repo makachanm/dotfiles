@@ -9,7 +9,7 @@ order = [ "default" ]
     capsule = false
     center = [ "gap", "clock", "gap" ]
     concave_edge_corners = true
-    end = [ "media", "group:notes", "group:settings" ]
+    end = [ "media_button", "group:notes", "group:settings" ]
     font_weight = 500
     margin_edge = 0
     margin_ends = 0
@@ -44,7 +44,7 @@ order = [ "default" ]
         members = [ "battery", "network", "volume", "brightness", "bluetooth", "caffeine", "tray" ]
         opacity = 0.0
         padding = 0.0
-        widget_spacing = 4
+        widget_spacing = 8
 
 [battery]
 warning_threshold = 5
@@ -424,6 +424,16 @@ scale = 1.25
 hide_album_art = true
 hide_when_idle = true
 hide_when_no_media = true
+
+[widget.media_button]
+glyph = "music"
+tooltip = "재생/일시정지 · 우클릭 다음 곡 · 가운데 클릭 이전 곡"
+type = "custom_button"
+
+    [widget.media_button.actions]
+    left = "media toggle"
+    middle = "media previous"
+    right = "media next"
 
 [widget.network]
 capsule = false
