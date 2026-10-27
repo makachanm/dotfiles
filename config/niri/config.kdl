@@ -3,41 +3,7 @@ spawn-at-startup "noctalia"
 spawn-at-startup "tailscale" "systray"
 spawn-at-startup "udiskie" "--automount" "--no-notify" "--no-tray"
 
-output "eDP-1" {
-    mode "2240x1400"
-    scale 1.2
-    position x=0 y=0
-}
-
-output "DP-1" {
-    mode "3840x2160"
-    scale 1.5
-    position x=1866 y=0
-}
-
-input {
-    keyboard {
-        xkb {
-            layout "kr"
-        }
-    }
-    touchpad {
-        tap
-        dwt
-        natural-scroll
-    }
-}
-
-gestures {
-    hot-corners {
-        off
-    }
-}
-
-window-rule {
-    clip-to-geometry true
-    geometry-corner-radius 12
-}
+include "common.kdl"
 
 window-rule {
     match app-id="^dev\\.noctalia\\.Noctalia$"
@@ -48,37 +14,15 @@ debug {
     honor-xdg-activation-with-invalid-serial
 }
 
-layout {
-    gaps 10
-    default-column-width { proportion 0.5; }
-    focus-ring {
-        on
-    }
-}
-
 binds {
-    Mod+R { spawn "qterminal"; }
     Mod+Space { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
     Mod+C { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
     Mod+Comma { spawn "noctalia" "msg" "settings-toggle"; }
     Mod+F { spawn "noctalia" "msg" "screenshot-region"; }
     Mod+Shift+F { spawn "noctalia" "msg" "screenshot-fullscreen"; }
-    Ctrl+Shift+Escape { spawn "qterminal" "-e" "htop"; }
 
     Mod+L { spawn "noctalia" "msg" "session" "lock"; }
     Mod+Shift+Escape { spawn "noctalia" "msg" "panel-toggle" "session"; }
-
-    Mod+Q { focus-column-left; }
-    Mod+W { focus-column-right; }
-    Mod+A { move-column-left; }
-    Mod+S { move-column-right; }
-    Mod+E { set-column-width "+10%"; }
-    Mod+D { set-column-width "-10%"; }
-    Mod+Z { maximize-column; }
-    Mod+X { toggle-window-floating; }
-    Mod+Tab { spawn-sh "~/.config/niri/scripts/ws-cycle next"; }
-    Mod+Shift+Tab { spawn-sh "~/.config/niri/scripts/ws-cycle move"; }
-    Mod+Ctrl+Tab { move-column-to-monitor-next; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "noctalia" "msg" "volume-up"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "noctalia" "msg" "volume-down"; }
@@ -86,6 +30,3 @@ binds {
     XF86MonBrightnessUp allow-when-locked=true { spawn "noctalia" "msg" "brightness-up"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "noctalia" "msg" "brightness-down"; }
 }
-
-include "noctalia.kdl"
-include "focus-ring.kdl"
