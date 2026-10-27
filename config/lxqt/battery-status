@@ -1,8 +1,0 @@
-#!/bin/sh
-b=/sys/class/power_supply/BAT0
-[ -r "$b/capacity" ] || exit 0
-case "$(cat "$b/status")" in
-    Discharging) p=BAT ;;
-    *) p=AC ;;
-esac
-echo "$p $(cat "$b/capacity")%"
