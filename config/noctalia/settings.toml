@@ -9,7 +9,7 @@ order = [ "default" ]
     capsule = false
     center = [ "bar", "gap", "clock", "gap", "notifications" ]
     concave_edge_corners = true
-    end = [ "cat_2", "tray", "caffeine", "bluetooth", "brightness", "volume", "network", "gap", "battery" ]
+    end = [ "cat_2", "tray", "group:settings", "gap", "battery" ]
     font_weight = 500
     margin_edge = 0
     margin_ends = 0
@@ -19,12 +19,19 @@ order = [ "default" ]
     radius = 0
     scale = 1.0800000000000001
     shadow = true
-    start = [ "workspaces" ]
+    start = [ "workspaces", "media" ]
     thickness = 33
     widget_spacing = 8
 
         [bar.default.dead_zone.actions]
         right = "none"
+
+        [[bar.default.capsule_group]]
+        id = "settings"
+        members = [ "network", "volume", "brightness", "bluetooth", "caffeine" ]
+        accordion = true
+        accordion_direction = "start"
+        opacity = 0.0
 
 [battery]
 warning_threshold = 5
@@ -400,6 +407,11 @@ type = "spacer"
 enabled = false
 glyph = "menu-2"
 scale = 1.25
+
+[widget.media]
+album_art_only = true
+hide_when_idle = true
+hide_when_no_media = true
 
 [widget.network]
 capsule = false
