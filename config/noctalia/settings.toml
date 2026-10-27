@@ -9,7 +9,7 @@ order = [ "default" ]
     capsule = false
     center = [ "gap", "clock", "gap" ]
     concave_edge_corners = true
-    end = [ "bar", "notifications", "group:settings" ]
+    end = [ "group:notes", "gap", "group:settings" ]
     font_weight = 500
     margin_edge = 0
     margin_ends = 0
@@ -25,6 +25,14 @@ order = [ "default" ]
 
         [bar.default.dead_zone.actions]
         right = "none"
+
+        [[bar.default.capsule_group]]
+        enabled = true
+        id = "notes"
+        members = [ "bar", "notifications" ]
+        opacity = 0.0
+        padding = 0.0
+        widget_spacing = 1
 
         [[bar.default.capsule_group]]
         accordion = true
