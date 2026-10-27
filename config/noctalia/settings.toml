@@ -9,7 +9,7 @@ order = [ "default" ]
     capsule = false
     center = [ "gap", "clock", "gap" ]
     concave_edge_corners = true
-    end = [ "media", "group:notes", "group:settings" ]
+    end = [ "group:notes", "group:settings" ]
     font_weight = 500
     margin_edge = 0
     margin_ends = 0
@@ -29,7 +29,7 @@ order = [ "default" ]
         [[bar.default.capsule_group]]
         enabled = true
         id = "notes"
-        members = [ "bar", "notifications" ]
+        members = [ "media", "bar", "notifications" ]
         opacity = 0.0
         padding = 0.0
         widget_spacing = 5
@@ -427,6 +427,7 @@ scale = 1.25
 
 [widget.media]
 album_art_only = true
+art_size = 13
 hide_when_idle = true
 hide_when_no_media = true
 
