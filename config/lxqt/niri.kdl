@@ -11,6 +11,7 @@ environment {
 
 spawn-sh-at-startup "systemctl --user import-environment WAYLAND_DISPLAY NIRI_SOCKET XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE QT_QPA_PLATFORMTHEME && systemctl --user start lxqt-niri-session.target; lxqt-session && systemctl --user stop lxqt-niri-session.target && niri msg action quit -s"
 spawn-at-startup "tailscale" "systray"
+spawn-at-startup "swayidle" "-w" "timeout" "400" "niri msg action power-off-monitors" "timeout" "405" "swaylock -f -c 000000" "timeout" "1000" "systemctl suspend" "before-sleep" "swaylock -f -c 000000"
 spawn-at-startup "udiskie" "--automount" "--no-notify" "--no-tray"
 
 hotkey-overlay {
