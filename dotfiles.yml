@@ -3,8 +3,7 @@ dotfiles:
   - { src: config/vim/vimrc, dest: .config/vim/vimrc }
   - { src: config/niri/, dest: .config/niri/ }
   - { src: config/noctalia/, dest: .config/noctalia/ }
-  - { src: config/qterminal/qterminal.ini, dest: .config/qterminal.org/qterminal.ini }
-  - { src: config/qterminal/Mono.colorscheme, dest: .local/share/qterminal/color-schemes/Mono.colorscheme }
+  - { src: config/alacritty/alacritty.toml, dest: .config/alacritty/alacritty.toml }
   - { src: config/htop/htoprc, dest: .config/htop/htoprc }
   - { src: config/pcmanfm-qt/settings.conf, dest: .config/pcmanfm-qt/default/settings.conf }
   - { src: config/qimgv/, dest: .config/qimgv/ }
