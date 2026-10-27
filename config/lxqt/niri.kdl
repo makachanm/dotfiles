@@ -32,7 +32,7 @@ debug {
 }
 
 binds {
-    Mod+Space { spawn "lxqt-runner"; }
+    Mod+Space { spawn "rofi" "-show" "drun"; }
     Mod+Comma { spawn "lxqt-config"; }
     Mod+F { screenshot; }
     Mod+Shift+F { screenshot-screen; }

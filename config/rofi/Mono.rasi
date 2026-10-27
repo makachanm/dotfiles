@@ -1,0 +1,119 @@
+* {
+    bg: #000000;
+    bg-alt: #141414;
+    fg: #ffffff;
+    fg-dim: #aaaaaa;
+    sel-bg: #e6e6e6;
+    sel-fg: #000000;
+    line: #444444;
+
+    background-color: transparent;
+    text-color: @fg;
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    width: 640px;
+    background-color: @bg;
+    border: 1px;
+    border-color: @line;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+mainbox {
+    spacing: 10px;
+    children: [ "inputbar", "listview", "mode-switcher" ];
+}
+
+inputbar {
+    background-color: @bg-alt;
+    border-radius: 8px;
+    padding: 10px 12px;
+    spacing: 10px;
+    children: [ "prompt", "entry" ];
+}
+
+prompt {
+    text-color: @fg-dim;
+}
+
+entry {
+    placeholder: "검색";
+    placeholder-color: @fg-dim;
+    cursor: text;
+}
+
+listview {
+    lines: 8;
+    columns: 1;
+    fixed-height: true;
+    scrollbar: false;
+    spacing: 2px;
+}
+
+element {
+    padding: 8px 10px;
+    spacing: 10px;
+    border-radius: 8px;
+}
+
+element normal.normal, element alternate.normal {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+element selected.normal {
+    background-color: @sel-bg;
+    text-color: @sel-fg;
+}
+
+element normal.active, element alternate.active {
+    text-color: @fg;
+}
+
+element selected.active {
+    background-color: @sel-bg;
+    text-color: @sel-fg;
+}
+
+element normal.urgent, element alternate.urgent, element selected.urgent {
+    text-color: #d05050;
+}
+
+element-icon {
+    size: 24px;
+    vertical-align: 0.5;
+}
+
+element-text {
+    text-color: inherit;
+    vertical-align: 0.5;
+}
+
+mode-switcher {
+    spacing: 6px;
+}
+
+button {
+    padding: 6px;
+    border-radius: 8px;
+    text-color: @fg-dim;
+}
+
+button selected {
+    background-color: @bg-alt;
+    text-color: @fg;
+}
+
+message {
+    background-color: @bg-alt;
+    border-radius: 8px;
+    padding: 8px 12px;
+}
+
+textbox {
+    text-color: @fg;
+}

@@ -14,6 +14,8 @@ dotfiles:
   - { src: config/qterminal/qterminal.ini, dest: .config/qterminal.org/qterminal.ini }
   - { src: config/qterminal/Mono.colorscheme, dest: .local/share/qterminal/color-schemes/Mono.colorscheme }
   - { src: config/htop/htoprc, dest: .config/htop/htoprc }
+  - { src: config/rofi/config.rasi, dest: .config/rofi/config.rasi }
+  - { src: config/rofi/Mono.rasi, dest: .local/share/rofi/themes/Mono.rasi }
   - { src: config/pcmanfm-qt/settings.conf, dest: .config/pcmanfm-qt/default/settings.conf }
   - { src: config/pcmanfm-qt/lxqt.conf, dest: .config/pcmanfm-qt/lxqt/settings.conf }
   - { src: config/qimgv/, dest: .config/qimgv/ }

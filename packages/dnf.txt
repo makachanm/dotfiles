@@ -28,6 +28,7 @@ lxqt-globalkeys
 lxqt-qtplugin
 lxqt-themes
 swaylock
+rofi
 
 pcmanfm-qt
 qterminal
