@@ -7,6 +7,8 @@ dotfiles:
   - { src: config/lxqt/session.conf, dest: .config/lxqt/session.conf }
   - { src: config/lxqt/lxqt.conf, dest: .config/lxqt/lxqt.conf }
   - { src: config/lxqt/panel.conf, dest: .config/lxqt/panel.conf }
+  - { src: config/lxqt/notifications.conf, dest: .config/lxqt/notifications.conf }
+  - { src: config/lxqt/lxqt-powermanagement.conf, dest: .config/lxqt/lxqt-powermanagement.conf }
   - { src: config/lxqt/themes/, dest: .local/share/lxqt/themes/ }
   - { src: config/lxqt/palettes/, dest: .local/share/lxqt/palettes/ }
   - { src: config/lxqt/lxqt-config-appearance.conf, dest: .config/lxqt/lxqt-config-appearance.conf }
