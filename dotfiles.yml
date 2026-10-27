@@ -9,6 +9,9 @@ dotfiles:
   - { src: config/lxqt/panel.conf, dest: .config/lxqt/panel.conf }
   - { src: config/lxqt/notifications.conf, dest: .config/lxqt/notifications.conf }
   - { src: config/lxqt/lxqt-powermanagement.conf, dest: .config/lxqt/lxqt-powermanagement.conf }
+  - { src: config/lxqt/cpu-usage, dest: .local/bin/cpu-usage }
+  - { src: config/lxqt/battery-status, dest: .local/bin/battery-status }
+  - { src: config/lxqt/nm-applet.desktop, dest: .config/autostart/nm-applet.desktop }
   - { src: config/lxqt/themes/, dest: .local/share/lxqt/themes/ }
   - { src: config/lxqt/palettes/, dest: .local/share/lxqt/palettes/ }
   - { src: config/lxqt/lxqt-config-appearance.conf, dest: .config/lxqt/lxqt-config-appearance.conf }

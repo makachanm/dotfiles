@@ -29,6 +29,7 @@ lxqt-qtplugin
 lxqt-themes
 swaylock
 swayidle
+network-manager-applet
 rofi
 
 pcmanfm-qt
