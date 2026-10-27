@@ -1,0 +1,54 @@
+/* Main dialog window */
+QDialog {
+    color: #e0e0e0;
+    background: #000000;
+    border: 1px solid #2f2f2f;
+}
+
+/* Caption colors */
+QLabel {
+    color: #ffffff;
+    background: transparent;
+}
+
+/* Session action buttons */
+QAbstractItemView {
+    color: #ffffff;
+    background: #000000;
+    /* note: must use solid color 1px .png image for bg color */
+    background-image: url(assets/menus/bg.png);
+    border: 1px solid #555555;
+}
+
+/* Confirmation dialog buttons */
+QPushButton {
+    color: #e0e0e0;
+    background: qlineargradient(x1:0, x2:0, y1:0, y2:1, stop:0 #000000, stop:0.89 #000000, stop:0.9 #030303, stop:1 #141414);
+    border: 1px solid #555555;
+    border-radius: 3px;
+    padding: 4px 20px;
+    margin: 0px 6px;
+}
+
+QToolButton {
+    color: #e0e0e0;
+    background: qlineargradient(x1:0, x2:0, y1:0, y2:1, stop:0 #000000, stop:0.89 #000000, stop:0.9 #030303, stop:1 #141414);
+    border: 1px solid #555555;
+    border-radius: 3px;
+    padding: 4px 5px;
+    margin: 0px 6px;
+}
+
+QPushButton:hover,
+QToolButton:hover {
+    color: #e0e0e0;
+    background: qlineargradient(x1:0, x2:0, y1:0, y2:1, stop:0 #121212, stop:0.89 #121212, stop:0.9 #141414, stop:1 #202020);
+    border: 1px solid #4b4b4b;
+}
+
+QPushButton:pressed,
+QToolButton:pressed {
+    color: #e0e0e0;
+    background: qlineargradient(x1:0, x2:0, y1:0, y2:1, stop:0 #2f2f2f, stop:0.19 #141414, stop:0.2 #0d0d0d, stop:0.8 #0d0d0d, stop:0.81 #0f0f0f, stop:1 #161616);
+    border: 1px solid #505050;
+}
