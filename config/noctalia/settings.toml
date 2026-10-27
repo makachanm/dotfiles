@@ -9,7 +9,7 @@ order = [ "default" ]
     capsule = false
     center = [ "bar", "gap", "clock", "gap", "notifications" ]
     concave_edge_corners = true
-    end = [ "cat_2", "tray", "group:settings", "gap", "battery" ]
+    end = [ "cat_2", "tray", "group:settings" ]
     font_weight = 500
     margin_edge = 0
     margin_ends = 0
@@ -27,10 +27,10 @@ order = [ "default" ]
         right = "none"
 
         [[bar.default.capsule_group]]
-        id = "settings"
-        members = [ "network", "volume", "brightness", "bluetooth", "caffeine" ]
         accordion = true
         accordion_direction = "start"
+        id = "settings"
+        members = [ "battery", "network", "volume", "brightness", "bluetooth", "caffeine" ]
         opacity = 0.0
 
 [battery]
@@ -351,7 +351,6 @@ enabled = false
 type = "ahmedhossamdev/sticky-notes:bar"
 
 [widget.battery]
-anchor = true
 capsule = false
 capsule_fill = "on_primary"
 capsule_padding = 1
