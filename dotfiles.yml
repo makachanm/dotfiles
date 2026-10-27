@@ -6,10 +6,14 @@ dotfiles:
   - { src: config/lxqt/niri.kdl, dest: .config/lxqt/wayland/lxqt-niri.kdl }
   - { src: config/lxqt/session.conf, dest: .config/lxqt/session.conf }
   - { src: config/lxqt/lxqt.conf, dest: .config/lxqt/lxqt.conf }
+  - { src: config/lxqt/panel.conf, dest: .config/lxqt/panel.conf }
+  - { src: config/lxqt/lxqt-config-appearance.conf, dest: .config/lxqt/lxqt-config-appearance.conf }
+  - { src: config/lxqt/lxqt-niri-session.target, dest: .config/systemd/user/lxqt-niri-session.target }
   - { src: config/qterminal/qterminal.ini, dest: .config/qterminal.org/qterminal.ini }
   - { src: config/qterminal/Mono.colorscheme, dest: .local/share/qterminal/color-schemes/Mono.colorscheme }
   - { src: config/htop/htoprc, dest: .config/htop/htoprc }
   - { src: config/pcmanfm-qt/settings.conf, dest: .config/pcmanfm-qt/default/settings.conf }
+  - { src: config/pcmanfm-qt/lxqt.conf, dest: .config/pcmanfm-qt/lxqt/settings.conf }
   - { src: config/qimgv/, dest: .config/qimgv/ }
   - { src: config/speedcrunch/SpeedCrunch.ini, dest: .config/SpeedCrunch/SpeedCrunch.ini }
   - { src: config/speedcrunch/Mono.json, dest: .local/share/SpeedCrunch/color-schemes/Mono.json }

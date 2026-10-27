@@ -9,7 +9,7 @@ environment {
     INPUT_METHOD "kime"
 }
 
-spawn-sh-at-startup "lxqt-session && niri msg action quit -s"
+spawn-sh-at-startup "systemctl --user import-environment WAYLAND_DISPLAY NIRI_SOCKET XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE QT_QPA_PLATFORMTHEME && systemctl --user start lxqt-niri-session.target; lxqt-session && systemctl --user stop lxqt-niri-session.target && niri msg action quit -s"
 spawn-at-startup "tailscale" "systray"
 spawn-at-startup "udiskie" "--automount" "--no-notify" "--no-tray"
 
