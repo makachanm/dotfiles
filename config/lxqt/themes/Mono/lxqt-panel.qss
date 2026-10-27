@@ -834,3 +834,82 @@ QCalendarWidget #qt_calendar_nextmonth {
 #LXQtMountPopup #NoDiskLabel {
     padding: 2px;
 }
+
+/* Mono */
+LXQtPanel, LXQtPanel #BackgroundWidget {
+    color: #ffffff;
+    background: #000000;
+    border: none;
+}
+
+Plugin {
+    margin: 0px 3px;
+}
+
+#DesktopSwitch QToolButton {
+    color: #aaaaaa;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    margin: 5px 1px;
+    padding: 0px 8px;
+    font-weight: 500;
+}
+
+#DesktopSwitch QToolButton:hover {
+    color: #ffffff;
+    background: #333333;
+    border: none;
+}
+
+#DesktopSwitch QToolButton:checked {
+    color: #000000;
+    background: #e6e6e6;
+    border: none;
+}
+
+#DesktopSwitch QToolButton[urgent="true"] {
+    color: #000000;
+    background: #d05050;
+    border: none;
+}
+
+#WorldClock:hover {
+    background: transparent;
+    border: none;
+}
+
+#WorldClockContent {
+    color: #ffffff;
+    font-weight: 500;
+    padding: 0px 8px;
+}
+
+#StatusNotifierPlugin QToolButton,
+#Backlight QToolButton,
+#VolumePlugin QToolButton,
+Plugin > QToolButton {
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    padding: 0px 3px;
+}
+
+#StatusNotifierPlugin QToolButton:hover,
+#Backlight QToolButton:hover,
+#VolumePlugin QToolButton:hover,
+Plugin > QToolButton:hover {
+    background: #333333;
+}
+
+#LXQtCpuLoad {
+    qproperty-fontColor: #ffffff;
+}
+
+QToolTip {
+    color: #ffffff;
+    background: #141414;
+    border: 1px solid #444444;
+    border-radius: 6px;
+    padding: 4px 8px;
+}

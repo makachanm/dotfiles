@@ -1,0 +1,8 @@
+#!/bin/sh
+read -r _ a b c d e f g _ < /proc/stat
+sleep 0.5
+read -r _ A B C D E F G _ < /proc/stat
+busy=$(( (A + B + C + F + G) - (a + b + c + f + g) ))
+total=$(( busy + (D + E) - (d + e) ))
+[ "$total" -gt 0 ] || total=1
+echo "CPU $(( 100 * busy / total ))%"
