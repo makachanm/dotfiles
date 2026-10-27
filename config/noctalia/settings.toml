@@ -14,7 +14,7 @@ order = [ "default" ]
     margin_edge = 0
     margin_ends = 0
     margin_opposite_edge = 0
-    padding = 10
+    padding = 4
     position = "top"
     radius = 0
     scale = 1.0800000000000001
@@ -43,7 +43,7 @@ order = [ "default" ]
         id = "settings"
         members = [ "battery", "network", "volume", "brightness", "bluetooth", "caffeine", "tray" ]
         opacity = 0.0
-        padding = 2.0
+        padding = 0.0
         widget_spacing = 4
 
 [battery]
