@@ -9,7 +9,7 @@ order = [ "default" ]
     capsule = false
     center = [ "gap", "clock", "gap" ]
     concave_edge_corners = true
-    end = [ "group:notes", "group:settings" ]
+    end = [ "tray", "group:notes", "group:settings" ]
     font_weight = 500
     margin_edge = 0
     margin_ends = 0
@@ -19,7 +19,7 @@ order = [ "default" ]
     radius = 0
     scale = 1.0800000000000001
     shadow = true
-    start = [ "workspaces" ]
+    start = [ "workspaces", "media" ]
     thickness = 33
     widget_spacing = 5
 
@@ -27,9 +27,13 @@ order = [ "default" ]
         right = "none"
 
         [[bar.default.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        border_width = 1.0
         enabled = true
+        fill = "surface_variant"
         id = "notes"
-        members = [ "media", "bar", "notifications" ]
+        members = [ "bar", "notifications" ]
         opacity = 0.0
         padding = 0.0
         widget_spacing = 5
@@ -41,7 +45,7 @@ order = [ "default" ]
         enabled = true
         fill = "surface_variant"
         id = "settings"
-        members = [ "battery", "network", "volume", "brightness", "bluetooth", "caffeine", "tray", "gap_s" ]
+        members = [ "battery", "network", "volume", "brightness", "bluetooth", "caffeine", "gap_s" ]
         opacity = 0.0
         padding = 0.0
         widget_spacing = 6
@@ -427,7 +431,7 @@ scale = 1.25
 
 [widget.media]
 album_art_only = true
-art_size = 13
+art_size = 18
 hide_when_idle = true
 hide_when_no_media = true
 
@@ -449,7 +453,7 @@ capsule = true
 capsule_fill = "on_primary"
 capsule_padding = 2
 capsule_radius = 0
-drawer = false
+drawer = true
 pinned = [ "kime" ]
 scale = 0.85000000000000009
 
