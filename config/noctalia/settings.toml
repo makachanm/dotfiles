@@ -319,7 +319,7 @@ source = "custom"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
-    builtin_ids = [ "gtk3", "gtk4", "kcolorscheme", "niri" ]
+    builtin_ids = [ "niri" ]
 
 [wallpaper]
 directory = "/home/maka/Pictures/wallpaper"
