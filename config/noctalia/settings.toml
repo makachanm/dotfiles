@@ -431,7 +431,7 @@ scale = 1.25
 
 [widget.media]
 album_art_only = true
-art_size = 18
+art_size = 16
 hide_when_idle = true
 hide_when_no_media = true
 
@@ -455,7 +455,7 @@ capsule_padding = 2
 capsule_radius = 0
 drawer = true
 pinned = [ "kime" ]
-scale = 0.85000000000000009
+scale = 0.94999999999999996
 
 [widget.volume]
 capsule = true
@@ -472,6 +472,6 @@ empty_color = "surface"
 focused_color = "outline"
 label_source = "id"
 occupied_color = "surface_variant"
-scale = 1.25
+scale = 1.1000000000000001
 show_labels = true
 style = "regular"
