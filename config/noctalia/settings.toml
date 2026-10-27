@@ -7,9 +7,9 @@ order = [ "default" ]
     [bar.default]
     border_width = 0.0
     capsule = false
-    center = [ "bar", "gap", "clock", "gap", "notifications" ]
+    center = [ "gap", "clock", "gap" ]
     concave_edge_corners = true
-    end = [ "cat_2", "tray", "group:settings" ]
+    end = [ "bar", "notifications", "group:settings" ]
     font_weight = 500
     margin_edge = 0
     margin_ends = 0
@@ -21,7 +21,7 @@ order = [ "default" ]
     shadow = true
     start = [ "workspaces", "media" ]
     thickness = 33
-    widget_spacing = 8
+    widget_spacing = 5
 
         [bar.default.dead_zone.actions]
         right = "none"
@@ -29,9 +29,14 @@ order = [ "default" ]
         [[bar.default.capsule_group]]
         accordion = true
         accordion_direction = "start"
+        border_width = 1.0
+        enabled = true
+        fill = "surface_variant"
         id = "settings"
-        members = [ "battery", "network", "volume", "brightness", "bluetooth", "caffeine" ]
+        members = [ "battery", "network", "volume", "brightness", "bluetooth", "caffeine", "tray" ]
         opacity = 0.0
+        padding = 2.0
+        widget_spacing = 4
 
 [battery]
 warning_threshold = 5
@@ -430,7 +435,7 @@ capsule = true
 capsule_fill = "on_primary"
 capsule_padding = 2
 capsule_radius = 0
-drawer = true
+drawer = false
 pinned = [ "kime" ]
 scale = 0.85000000000000009
 
