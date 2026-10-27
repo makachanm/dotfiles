@@ -9,7 +9,7 @@ order = [ "default" ]
     capsule = false
     center = [ "gap", "clock", "gap" ]
     concave_edge_corners = true
-    end = [ "group:notes", "group:settings" ]
+    end = [ "media", "group:notes", "group:settings" ]
     font_weight = 500
     margin_edge = 0
     margin_ends = 0
@@ -19,7 +19,7 @@ order = [ "default" ]
     radius = 0
     scale = 1.0800000000000001
     shadow = true
-    start = [ "workspaces", "media" ]
+    start = [ "workspaces" ]
     thickness = 33
     widget_spacing = 5
 
@@ -421,7 +421,7 @@ glyph = "menu-2"
 scale = 1.25
 
 [widget.media]
-album_art_only = true
+hide_album_art = true
 hide_when_idle = true
 hide_when_no_media = true
 
