@@ -16,21 +16,6 @@ plasma-breeze
 papirus-icon-theme-dark
 
 udiskie
-lxqt-niri-session
-lxqt-session
-lxqt-panel
-lxqt-config
-lxqt-policykit
-lxqt-notificationd
-lxqt-runner
-lxqt-powermanagement
-lxqt-globalkeys
-lxqt-qtplugin
-lxqt-themes
-swaylock
-swayidle
-network-manager-applet
-rofi
 
 pcmanfm-qt
 qterminal

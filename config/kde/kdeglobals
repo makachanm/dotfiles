@@ -19,63 +19,63 @@ IntensityAmount=0
 IntensityEffect=0
 
 [Colors:Button]
-BackgroundAlternate=20,20,20
+BackgroundAlternate=10,10,10
 BackgroundNormal=30,30,30
 DecorationFocus=230,230,230
 DecorationHover=230,230,230
-ForegroundActive=255,255,255
+ForegroundActive=230,230,230
 ForegroundInactive=170,170,170
 ForegroundLink=136,136,136
 ForegroundNegative=208,80,80
 ForegroundNeutral=187,187,187
 ForegroundNormal=255,255,255
 ForegroundPositive=187,187,187
-ForegroundVisited=187,187,187
+ForegroundVisited=230,230,230
 
 [Colors:Complementary]
-BackgroundAlternate=20,20,20
+BackgroundAlternate=10,10,10
 BackgroundNormal=0,0,0
 DecorationFocus=230,230,230
 DecorationHover=230,230,230
-ForegroundActive=255,255,255
+ForegroundActive=230,230,230
 ForegroundInactive=170,170,170
 ForegroundLink=136,136,136
 ForegroundNegative=208,80,80
 ForegroundNeutral=187,187,187
-ForegroundNormal=255,255,255
+ForegroundNormal=29,29,29
 ForegroundPositive=187,187,187
-ForegroundVisited=187,187,187
+ForegroundVisited=230,230,230
 
 [Colors:Header]
 BackgroundAlternate=0,0,0
 BackgroundNormal=20,20,20
 DecorationFocus=230,230,230
 DecorationHover=230,230,230
-ForegroundActive=255,255,255
+ForegroundActive=230,230,230
 ForegroundInactive=170,170,170
 ForegroundLink=136,136,136
 ForegroundNegative=208,80,80
 ForegroundNeutral=187,187,187
 ForegroundNormal=255,255,255
 ForegroundPositive=187,187,187
-ForegroundVisited=187,187,187
+ForegroundVisited=230,230,230
 
 [Colors:Header][Inactive]
-BackgroundAlternate=0,0,0
-BackgroundNormal=20,20,20
+BackgroundAlternate=20,20,20
+BackgroundNormal=0,0,0
 DecorationFocus=230,230,230
 DecorationHover=230,230,230
-ForegroundActive=255,255,255
+ForegroundActive=230,230,230
 ForegroundInactive=170,170,170
 ForegroundLink=136,136,136
 ForegroundNegative=208,80,80
 ForegroundNeutral=187,187,187
 ForegroundNormal=255,255,255
 ForegroundPositive=187,187,187
-ForegroundVisited=187,187,187
+ForegroundVisited=230,230,230
 
 [Colors:Selection]
-BackgroundAlternate=230,230,230
+BackgroundAlternate=10,10,10
 BackgroundNormal=230,230,230
 DecorationFocus=230,230,230
 DecorationHover=230,230,230
@@ -86,53 +86,53 @@ ForegroundNegative=90,20,20
 ForegroundNeutral=112,83,83
 ForegroundNormal=0,0,0
 ForegroundPositive=112,83,83
-ForegroundVisited=187,187,187
+ForegroundVisited=230,230,230
 
 [Colors:Tooltip]
 BackgroundAlternate=0,0,0
 BackgroundNormal=20,20,20
 DecorationFocus=230,230,230
 DecorationHover=230,230,230
-ForegroundActive=255,255,255
+ForegroundActive=230,230,230
 ForegroundInactive=170,170,170
 ForegroundLink=136,136,136
 ForegroundNegative=208,80,80
 ForegroundNeutral=187,187,187
 ForegroundNormal=255,255,255
 ForegroundPositive=187,187,187
-ForegroundVisited=187,187,187
+ForegroundVisited=230,230,230
 
 [Colors:View]
 BackgroundAlternate=20,20,20
 BackgroundNormal=0,0,0
-DecorationFocus=230,230,230
-DecorationHover=230,230,230
-ForegroundActive=255,255,255
+DecorationFocus=29,29,29
+DecorationHover=0,0,0
+ForegroundActive=230,230,230
 ForegroundInactive=170,170,170
 ForegroundLink=136,136,136
 ForegroundNegative=208,80,80
 ForegroundNeutral=187,187,187
 ForegroundNormal=255,255,255
 ForegroundPositive=187,187,187
-ForegroundVisited=187,187,187
+ForegroundVisited=230,230,230
 
 [Colors:Window]
-BackgroundAlternate=30,30,30
+BackgroundAlternate=158,124,124
 BackgroundNormal=20,20,20
 DecorationFocus=230,230,230
 DecorationHover=230,230,230
-ForegroundActive=255,255,255
+ForegroundActive=230,230,230
 ForegroundInactive=170,170,170
 ForegroundLink=136,136,136
 ForegroundNegative=208,80,80
 ForegroundNeutral=187,187,187
 ForegroundNormal=255,255,255
 ForegroundPositive=187,187,187
-ForegroundVisited=187,187,187
+ForegroundVisited=230,230,230
 
 [General]
-ColorScheme=Mono
-Name=Mono
+ColorScheme=Noctalia
+Name=noctalia
 TerminalApplication=qterminal
 TerminalService=qterminal.desktop
 fixed=Nordwand Mono,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
@@ -168,9 +168,9 @@ Speedbar Width=154
 View Style=DetailTree
 
 [WM]
-activeBackground=20,20,20
-activeBlend=255,255,255
-activeForeground=255,255,255
+activeBackground=158,124,124
+activeBlend=29,29,29
+activeForeground=29,29,29
 inactiveBackground=0,0,0
 inactiveBlend=170,170,170
 inactiveForeground=170,170,170
