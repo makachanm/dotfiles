@@ -1,3 +1,0 @@
-org.prismlauncher.PrismLauncher
-com.spotify.Client
-net.pcsx2.PCSX2
