@@ -1,15 +1,15 @@
-# System
+## Files
 
-| File | Destination |
+| | |
 | --- | --- |
 | `*.rules` | `/etc/udev/rules.d/` |
 | `*.repo` | `/etc/yum.repos.d/` |
 | `keyd.conf` | `/etc/keyd/default.conf` |
 | `grub` | `/etc/default/grub`, then `grub2-mkconfig -o /boot/grub2/grub.cfg` |
 | `sddm.conf` | `/etc/sddm.conf.d/10-void.conf` |
-| `plymouth-nologo.sh` | run with `sudo sh` |
+| `plymouth-nologo.sh` | Removes Plymouth Fedora Logo |
 
-`packages.txt` lists COPR repos, RPM Fusion, dnf packages and Flatpaks.
+`packages.txt`: COPR + Flatpak+ RPM
 
 ## SDDM theme
 
