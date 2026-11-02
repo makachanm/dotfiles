@@ -11,9 +11,9 @@ in
     enable = true;
 
     workspace = {
-      lookAndFeel = "org.kde.breeze.desktop";
-      colorScheme = "BreezeLight";
-      iconTheme = "breeze";
+      lookAndFeel = "org.kde.breezedark.desktop";
+      colorScheme = "BreezeDark";
+      iconTheme = "Papirus-Dark";
       wallpaper = ./assets/wallpaper + "/PIA26702~orig.png";
     };
 
