@@ -99,7 +99,9 @@ in
         "karousel-column-move-right" = "Meta+S";
         "karousel-column-width-increase" = "Meta+E";
         "karousel-column-width-decrease" = "Meta+D";
-        "karousel-column-width-maximize" = "Meta+Z";
+        "karousel-column-width-maximize" = [ ];
+        "Window Fullscreen" = "Meta+C";
+        "Window Close" = [ "Meta+Z" "Alt+F4" ];
         "karousel-window-toggle-floating" = "Meta+X";
         "karousel-column-toggle-stacked" = [ ];
         "karousel-cycle-preset-widths" = [ ];
@@ -116,7 +118,7 @@ in
         "manage activities" = [ ];
         "next activity" = [ ];
         "previous activity" = [ ];
-        "show-on-mouse-pos" = "Meta+C";
+        "show-on-mouse-pos" = "Meta+V";
       };
       ksmserver = {
         "Lock Session" = [ "Meta+L" "Screensaver" ];
