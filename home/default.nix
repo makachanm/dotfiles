@@ -28,6 +28,7 @@ in
     ".local/share/konsole/Mono.colorscheme".source = ./config/konsole/Mono.colorscheme;
     ".local/share/SpeedCrunch/color-schemes/Mono.json".source = ./config/speedcrunch/Mono.json;
     ".config/kime/config.yaml".source = ./config/kime/config.yaml;
+    ".config/autostart/tailscale-systray.desktop".source = ./config/autostart/tailscale-systray.desktop;
     ".config/fontconfig/fonts.conf".source = ./config/fontconfig/fonts.conf;
     ".config/environment.d/50-session.conf".source = ./config/desktop/environment.conf;
     ".local/share/applications/vim.desktop".source = ./config/applications/vim.desktop;
