@@ -128,7 +128,6 @@ in
                 "org.kde.plasma.volume"
                 "org.kde.plasma.brightness"
                 "org.kde.kscreen"
-                "org.kde.plasma.cameraindicator"
                 "org.kde.plasma.clipboard"
                 "org.kde.plasma.devicenotifier"
                 "org.kde.plasma.mediacontroller"
@@ -138,8 +137,6 @@ in
                 "org.kde.plasma.bluetooth"
                 "org.kde.plasma.volume"
                 "org.kde.plasma.brightness"
-                "org.kde.kscreen"
-                "org.kde.plasma.cameraindicator"
               ];
               disabledStatusNotifiers = "Xwayland Video Bridge";
             };
