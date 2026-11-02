@@ -77,6 +77,10 @@ in
           }
           "org.kde.plasma.panelspacer"
           {
+            name = "org.kde.plasma.notes";
+            config.General.noteId = "notes";
+          }
+          {
             name = "org.kde.plasma.systemtray";
             config.General = {
               extraItems = [
