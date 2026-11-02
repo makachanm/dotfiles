@@ -171,7 +171,7 @@ in
       konsolerc."Desktop Entry".DefaultProfile = "Mono.profile";
       konsolerc.KonsoleWindow.ShowMenuBarByDefault = false;
       konsolerc.TabBar = {
-        TabBarVisibility = "ShowTabBarWhenNeeded";
+        TabBarVisibility = "AlwaysHideTabBar";
         NewTabButton = false;
         CloseTabButton = "None";
       };
