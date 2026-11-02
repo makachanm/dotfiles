@@ -14,7 +14,7 @@ in
       lookAndFeel = "org.kde.breezedark.desktop";
       colorScheme = "BreezeDark";
       iconTheme = "Papirus-Dark";
-      wallpaper = ./assets/wallpaper + "/PIA26702~orig.png";
+      wallpaper = "${config.home.homeDirectory}/Pictures/wallpaper/PIA26702~orig.png";
     };
 
     fonts = {
