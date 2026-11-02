@@ -1,5 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=QTerminal Drop-down
-Exec=qterminal --drop
-NoDisplay=true
