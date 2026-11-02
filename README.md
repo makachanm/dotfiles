@@ -7,7 +7,7 @@ Fedora + KDE Plasma (KWin + Karousel) + Konqueror.
 
 ```sh
 sudo dnf install nix nix-daemon
-sudo systemctl enable --now nix-daemon.socket
+sudo sh system/nix-selinux.sh
 nix run home-manager -- switch --flake .#maka -b hm-backup
 ```
 
