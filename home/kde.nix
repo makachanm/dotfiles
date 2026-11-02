@@ -13,7 +13,7 @@ in
     workspace = {
       lookAndFeel = "org.kde.breezedark.desktop";
       colorScheme = "BreezeDark";
-      iconTheme = "Papirus-Dark";
+      iconTheme = "breeze-dark";
       wallpaper = "${config.home.homeDirectory}/Pictures/wallpaper/PIA26702~orig.png";
     };
 
@@ -64,16 +64,34 @@ in
               showActionButtonCaptions = false;
               systemFavorites = "lock-screen\\,logout\\,save-session\\,switch-user\\,suspend\\,hibernate\\,reboot\\,shutdown";
             };
+            extraConfig = "(widget) => { widget.globalShortcut = 'Meta+Space'; }";
           }
           "org.kde.plasma.marginsseparator"
           "org.kde.plasma.pager"
           "org.kde.plasma.marginsseparator"
+          {
+            name = "org.kde.plasma.notes";
+            config.General = {
+              noteId = "notes";
+              fontSize = 10;
+            };
+          }
           "org.kde.plasma.panelspacer"
           {
             name = "org.kde.plasma.icontasks";
             config.General = {
-              launchers = "";
-              reverseMode = true;
+              launchers = [
+                "applications:zen-browser.desktop"
+                "applications:thorium-browser.desktop"
+                "applications:com.microsoft.VSCode.desktop"
+                "applications:org.kde.dolphin.desktop"
+                "applications:org.speedcrunch.SpeedCrunch.desktop"
+                "applications:com.spotify.Client.desktop"
+                "applications:slack.desktop"
+                "applications:vesktop.desktop"
+                "applications:com.ayugram.desktop.desktop"
+                "applications:steam.desktop"
+              ];
               showOnlyCurrentScreen = true;
               sortingStrategy = 2;
             };
@@ -104,15 +122,7 @@ in
               disabledStatusNotifiers = "Xwayland Video Bridge";
             };
           }
-          {
-            name = "org.kde.plasma.notes";
-            config.General = {
-              noteId = "notes";
-              fontSize = 10;
-            };
-          }
           "org.kde.plasma.battery"
-          "org.kde.plasma.notifications"
           {
             name = "org.kde.plasma.digitalclock";
             config.Appearance = {
@@ -126,6 +136,7 @@ in
               showDate = false;
             };
           }
+          "org.kde.plasma.notifications"
         ];
       }
     ];
@@ -160,6 +171,7 @@ in
         "next activity" = [ ];
         "previous activity" = [ ];
         "show-on-mouse-pos" = "Meta+V";
+        "activate application launcher" = [ ];
       };
       ksmserver = {
         "Lock Session" = [ "Meta+L" "Screensaver" ];
@@ -212,6 +224,7 @@ in
         gestureScroll = true;
         presetWidths = "10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%";
       };
+      kwinrc.ModifierOnlyShortcuts.Meta = "";
       kwinrc.Wayland.InputMethod = "/usr/share/applications/kime.desktop";
       kwinrc.Windows = {
         RollOverDesktops = true;
