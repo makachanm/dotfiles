@@ -1,6 +1,6 @@
 # dotfiles
 
-Fedora + KDE Plasma (KWin + Karousel) + Konqueror.
+Fedora + KDE Plasma (KWin + Karousel).
 
 - `home/`: home-manager + plasma-manager
 - `system/`: everything else

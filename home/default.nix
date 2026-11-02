@@ -2,10 +2,7 @@
 let
   copied = {
     ".config/htop/htoprc" = ./config/htop/htoprc;
-    ".config/qimgv/qimgv.conf" = ./config/qimgv/qimgv.conf;
-    ".config/qimgv/theme.conf" = ./config/qimgv/theme.conf;
-    ".config/SpeedCrunch/SpeedCrunch.ini" = ./config/speedcrunch/SpeedCrunch.ini;
-    ".config/vlc/vlcrc" = ./config/vlc/vlcrc;
+    ".local/share/konsole/Mono.profile" = ./config/konsole/Mono.profile;
     ".config/mimeapps.list" = ./config/desktop/mimeapps.list;
     ".config/user-dirs.dirs" = ./config/desktop/user-dirs.dirs;
     ".claude/settings.json" = ./config/claude/settings.json;
@@ -14,7 +11,6 @@ in
 {
   imports = [
     ./kde.nix
-    ./niri.nix
   ];
 
   home.username = "maka";
@@ -28,20 +24,15 @@ in
   home.file = {
     ".zshrc".source = ./config/zsh/zshrc;
     ".config/vim/vimrc".source = ./config/vim/vimrc;
-    ".config/alacritty/alacritty.toml".source = ./config/alacritty/alacritty.toml;
+    ".local/share/konsole/Mono.colorscheme".source = ./config/konsole/Mono.colorscheme;
     ".config/kime/config.yaml".source = ./config/kime/config.yaml;
     ".config/fontconfig/fonts.conf".source = ./config/fontconfig/fonts.conf;
     ".config/environment.d/50-session.conf".source = ./config/desktop/environment.conf;
-    ".local/share/SpeedCrunch/color-schemes/Mono.json".source = ./config/speedcrunch/Mono.json;
-    ".local/share/applications/htop.desktop".source = ./config/applications/htop.desktop;
     ".local/share/applications/vim.desktop".source = ./config/applications/vim.desktop;
     ".local/share/applications/im-chooser.desktop".source = ./config/applications/im-chooser.desktop;
     ".local/share/applications/io.github.vectorgraphics.asymptote.desktop".source = ./config/applications/io.github.vectorgraphics.asymptote.desktop;
     ".local/share/applications/mupdf-gl.desktop".source = ./config/applications/mupdf-gl.desktop;
     ".local/share/applications/thorium-shell.desktop".source = ./config/applications/thorium-shell.desktop;
-    ".local/bin/filemanager-open".source = ./config/filemanager/filemanager-open;
-    ".local/bin/filemanager1".source = ./config/filemanager/filemanager1;
-    ".local/share/dbus-1/services/org.freedesktop.FileManager1.service".source = ./config/filemanager/org.freedesktop.FileManager1.service;
     ".local/share/fonts/NordwandMono".source = ./assets/fonts/NordwandMono;
     "Pictures/wallpaper/PIA26702~orig.png".source = ./assets/wallpaper + "/PIA26702~orig.png";
   };
