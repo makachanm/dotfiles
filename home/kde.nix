@@ -107,6 +107,8 @@ in
                 "org.kde.plasma.brightness"
                 "org.kde.plasma.bluetooth"
                 "org.kde.plasma.clipboard"
+                "tailscale"
+                "AyuGramDesktop"
               ];
               reverseIconOrder = true;
               scaleIconsToFit = false;
