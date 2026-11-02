@@ -13,5 +13,5 @@ if len(sys.argv) > 1:
         target = os.path.dirname(target) or os.path.expanduser("~")
     args = [target]
 
-subprocess.Popen(["pcmanfm-qt", *args], start_new_session=True,
+subprocess.Popen(["konqueror", *args], start_new_session=True,
                  stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
