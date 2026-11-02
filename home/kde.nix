@@ -40,7 +40,7 @@ in
           {
             name = "org.kde.plasma.kickoff";
             config.General = {
-              icon = "view-calendar-agenda";
+              icon = "/usr/share/pixmaps/fedora-logo-sprite.png";
               compactMode = true;
               favoritesDisplay = 1;
               primaryActions = 3;
@@ -70,7 +70,7 @@ in
                 "org.kde.plasma.volume"
                 "org.kde.plasma.brightness"
                 "org.kde.plasma.bluetooth"
-                "org.kde.plasma.devicenotifier"
+                "org.kde.plasma.notifications"
               ];
               hiddenItems = [
                 "org.kde.plasma.battery"
@@ -78,12 +78,28 @@ in
                 "org.kde.plasma.volume"
                 "org.kde.plasma.brightness"
                 "org.kde.plasma.bluetooth"
+                "org.kde.plasma.notifications"
               ];
               reverseIconOrder = true;
               disabledStatusNotifiers = "Xwayland Video Bridge";
             };
           }
-          "org.kde.plasma.notifications"
+          {
+            name = "org.kde.plasma.battery";
+            config.General.showPercentage = false;
+          }
+          {
+            name = "org.kde.plasma.systemmonitor";
+            config = {
+              Appearance = {
+                chartFace = "org.kde.ksysguard.textonly";
+                showTitle = false;
+              };
+              Sensors.highPrioritySensorIds = ''["power/824/chargePercentage"]'';
+              SensorLabels."power/824/chargePercentage" = "​";
+              SensorColors."power/824/chargePercentage" = "0,0,0,0";
+            };
+          }
           "org.kde.plasma.digitalclock"
         ];
       }
