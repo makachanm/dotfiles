@@ -1,12 +1,19 @@
 { pkgs, ... }:
+let
+  karousel = pkgs.fetchzip {
+    url = "https://github.com/peterfajdiga/karousel/releases/download/v0.18/karousel_0_18.tar.gz";
+    hash = "sha256-BNINtARJ7IVZB2cUi9j5U2d+RNAdFvcGr6x8c8YR4Hk=";
+    stripRoot = false;
+  };
+in
 {
   programs.plasma = {
     enable = true;
 
     workspace = {
-      colorScheme = "Mono";
-      iconTheme = "Papirus-Dark";
-      widgetStyle = "Breeze";
+      lookAndFeel = "org.kde.breeze.desktop";
+      colorScheme = "BreezeLight";
+      iconTheme = "breeze";
       wallpaper = ./assets/wallpaper + "/PIA26702~orig.png";
     };
 
@@ -17,6 +24,48 @@
       small = { family = "IBM Plex Sans KR"; pointSize = 8; };
       fixedWidth = { family = "Nordwand Mono"; pointSize = 10; };
     };
+
+    kwin.virtualDesktops.number = 4;
+
+    panels = [
+      {
+        location = "top";
+        height = 33;
+        floating = false;
+        widgets = [
+          {
+            pager.general = {
+              displayedText = "desktopNumber";
+              showWindowOutlines = false;
+            };
+          }
+          "org.kde.plasma.mediacontroller"
+          "org.kde.plasma.panelspacer"
+          {
+            digitalClock = {
+              date = {
+                enable = true;
+                format.custom = "yyyy MM.dd ddd";
+                position = "besideTime";
+              };
+              time.format = "24h";
+            };
+          }
+          "org.kde.plasma.panelspacer"
+          "org.kde.plasma.notes"
+          {
+            systemTray.items.shown = [
+              "org.kde.plasma.battery"
+              "org.kde.plasma.networkmanagement"
+              "org.kde.plasma.volume"
+              "org.kde.plasma.brightness"
+              "org.kde.plasma.bluetooth"
+              "org.kde.plasma.notifications"
+            ];
+          }
+        ];
+      }
+    ];
 
     hotkeys.commands = {
       terminal = {
@@ -42,8 +91,9 @@
     };
   };
 
-  home.file = {
-    ".local/share/kwin/scripts/karousel".source = "${pkgs.kdePackages.karousel}/share/kwin/scripts/karousel";
-    ".local/share/color-schemes/Mono.colors".source = ./config/kde/Mono.colors;
-  };
+  home.packages = [
+    (pkgs.writeShellScriptBin "qdbus" ''exec /usr/lib64/qt6/bin/qdbus "$@"'')
+  ];
+
+  home.file.".local/share/kwin/scripts/karousel".source = "${karousel}/karousel";
 }
