@@ -96,6 +96,7 @@ in
                 "org.kde.plasma.notifications"
               ];
               reverseIconOrder = true;
+              scaleIconsToFit = false;
               disabledStatusNotifiers = "Xwayland Video Bridge";
             };
           }
