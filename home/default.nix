@@ -6,8 +6,6 @@ let
     ".config/qimgv/theme.conf" = ./config/qimgv/theme.conf;
     ".config/SpeedCrunch/SpeedCrunch.ini" = ./config/speedcrunch/SpeedCrunch.ini;
     ".config/vlc/vlcrc" = ./config/vlc/vlcrc;
-    ".config/gtk-3.0/settings.ini" = ./config/gtk/gtk-3.0.ini;
-    ".config/gtk-4.0/settings.ini" = ./config/gtk/gtk-4.0.ini;
     ".config/mimeapps.list" = ./config/desktop/mimeapps.list;
     ".config/user-dirs.dirs" = ./config/desktop/user-dirs.dirs;
     ".claude/settings.json" = ./config/claude/settings.json;
@@ -63,15 +61,12 @@ in
   '';
 
   dconf.settings."org/gnome/desktop/interface" = {
-    accent-color = "teal";
     clock-format = "24h";
     clock-show-weekday = true;
-    color-scheme = "prefer-dark";
     cursor-blink = true;
     cursor-blink-time = 1200;
     cursor-blink-timeout = 10;
     cursor-size = 24;
-    cursor-theme = "Adwaita";
     document-font-name = "IBM Plex Sans KR Medium 12";
     enable-animations = true;
     enable-hot-corners = false;
@@ -79,8 +74,6 @@ in
     gtk-enable-primary-paste = true;
     gtk-im-module = "";
     gtk-key-theme = "";
-    gtk-theme = "adw-gtk3-dark";
-    icon-theme = "Papirus-Dark";
     monospace-font-name = "Nordwand Mono 11";
     overlay-scrolling = true;
     show-battery-percentage = true;
