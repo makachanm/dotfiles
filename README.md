@@ -1,9 +1,6 @@
 # dotfiles
 
-Fedora + KDE Plasma (KWin + Karousel).
-
-- `home/`: home-manager + plasma-manager
-- `system/`: everything else
+My KDE + Fedora settings.
 
 ## Home
 
@@ -15,4 +12,6 @@ nix run home-manager -- switch --flake .#maka -b hm-backup
 
 After that: `home-manager switch --flake .#maka`
 
-System files: [system/README.md](system/README.md)
+## System
+
+Check `system/README.md`.
