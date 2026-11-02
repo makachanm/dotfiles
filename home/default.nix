@@ -1,0 +1,89 @@
+{ lib, ... }:
+let
+  copied = {
+    ".config/htop/htoprc" = ./config/htop/htoprc;
+    ".config/qimgv/qimgv.conf" = ./config/qimgv/qimgv.conf;
+    ".config/qimgv/theme.conf" = ./config/qimgv/theme.conf;
+    ".config/SpeedCrunch/SpeedCrunch.ini" = ./config/speedcrunch/SpeedCrunch.ini;
+    ".config/vlc/vlcrc" = ./config/vlc/vlcrc;
+    ".config/gtk-3.0/settings.ini" = ./config/gtk/gtk-3.0.ini;
+    ".config/gtk-4.0/settings.ini" = ./config/gtk/gtk-4.0.ini;
+    ".config/mimeapps.list" = ./config/desktop/mimeapps.list;
+    ".config/user-dirs.dirs" = ./config/desktop/user-dirs.dirs;
+    ".claude/settings.json" = ./config/claude/settings.json;
+  };
+in
+{
+  imports = [
+    ./kde.nix
+    ./niri.nix
+  ];
+
+  home.username = "maka";
+  home.homeDirectory = "/home/maka";
+  home.stateVersion = "26.11";
+
+  programs.home-manager.enable = true;
+  programs.man.enable = false;
+  xdg.mime.enable = false;
+
+  home.file = {
+    ".zshrc".source = ./config/zsh/zshrc;
+    ".config/vim/vimrc".source = ./config/vim/vimrc;
+    ".config/alacritty/alacritty.toml".source = ./config/alacritty/alacritty.toml;
+    ".config/kime/config.yaml".source = ./config/kime/config.yaml;
+    ".config/fontconfig/fonts.conf".source = ./config/fontconfig/fonts.conf;
+    ".config/environment.d/50-session.conf".source = ./config/desktop/environment.conf;
+    ".local/share/SpeedCrunch/color-schemes/Mono.json".source = ./config/speedcrunch/Mono.json;
+    ".local/share/applications/htop.desktop".source = ./config/applications/htop.desktop;
+    ".local/share/applications/vim.desktop".source = ./config/applications/vim.desktop;
+    ".local/share/applications/im-chooser.desktop".source = ./config/applications/im-chooser.desktop;
+    ".local/share/applications/io.github.vectorgraphics.asymptote.desktop".source = ./config/applications/io.github.vectorgraphics.asymptote.desktop;
+    ".local/share/applications/mupdf-gl.desktop".source = ./config/applications/mupdf-gl.desktop;
+    ".local/share/applications/thorium-shell.desktop".source = ./config/applications/thorium-shell.desktop;
+    ".local/bin/filemanager-open".source = ./config/filemanager/filemanager-open;
+    ".local/bin/filemanager1".source = ./config/filemanager/filemanager1;
+    ".local/share/dbus-1/services/org.freedesktop.FileManager1.service".source = ./config/filemanager/org.freedesktop.FileManager1.service;
+    ".local/share/fonts/NordwandMono".source = ./assets/fonts/NordwandMono;
+    "Pictures/wallpaper/PIA26702~orig.png".source = ./assets/wallpaper + "/PIA26702~orig.png";
+  };
+
+  home.activation.copyConfigs = lib.hm.dag.entryAfter [ "writeBoundary" ] (
+    lib.concatStrings (
+      lib.mapAttrsToList (dest: src: ''
+        run install -Dm644 ${src} "$HOME/${dest}"
+      '') copied
+    )
+  );
+
+  home.activation.zinit = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    if [ ! -d "$HOME/.local/share/zinit/zinit.git" ]; then
+      run /usr/bin/git clone -q https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git"
+    fi
+  '';
+
+  dconf.settings."org/gnome/desktop/interface" = {
+    accent-color = "teal";
+    clock-format = "24h";
+    clock-show-weekday = true;
+    color-scheme = "prefer-dark";
+    cursor-blink = true;
+    cursor-blink-time = 1200;
+    cursor-blink-timeout = 10;
+    cursor-size = 24;
+    cursor-theme = "Adwaita";
+    document-font-name = "IBM Plex Sans KR Medium 12";
+    enable-animations = true;
+    enable-hot-corners = false;
+    font-name = "IBM Plex Sans KR 10";
+    gtk-enable-primary-paste = true;
+    gtk-im-module = "";
+    gtk-key-theme = "";
+    gtk-theme = "adw-gtk3-dark";
+    icon-theme = "Papirus-Dark";
+    monospace-font-name = "Nordwand Mono 11";
+    overlay-scrolling = true;
+    show-battery-percentage = true;
+    toolkit-accessibility = false;
+  };
+}

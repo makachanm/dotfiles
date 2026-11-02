@@ -82,7 +82,7 @@ x-scheme-handler/https=zen-browser.desktop
 text/html=zen-browser.desktop
 application/xhtml+xml=zen-browser.desktop
 application/pdf=zen-browser.desktop
-inode/directory=pcmanfm-qt.desktop
+inode/directory=org.kde.konqueror.desktop
 application/ogg=vlc.desktop
 application/x-ogg=vlc.desktop
 audio/aac=vlc.desktop
@@ -262,5 +262,5 @@ text/markdown=vim.desktop;com.microsoft.VSCode.desktop;
 application/json=vim.desktop;zen-browser.desktop;com.microsoft.VSCode.desktop;
 image/png=qimgv.desktop;gimp.desktop;
 image/jpeg=qimgv.desktop;gimp.desktop;org.darktable.darktable.desktop;
-inode/directory=pcmanfm-qt.desktop;com.microsoft.VSCode.desktop;
+inode/directory=org.kde.konqueror.desktop;com.microsoft.VSCode.desktop;
 

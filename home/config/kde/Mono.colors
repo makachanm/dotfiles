@@ -1,3 +1,6 @@
+[General]
+Name=Mono
+
 [ColorEffects:Disabled]
 Color=4,4,4
 ColorAmount=0
@@ -129,43 +132,6 @@ ForegroundNeutral=187,187,187
 ForegroundNormal=255,255,255
 ForegroundPositive=187,187,187
 ForegroundVisited=230,230,230
-
-[General]
-ColorScheme=Noctalia
-Name=noctalia
-TerminalApplication=alacritty
-TerminalService=Alacritty.desktop
-fixed=Nordwand Mono,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-font=IBM Plex Sans KR,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-menuFont=IBM Plex Sans KR,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-shadeSortColumn=true
-smallestReadableFont=IBM Plex Sans KR,8,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-toolBarFont=IBM Plex Sans KR,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-
-[Icons]
-Theme=Papirus-Dark
-
-[KDE]
-AnimationDurationFactor=0
-contrast=4
-widgetStyle=Breeze
-
-[KFileDialog Settings]
-Allow Expansion=false
-Automatically select filename extension=true
-Breadcrumb Navigation=true
-Decoration position=2
-Show Full Path=false
-Show Inline Previews=true
-Show Preview=false
-Show Speedbar=true
-Show hidden files=false
-Sort by=Date
-Sort directories first=true
-Sort hidden files last=false
-Sort reversed=false
-Speedbar Width=154
-View Style=DetailTree
 
 [WM]
 activeBackground=158,124,124

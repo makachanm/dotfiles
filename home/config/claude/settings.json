@@ -26,6 +26,14 @@
       }
     }
   },
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "autoCompactWindow": 400000
+    },
+    "claude-opus-4-8": {
+      "autoCompactWindow": 400000
+    }
+  },
   "tui": "fullscreen",
   "theme": "dark-daltonized",
   "switchModelsOnFlag": true,
@@ -57,10 +65,5 @@
       "**Trusted repo**: /home/maka/Workspace/dotfiles (remote: https://github.com/makachanm/settings.git), visibility not queryable here — treat as possibly public",
       "**Org-specific CLIs**: None configured — routine package-manager usage observed (rpm, dnf, flatpak, fc-list) is local system tooling, not org-specific"
     ]
-  },
-  "modelSettings": {
-    "claude-opus-5-5": {
-      "autoCompactWindow": 400000
-    }
   }
 }
