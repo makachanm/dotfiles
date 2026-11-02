@@ -33,7 +33,7 @@ in
     panels = [
       {
         location = "top";
-        height = 44;
+        height = 36;
         floating = false;
         opacity = "opaque";
         widgets = [
@@ -86,19 +86,7 @@ in
           }
           {
             name = "org.kde.plasma.battery";
-            config.General.showPercentage = false;
-          }
-          {
-            name = "org.kde.plasma.systemmonitor";
-            config = {
-              Appearance = {
-                chartFace = "org.kde.ksysguard.textonly";
-                showTitle = false;
-              };
-              Sensors.highPrioritySensorIds = ''["power/824/chargePercentage"]'';
-              SensorLabels."power/824/chargePercentage" = "​";
-              SensorColors."power/824/chargePercentage" = "0,0,0,0";
-            };
+            config.General.showPercentage = true;
           }
           "org.kde.plasma.digitalclock"
         ];
@@ -186,6 +174,11 @@ in
         ElectricBorderTiling = false;
       };
       kwinrc.Effect-overview.BorderActivate = 9;
+      ksplashrc.KSplash = {
+        Engine = "none";
+        Theme = "None";
+      };
+      dolphinrc.MainWindow.MenuBar = "Disabled";
       konsolerc."Desktop Entry".DefaultProfile = "Mono.profile";
       konsolerc.KonsoleWindow.ShowMenuBarByDefault = false;
       konsolerc.TabBar = {
