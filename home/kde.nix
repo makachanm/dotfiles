@@ -30,39 +30,16 @@ in
     panels = [
       {
         location = "top";
-        height = 33;
-        floating = false;
+        height = 44;
+        floating = true;
         widgets = [
-          {
-            pager.general = {
-              displayedText = "desktopNumber";
-              showWindowOutlines = false;
-            };
-          }
-          "org.kde.plasma.mediacontroller"
-          "org.kde.plasma.panelspacer"
-          {
-            digitalClock = {
-              date = {
-                enable = true;
-                format.custom = "yyyy MM.dd ddd";
-                position = "besideTime";
-              };
-              time.format = "24h";
-            };
-          }
-          "org.kde.plasma.panelspacer"
-          "org.kde.plasma.notes"
-          {
-            systemTray.items.shown = [
-              "org.kde.plasma.battery"
-              "org.kde.plasma.networkmanagement"
-              "org.kde.plasma.volume"
-              "org.kde.plasma.brightness"
-              "org.kde.plasma.bluetooth"
-              "org.kde.plasma.notifications"
-            ];
-          }
+          "org.kde.plasma.kickoff"
+          "org.kde.plasma.pager"
+          "org.kde.plasma.icontasks"
+          "org.kde.plasma.marginsseparator"
+          "org.kde.plasma.systemtray"
+          "org.kde.plasma.digitalclock"
+          "org.kde.plasma.showdesktop"
         ];
       }
     ];
