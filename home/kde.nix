@@ -53,29 +53,19 @@ in
         opacity = "opaque";
         widgets = [
           {
-            name = "org.kde.plasma.kickoff";
+            name = "org.kde.plasma.kickerdash";
             config.General = {
-              icon = "/usr/share/pixmaps/fedora-logo-sprite.png";
-              appNameFormat = 0;
-              compactMode = true;
-              favoritesDisplay = 1;
+              customButtonImage = "preferences-other-symbolic";
+              useCustomButtonImage = true;
               highlightNewlyInstalledApps = false;
-              primaryActions = 3;
-              showActionButtonCaptions = false;
-              systemFavorites = "lock-screen\\,logout\\,save-session\\,switch-user\\,suspend\\,hibernate\\,reboot\\,shutdown";
+              recentOrdering = 1;
+              showRecentApps = false;
+              showRecentDocs = false;
             };
             extraConfig = "(widget) => { widget.globalShortcut = 'Meta+Space'; }";
           }
           "org.kde.plasma.marginsseparator"
           "org.kde.plasma.pager"
-          "org.kde.plasma.marginsseparator"
-          {
-            name = "org.kde.plasma.notes";
-            config.General = {
-              noteId = "notes";
-              fontSize = 10;
-            };
-          }
           "org.kde.plasma.panelspacer"
           {
             name = "org.kde.plasma.icontasks";
@@ -84,13 +74,15 @@ in
                 "applications:zen-browser.desktop"
                 "applications:thorium-browser.desktop"
                 "applications:com.microsoft.VSCode.desktop"
+                "applications:org.kde.kate.desktop"
                 "applications:org.kde.dolphin.desktop"
                 "applications:org.speedcrunch.SpeedCrunch.desktop"
-                "applications:com.spotify.Client.desktop"
                 "applications:slack.desktop"
                 "applications:vesktop.desktop"
                 "applications:com.ayugram.desktop.desktop"
+                "applications:com.spotify.Client.desktop"
                 "applications:steam.desktop"
+                "applications:org.prismlauncher.PrismLauncher.desktop"
               ];
               showOnlyCurrentScreen = true;
               sortingStrategy = 2;
@@ -118,11 +110,19 @@ in
               ];
               reverseIconOrder = true;
               scaleIconsToFit = false;
-              iconSpacing = 3;
               disabledStatusNotifiers = "Xwayland Video Bridge";
             };
           }
+          {
+            name = "org.kde.plasma.notes";
+            config.General = {
+              noteId = "notes";
+              fontSize = 10;
+            };
+          }
+          "org.kde.plasma.marginsseparator"
           "org.kde.plasma.battery"
+          "org.kde.plasma.marginsseparator"
           {
             name = "org.kde.plasma.digitalclock";
             config.Appearance = {
@@ -136,6 +136,7 @@ in
               showDate = false;
             };
           }
+          "org.kde.plasma.marginsseparator"
           "org.kde.plasma.notifications"
         ];
       }
