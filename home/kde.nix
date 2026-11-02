@@ -109,11 +109,11 @@ in
         "karousel-window-toggle-floating" = "Meta+X";
         "karousel-column-toggle-stacked" = [ ];
         "karousel-cycle-preset-widths" = [ ];
-        "karousel-column-move-to-next-desktop" = "Meta+Shift+Tab";
+        "karousel-column-move-to-next-desktop" = [ ];
         "Switch to Next Desktop" = "Meta+Tab";
         "Walk Through Windows" = "Alt+Tab";
         "Walk Through Windows (Reverse)" = "Alt+Shift+Tab";
-        "Window to Next Screen" = "Meta+Ctrl+Tab";
+        "Window to Next Screen" = "Meta+Shift+Tab";
         "Overview" = [ ];
         "Show Desktop" = [ ];
         "disableInputCapture" = [ ];
