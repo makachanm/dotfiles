@@ -25,7 +25,10 @@ in
       fixedWidth = { family = "Nordwand Mono"; pointSize = 10; };
     };
 
-    kwin.virtualDesktops.number = 4;
+    kwin.virtualDesktops = {
+      number = 4;
+      rows = 2;
+    };
 
     panels = [
       {
@@ -37,7 +40,28 @@ in
           "org.kde.plasma.pager"
           "org.kde.plasma.icontasks"
           "org.kde.plasma.marginsseparator"
-          "org.kde.plasma.systemtray"
+          {
+            systemTray.items = {
+              extra = [
+                "org.kde.plasma.notifications"
+                "org.kde.plasma.battery"
+                "org.kde.plasma.networkmanagement"
+                "org.kde.plasma.volume"
+                "org.kde.plasma.brightness"
+                "org.kde.plasma.bluetooth"
+                "org.kde.plasma.devicenotifier"
+                "org.kde.plasma.clipboard"
+                "org.kde.kscreen"
+              ];
+              shown = [
+                "org.kde.plasma.battery"
+                "org.kde.plasma.networkmanagement"
+                "org.kde.plasma.volume"
+                "org.kde.plasma.brightness"
+                "org.kde.plasma.bluetooth"
+              ];
+            };
+          }
           "org.kde.plasma.digitalclock"
           "org.kde.plasma.showdesktop"
         ];
