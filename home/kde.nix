@@ -31,6 +31,17 @@ in
       lowBattery.inhibitLidActionWhenExternalMonitorConnected = true;
     };
 
+    input.touchpads = [
+      {
+        name = "ELAN06C7:00 04F3:3193 Touchpad";
+        vendorId = "04f3";
+        productId = "3193";
+        tapToClick = true;
+        disableWhileTyping = true;
+        naturalScroll = true;
+      }
+    ];
+
     kwin.virtualDesktops = {
       number = 4;
       rows = 2;
@@ -173,6 +184,13 @@ in
       };
       kwinrc.Script-karousel = {
         untileOnDrag = false;
+        gapsOuterTop = 10;
+        gapsOuterBottom = 10;
+        gapsOuterLeft = 10;
+        gapsOuterRight = 10;
+        gapsInnerHorizontal = 10;
+        gapsInnerVertical = 10;
+        gestureScroll = true;
         presetWidths = "10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%";
       };
       kwinrc.Wayland.InputMethod = "/usr/share/applications/kime.desktop";
