@@ -122,7 +122,8 @@ in
         "Lock Session" = [ "Meta+L" "Screensaver" ];
         "Log Out" = [ "Meta+Shift+Esc" "Ctrl+Alt+Del" ];
       };
-      "services/org.kde.krunner.desktop"._launch = [ "Meta+Space" "Alt+Space" ];
+      "services/org.kde.krunner.desktop"._launch = "Alt+Space";
+      "services/org.kde.dolphin.desktop"._launch = [ ];
       "services/org.kde.spectacle.desktop" = {
         RectangularRegionScreenShot = "Meta+F";
         FullScreenScreenShot = "Meta+Shift+F";
@@ -157,7 +158,10 @@ in
         karouselEnabled = true;
         desktopchangeosdEnabled = true;
       };
-      kwinrc.Script-karousel.untileOnDrag = false;
+      kwinrc.Script-karousel = {
+        untileOnDrag = false;
+        presetWidths = "10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%";
+      };
       kwinrc.Wayland.InputMethod = "/usr/share/applications/kime.desktop";
       kwinrc.Windows = {
         ElectricBorderMaximize = false;
@@ -166,6 +170,11 @@ in
       kwinrc.Effect-overview.BorderActivate = 9;
       konsolerc."Desktop Entry".DefaultProfile = "Mono.profile";
       konsolerc.KonsoleWindow.ShowMenuBarByDefault = false;
+      konsolerc.TabBar = {
+        TabBarVisibility = "ShowTabBarWhenNeeded";
+        NewTabButton = false;
+        CloseTabButton = "None";
+      };
     };
   };
 
