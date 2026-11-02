@@ -36,10 +36,10 @@ in
         height = 44;
         floating = true;
         widgets = [
-          "org.kde.plasma.kickoff"
-          "org.kde.plasma.pager"
-          "org.kde.plasma.icontasks"
+          { kickoff.icon = "view-calendar-agenda"; }
           "org.kde.plasma.marginsseparator"
+          "org.kde.plasma.pager"
+          "org.kde.plasma.panelspacer"
           {
             systemTray.items = {
               extra = [
@@ -53,7 +53,7 @@ in
                 "org.kde.plasma.clipboard"
                 "org.kde.kscreen"
               ];
-              shown = [
+              hidden = [
                 "org.kde.plasma.battery"
                 "org.kde.plasma.networkmanagement"
                 "org.kde.plasma.volume"
@@ -63,7 +63,6 @@ in
             };
           }
           "org.kde.plasma.digitalclock"
-          "org.kde.plasma.showdesktop"
         ];
       }
     ];
@@ -87,7 +86,10 @@ in
         TerminalService = "Alacritty.desktop";
       };
       kdeglobals.KDE.AnimationDurationFactor = 0;
-      kwinrc.Plugins.karouselEnabled = true;
+      kwinrc.Plugins = {
+        karouselEnabled = true;
+        desktopchangeosdEnabled = true;
+      };
       kwinrc.Wayland.InputMethod = "/usr/share/applications/kime.desktop";
     };
   };
