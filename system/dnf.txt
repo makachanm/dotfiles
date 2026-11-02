@@ -100,8 +100,8 @@ konsole
 ark
 gwenview
 okular
-kcalc
-ktorrent
-haruna
 kate
 plasma-systemmonitor
+speedcrunch
+transmission-qt
+vlc
