@@ -1,0 +1,6 @@
+[qt]
+qt-dark-palette=1
+qt-privacy-ask=0
+
+[core]
+metadata-network-access=1

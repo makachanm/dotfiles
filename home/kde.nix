@@ -157,6 +157,7 @@ in
         karouselEnabled = true;
         desktopchangeosdEnabled = true;
       };
+      kwinrc.Script-karousel.untileOnDrag = false;
       kwinrc.Wayland.InputMethod = "/usr/share/applications/kime.desktop";
       kwinrc.Windows = {
         ElectricBorderMaximize = false;

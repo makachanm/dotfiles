@@ -3,6 +3,8 @@ let
   copied = {
     ".config/htop/htoprc" = ./config/htop/htoprc;
     ".local/share/konsole/Mono.profile" = ./config/konsole/Mono.profile;
+    ".config/SpeedCrunch/SpeedCrunch.ini" = ./config/speedcrunch/SpeedCrunch.ini;
+    ".config/vlc/vlcrc" = ./config/vlc/vlcrc;
     ".config/mimeapps.list" = ./config/desktop/mimeapps.list;
     ".config/user-dirs.dirs" = ./config/desktop/user-dirs.dirs;
     ".claude/settings.json" = ./config/claude/settings.json;
@@ -25,6 +27,7 @@ in
     ".zshrc".source = ./config/zsh/zshrc;
     ".config/vim/vimrc".source = ./config/vim/vimrc;
     ".local/share/konsole/Mono.colorscheme".source = ./config/konsole/Mono.colorscheme;
+    ".local/share/SpeedCrunch/color-schemes/Mono.json".source = ./config/speedcrunch/Mono.json;
     ".config/kime/config.yaml".source = ./config/kime/config.yaml;
     ".config/fontconfig/fonts.conf".source = ./config/fontconfig/fonts.conf;
     ".config/environment.d/50-session.conf".source = ./config/desktop/environment.conf;
