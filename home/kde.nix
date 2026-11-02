@@ -169,6 +169,7 @@ in
       kwinrc.Plugins = {
         karouselEnabled = true;
         desktopchangeosdEnabled = true;
+        diminactiveEnabled = true;
       };
       kwinrc.Script-karousel = {
         untileOnDrag = false;
