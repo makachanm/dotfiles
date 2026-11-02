@@ -170,6 +170,7 @@ in
       };
       kwinrc.Wayland.InputMethod = "/usr/share/applications/kime.desktop";
       kwinrc.Windows = {
+        RollOverDesktops = true;
         ElectricBorderMaximize = false;
         ElectricBorderTiling = false;
       };
