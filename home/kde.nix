@@ -25,6 +25,12 @@ in
       fixedWidth = { family = "Nordwand Mono"; pointSize = 10; };
     };
 
+    powerdevil = {
+      AC.inhibitLidActionWhenExternalMonitorConnected = true;
+      battery.inhibitLidActionWhenExternalMonitorConnected = true;
+      lowBattery.inhibitLidActionWhenExternalMonitorConnected = true;
+    };
+
     kwin.virtualDesktops = {
       number = 4;
       rows = 2;
