@@ -103,8 +103,8 @@ in
         "karousel-column-move-right" = "Meta+S";
         "karousel-column-width-increase" = "Meta+E";
         "karousel-column-width-decrease" = "Meta+D";
-        "karousel-column-width-maximize" = [ ];
-        "Window Fullscreen" = "Meta+C";
+        "karousel-column-width-maximize" = "Meta+C";
+        "Window Fullscreen" = [ ];
         "Window Close" = [ "Meta+Z" "Alt+F4" ];
         "karousel-window-toggle-floating" = "Meta+X";
         "karousel-column-toggle-stacked" = [ ];
