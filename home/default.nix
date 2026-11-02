@@ -4,7 +4,6 @@ let
     ".config/htop/htoprc" = ./config/htop/htoprc;
     ".local/share/konsole/Mono.profile" = ./config/konsole/Mono.profile;
     ".config/SpeedCrunch/SpeedCrunch.ini" = ./config/speedcrunch/SpeedCrunch.ini;
-    ".config/vlc/vlcrc" = ./config/vlc/vlcrc;
     ".config/mimeapps.list" = ./config/desktop/mimeapps.list;
     ".config/user-dirs.dirs" = ./config/desktop/user-dirs.dirs;
     ".claude/settings.json" = ./config/claude/settings.json;
