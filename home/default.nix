@@ -1,7 +1,6 @@
 { lib, ... }:
 let
   copied = {
-    ".config/htop/htoprc" = ./config/htop/htoprc;
     ".local/share/konsole/Mono.profile" = ./config/konsole/Mono.profile;
     ".config/SpeedCrunch/SpeedCrunch.ini" = ./config/speedcrunch/SpeedCrunch.ini;
     ".config/mimeapps.list" = ./config/desktop/mimeapps.list;

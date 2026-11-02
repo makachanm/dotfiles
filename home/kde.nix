@@ -5,6 +5,12 @@ let
     hash = "sha256-BNINtARJ7IVZB2cUi9j5U2d+RNAdFvcGr6x8c8YR4Hk=";
     stripRoot = false;
   };
+  karouselPinned = pkgs.runCommand "karousel-pinned" { } ''
+    cp -r ${karousel}/karousel $out
+    chmod -R u+w $out
+    substituteInPlace $out/contents/code/main.js \
+      --replace-fail "this.column.setWidth(newGeometry.width.round(), true);" ""
+  '';
 in
 {
   programs.plasma = {
@@ -196,6 +202,7 @@ in
       kwinrc.Wayland.InputMethod = "/usr/share/applications/kime.desktop";
       kwinrc.Windows = {
         RollOverDesktops = true;
+        FocusStealingPreventionLevel = 2;
         ElectricBorderMaximize = false;
         ElectricBorderTiling = false;
       };
@@ -225,7 +232,7 @@ in
     (pkgs.writeShellScriptBin "qdbus" ''exec /usr/lib64/qt6/bin/qdbus "$@"'')
   ];
 
-  home.file.".local/share/kwin/scripts/karousel".source = "${karousel}/karousel";
+  home.file.".local/share/kwin/scripts/karousel".source = karouselPinned;
 
   # /usr/bin/zen-browser creates ~/.zen/native-messaging-hosts under KDE, and
   # once ~/.zen exists Zen treats it as the legacy home and starts a fresh
