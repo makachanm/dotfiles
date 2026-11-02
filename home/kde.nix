@@ -89,32 +89,71 @@ in
             };
           }
           "org.kde.plasma.panelspacer"
+          "org.kde.plasma.marginsseparator"
+          {
+            name = "org.kde.plasma.battery";
+            config.General.showPercentage = true;
+          }
+          "org.kde.plasma.notifications"
+          {
+            name = "org.kde.plasma.digitalclock";
+            config.Appearance = {
+              autoFontAndSize = false;
+              dateFormat = "custom";
+              customDateFormat = "yyyy MMM dd";
+              displayTimezoneFormat = "UTCOffset";
+              fontFamily = "IBM Plex Sans";
+              fontSize = 11;
+              fontStyleName = "Text";
+              fontWeight = 450;
+            };
+          }
+          "org.kde.plasma.marginsseparator"
+        ];
+      }
+      {
+        location = "right";
+        alignment = "right";
+        lengthMode = "fit";
+        hiding = "autohide";
+        floating = true;
+        height = 40;
+        widgets = [
           {
             name = "org.kde.plasma.systemtray";
             config.General = {
               extraItems = [
-                "org.kde.plasma.battery"
                 "org.kde.plasma.networkmanagement"
+                "org.kde.plasma.bluetooth"
                 "org.kde.plasma.volume"
                 "org.kde.plasma.brightness"
-                "org.kde.plasma.bluetooth"
+                "org.kde.kscreen"
+                "org.kde.plasma.cameraindicator"
                 "org.kde.plasma.clipboard"
+                "org.kde.plasma.devicenotifier"
+                "org.kde.plasma.mediacontroller"
               ];
-              hiddenItems = [
-                "org.kde.plasma.battery"
+              shownItems = [
                 "org.kde.plasma.networkmanagement"
+                "org.kde.plasma.bluetooth"
                 "org.kde.plasma.volume"
                 "org.kde.plasma.brightness"
-                "org.kde.plasma.bluetooth"
-                "org.kde.plasma.clipboard"
-                "tailscale"
-                "AyuGramDesktop"
+                "org.kde.kscreen"
+                "org.kde.plasma.cameraindicator"
               ];
-              reverseIconOrder = true;
-              scaleIconsToFit = false;
               disabledStatusNotifiers = "Xwayland Video Bridge";
             };
           }
+        ];
+      }
+      {
+        location = "left";
+        alignment = "right";
+        lengthMode = "fit";
+        hiding = "autohide";
+        floating = true;
+        height = 40;
+        widgets = [
           {
             name = "org.kde.plasma.notes";
             config.General = {
@@ -122,24 +161,6 @@ in
               fontSize = 10;
             };
           }
-          "org.kde.plasma.marginsseparator"
-          "org.kde.plasma.battery"
-          "org.kde.plasma.marginsseparator"
-          {
-            name = "org.kde.plasma.digitalclock";
-            config.Appearance = {
-              autoFontAndSize = false;
-              dateDisplayFormat = "BesideTime";
-              displayTimezoneFormat = "UTCOffset";
-              fontFamily = "IBM Plex Sans";
-              fontSize = 11;
-              fontStyleName = "Text";
-              fontWeight = 450;
-              showDate = false;
-            };
-          }
-          "org.kde.plasma.marginsseparator"
-          "org.kde.plasma.notifications"
         ];
       }
     ];
