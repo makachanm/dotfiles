@@ -56,8 +56,10 @@ in
             name = "org.kde.plasma.kickoff";
             config.General = {
               icon = "/usr/share/pixmaps/fedora-logo-sprite.png";
+              appNameFormat = 0;
               compactMode = true;
               favoritesDisplay = 1;
+              highlightNewlyInstalledApps = false;
               primaryActions = 3;
               showActionButtonCaptions = false;
               systemFavorites = "lock-screen\\,logout\\,save-session\\,switch-user\\,suspend\\,hibernate\\,reboot\\,shutdown";
@@ -65,6 +67,7 @@ in
           }
           "org.kde.plasma.marginsseparator"
           "org.kde.plasma.pager"
+          "org.kde.plasma.marginsseparator"
           "org.kde.plasma.panelspacer"
           {
             name = "org.kde.plasma.icontasks";
@@ -77,10 +80,6 @@ in
           }
           "org.kde.plasma.panelspacer"
           {
-            name = "org.kde.plasma.notes";
-            config.General.noteId = "notes";
-          }
-          {
             name = "org.kde.plasma.systemtray";
             config.General = {
               extraItems = [
@@ -89,7 +88,7 @@ in
                 "org.kde.plasma.volume"
                 "org.kde.plasma.brightness"
                 "org.kde.plasma.bluetooth"
-                "org.kde.plasma.notifications"
+                "org.kde.plasma.clipboard"
               ];
               hiddenItems = [
                 "org.kde.plasma.battery"
@@ -97,18 +96,36 @@ in
                 "org.kde.plasma.volume"
                 "org.kde.plasma.brightness"
                 "org.kde.plasma.bluetooth"
-                "org.kde.plasma.notifications"
+                "org.kde.plasma.clipboard"
               ];
               reverseIconOrder = true;
               scaleIconsToFit = false;
+              iconSpacing = 3;
               disabledStatusNotifiers = "Xwayland Video Bridge";
             };
           }
           {
-            name = "org.kde.plasma.battery";
-            config.General.showPercentage = true;
+            name = "org.kde.plasma.notes";
+            config.General = {
+              noteId = "notes";
+              fontSize = 10;
+            };
           }
-          "org.kde.plasma.digitalclock"
+          "org.kde.plasma.battery"
+          "org.kde.plasma.notifications"
+          {
+            name = "org.kde.plasma.digitalclock";
+            config.Appearance = {
+              autoFontAndSize = false;
+              dateDisplayFormat = "BesideTime";
+              displayTimezoneFormat = "UTCOffset";
+              fontFamily = "IBM Plex Sans";
+              fontSize = 11;
+              fontStyleName = "Text";
+              fontWeight = 450;
+              showDate = false;
+            };
+          }
         ];
       }
     ];
