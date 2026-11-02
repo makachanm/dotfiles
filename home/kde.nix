@@ -179,7 +179,6 @@ in
         TerminalApplication = "konsole";
         TerminalService = "org.kde.konsole.desktop";
       };
-      kdeglobals.KDE.AnimationDurationFactor = 0;
       kwinrc.Plugins = {
         karouselEnabled = true;
         desktopchangeosdEnabled = true;
