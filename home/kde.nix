@@ -270,43 +270,6 @@ in
     run /usr/bin/kwriteconfig6 --file "$HOME/.config/kdeconnect/config" --group General --key disabled_providers_v2 "loopback, lan"
   '';
 
-  home.activation.okularStamp = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    run /usr/bin/python3 -I - "${config.home.homeDirectory}/Documents/Docs/signature.png" "$HOME/.config/okularpartrc" <<'EOF'
-import re, sys, os
-sig, rc = sys.argv[1], sys.argv[2]
-src = open('/usr/share/okular/tools.xml').read()
-src = src[src.index('<annotatingTools>'):]
-tools = []
-for t in re.findall(r'<tool .*?</tool>', src, re.S):
-    t = re.sub(r'>\s+<', '><', t)
-    t = re.sub(r'\s+', ' ', t).replace(' />', '/>')
-    if 'type="stamp"' in t:
-        t = t.replace('<engine ', '<engine hoverIcon="%s" ' % sig, 1)
-        t = t.replace('<annotation type="Stamp"', '<annotation type="Stamp" icon="%s"' % sig, 1)
-    tools.append(t.replace('\\', '\\\\').replace(',', '\\,'))
-entry = 'BuiltinAnnotationTools=' + ','.join(tools)
-lines = open(rc).read().splitlines() if os.path.exists(rc) else []
-out, group, done = [], None, False
-for l in lines:
-    if l.startswith('['):
-        if group == '[Reviews]' and not done:
-            out.append(entry)
-            done = True
-        group = l
-    elif group == '[Reviews]' and l.startswith('BuiltinAnnotationTools='):
-        if not done:
-            out.append(entry)
-            done = True
-        continue
-    out.append(l)
-if not done:
-    if group != '[Reviews]':
-        out += [str(), '[Reviews]']
-    out.append(entry)
-open(rc, 'w').write('\n'.join(out) + '\n')
-EOF
-  '';
-
   home.activation.konsoleToolbars = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     for bar in mainToolBar sessionToolbar; do
       run /usr/bin/kwriteconfig6 --file konsolerc --group MainWindow --group "Toolbar $bar" --key Hidden true
