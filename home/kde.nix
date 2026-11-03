@@ -259,6 +259,10 @@ in
     };
   };
 
+  home.activation.kdeconnectBluetooth = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    run /usr/bin/kwriteconfig6 --file "$HOME/.config/kdeconnect/config" --group General --key disabled_providers_v2 "loopback, lan"
+  '';
+
   home.activation.konsoleToolbars = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     for bar in mainToolBar sessionToolbar; do
       run /usr/bin/kwriteconfig6 --file konsolerc --group MainWindow --group "Toolbar $bar" --key Hidden true
