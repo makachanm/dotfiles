@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=kime OSD
-Exec=/home/maka/.local/bin/kime-osd
-X-KDE-autostart-phase=2
-NoDisplay=true
