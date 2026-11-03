@@ -250,31 +250,38 @@ in
       };
       dolphinrc.MainWindow.MenuBar = "Disabled";
       gwenviewrc.MainWindow.MenuBar = "Disabled";
-      okularrc.MainWindow.MenuBar = "Disabled";
-      okularrc.General.ShowSidebar = false;
       okularpartrc."Main View" = {
         ShowLeftPanel = false;
         ShowBottomBar = false;
       };
-      konsolerc."Desktop Entry".DefaultProfile = "Mono.profile";
-      konsolerc.KonsoleWindow.ShowMenuBarByDefault = false;
-      konsolerc.TabBar = {
+      "kdeconnect/config".General.disabled_providers_v2 = "loopback, lan";
+    };
+  };
+
+  programs.konsole = {
+    enable = true;
+    defaultProfile = "Mono";
+    customColorSchemes.Mono = ./config/konsole/Mono.colorscheme;
+    extraConfig = {
+      KonsoleWindow.ShowMenuBarByDefault = false;
+      TabBar = {
         TabBarVisibility = "AlwaysHideTabBar";
         NewTabButton = false;
         CloseTabButton = "None";
       };
+      "MainWindow/Toolbar mainToolBar".Hidden = true;
+      "MainWindow/Toolbar sessionToolbar".Hidden = true;
     };
   };
 
-  home.activation.kdeconnectBluetooth = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    run /usr/bin/kwriteconfig6 --file "$HOME/.config/kdeconnect/config" --group General --key disabled_providers_v2 "loopback, lan"
-  '';
-
-  home.activation.konsoleToolbars = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    for bar in mainToolBar sessionToolbar; do
-      run /usr/bin/kwriteconfig6 --file konsolerc --group MainWindow --group "Toolbar $bar" --key Hidden true
-    done
-  '';
+  programs.okular = {
+    enable = true;
+    package = null;
+    general = {
+      showMenuBar = false;
+      showSidebar = false;
+    };
+  };
 
   home.packages = [
     (pkgs.writeShellScriptBin "qdbus" ''exec /usr/lib64/qt6/bin/qdbus "$@"'')

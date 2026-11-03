@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Tailscale
-Exec=tailscale systray
-Icon=tailscale
-X-KDE-autostart-phase=2

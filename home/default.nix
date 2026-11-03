@@ -1,11 +1,27 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 let
   copied = {
     ".local/share/konsole/Mono.profile" = ./config/konsole/Mono.profile;
     ".config/SpeedCrunch/SpeedCrunch.ini" = ./config/speedcrunch/SpeedCrunch.ini;
     ".config/mimeapps.list" = ./config/desktop/mimeapps.list;
-    ".config/user-dirs.dirs" = ./config/desktop/user-dirs.dirs;
     ".claude/settings.json" = ./config/claude/settings.json;
+  };
+  hiddenApps = [
+    "im-chooser"
+    "io.github.vectorgraphics.asymptote"
+    "mupdf-gl"
+    "thorium-shell"
+  ];
+  kimeOsd = pkgs.writeShellScript "kime-osd" (builtins.readFile ./config/kime/kime-osd);
+  autostart = name: exec: {
+    text = ''
+      [Desktop Entry]
+      Type=Application
+      Name=${name}
+      Exec=${exec}
+      NoDisplay=true
+      X-KDE-autostart-phase=2
+    '';
   };
 in
 {
@@ -21,27 +37,55 @@ in
   programs.man.enable = false;
   xdg.mime.enable = false;
 
+  xdg.userDirs = {
+    enable = true;
+    package = null;
+    projects = null;
+  };
+
+  systemd.user.sessionVariables = {
+    GTK_IM_MODULE = "kime";
+    QT_IM_MODULE = "kime";
+    QT_IM_MODULES = "wayland;kime";
+    XMODIFIERS = "@im=kime";
+    SDL_IM_MODULE = "kime";
+    GLFW_IM_MODULE = "kime";
+    INPUT_METHOD = "kime";
+  };
+
+  fonts.fontconfig = {
+    enable = true;
+    antialiasing = true;
+    hinting = "slight";
+    subpixelRendering = "rgb";
+    defaultFonts.monospace = [
+      "Nordwand Mono"
+      "Noto Sans Mono CJK KR"
+      "Noto Sans Mono"
+    ];
+  };
+
+  xdg.configFile = {
+    "autostart/tailscale-systray.desktop" = autostart "Tailscale" "tailscale systray";
+    "autostart/kime-osd.desktop" = autostart "kime OSD" "${kimeOsd}";
+    "kime/config.yaml".source = ./config/kime/config.yaml;
+    "vim/vimrc".source = ./config/vim/vimrc;
+  };
+
+  xdg.dataFile = lib.genAttrs (map (app: "applications/${app}.desktop") hiddenApps) (_: {
+    text = ''
+      [Desktop Entry]
+      Hidden=true
+    '';
+  }) // {
+    "applications/vim.desktop".source = ./config/applications/vim.desktop;
+    "SpeedCrunch/color-schemes/Mono.json".source = ./config/speedcrunch/Mono.json;
+    "kxmlgui5/okular/part.rc".source = ./config/okular/part.rc;
+    "fonts/NordwandMono".source = ./assets/fonts/NordwandMono;
+  };
+
   home.file = {
     ".zshrc".source = ./config/zsh/zshrc;
-    ".config/vim/vimrc".source = ./config/vim/vimrc;
-    ".local/share/konsole/Mono.colorscheme".source = ./config/konsole/Mono.colorscheme;
-    ".local/share/SpeedCrunch/color-schemes/Mono.json".source = ./config/speedcrunch/Mono.json;
-    ".config/kime/config.yaml".source = ./config/kime/config.yaml;
-    ".config/autostart/tailscale-systray.desktop".source = ./config/autostart/tailscale-systray.desktop;
-    ".config/autostart/kime-osd.desktop".source = ./config/autostart/kime-osd.desktop;
-    ".local/bin/kime-osd" = {
-      source = ./config/kime/kime-osd;
-      executable = true;
-    };
-    ".config/fontconfig/fonts.conf".source = ./config/fontconfig/fonts.conf;
-    ".config/environment.d/50-session.conf".source = ./config/desktop/environment.conf;
-    ".local/share/applications/vim.desktop".source = ./config/applications/vim.desktop;
-    ".local/share/applications/im-chooser.desktop".source = ./config/applications/im-chooser.desktop;
-    ".local/share/applications/io.github.vectorgraphics.asymptote.desktop".source = ./config/applications/io.github.vectorgraphics.asymptote.desktop;
-    ".local/share/applications/mupdf-gl.desktop".source = ./config/applications/mupdf-gl.desktop;
-    ".local/share/applications/thorium-shell.desktop".source = ./config/applications/thorium-shell.desktop;
-    ".local/share/kxmlgui5/okular/part.rc".source = ./config/okular/part.rc;
-    ".local/share/fonts/NordwandMono".source = ./assets/fonts/NordwandMono;
     "Pictures/wallpaper/PIA26702~orig.png".source = ./assets/wallpaper + "/PIA26702~orig.png";
   };
 
