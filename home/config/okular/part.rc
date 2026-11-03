@@ -106,10 +106,7 @@
   <Action name="zoom_to" />
   <Action name="view_zoom_in"/>
   <Spacer/>
-  <Action name="page_number"/>
-  <Spacer/>
-  <Action name="mouse_toggle_annotate"/>
-  <Action name="hamburger_menu"/>
+  <Action name="annotation_stamp"/>
 </ToolBar>
 <ActionProperties scheme="Default">
   <Action priority="0" name="show_leftpanel"/>
