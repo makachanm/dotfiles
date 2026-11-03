@@ -85,7 +85,7 @@ in
                 "applications:org.prismlauncher.PrismLauncher.desktop"
               ];
               showOnlyCurrentScreen = true;
-              sortingStrategy = 2;
+              sortingStrategy = 0;
             };
           }
           "org.kde.plasma.panelspacer"
@@ -129,7 +129,10 @@ in
                 "org.kde.plasma.brightness"
                 "org.kde.kscreen"
                 "org.kde.plasma.clipboard"
-                "org.kde.plasma.devicenotifier"
+                "org.kde.plasma.mediacontroller"
+              ];
+              hiddenItems = [
+                "org.kde.plasma.clipboard"
                 "org.kde.plasma.mediacontroller"
               ];
               shownItems = [
@@ -141,20 +144,11 @@ in
               disabledStatusNotifiers = "Xwayland Video Bridge";
             };
           }
-        ];
-      }
-      {
-        location = "left";
-        alignment = "right";
-        lengthMode = "fit";
-        hiding = "autohide";
-        floating = true;
-        height = 40;
-        widgets = [
           {
             name = "org.kde.plasma.notes";
             config.General = {
               noteId = "notes";
+              color = "black";
               fontSize = 10;
             };
           }
