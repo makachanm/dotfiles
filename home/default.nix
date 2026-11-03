@@ -60,22 +60,13 @@ in
   '';
 
   dconf.settings."org/gnome/desktop/interface" = {
-    clock-format = "24h";
-    clock-show-weekday = true;
     cursor-blink = true;
     cursor-blink-time = 1200;
     cursor-blink-timeout = 10;
     cursor-size = 24;
     document-font-name = "IBM Plex Sans KR Medium 12";
-    enable-animations = true;
-    enable-hot-corners = false;
     font-name = "IBM Plex Sans KR 10";
-    gtk-enable-primary-paste = true;
-    gtk-im-module = "";
-    gtk-key-theme = "";
     monospace-font-name = "Nordwand Mono 11";
-    overlay-scrolling = true;
-    show-battery-percentage = true;
     toolkit-accessibility = false;
   };
 }

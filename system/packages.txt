@@ -15,7 +15,6 @@ tuned-ppd
 thermald
 plasma-integration
 plasma-breeze
-papirus-icon-theme-dark
 htop
 filelight
 kime
