@@ -250,6 +250,11 @@ in
       };
       dolphinrc.MainWindow.MenuBar = "Disabled";
       gwenviewrc.MainWindow.MenuBar = "Disabled";
+      okularrc.MainWindow.MenuBar = "Disabled";
+      okularpartrc."Main View" = {
+        ShowLeftPanel = false;
+        ShowBottomBar = false;
+      };
       konsolerc."Desktop Entry".DefaultProfile = "Mono.profile";
       konsolerc.KonsoleWindow.ShowMenuBarByDefault = false;
       konsolerc.TabBar = {

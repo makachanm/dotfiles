@@ -40,6 +40,7 @@ in
     ".local/share/applications/io.github.vectorgraphics.asymptote.desktop".source = ./config/applications/io.github.vectorgraphics.asymptote.desktop;
     ".local/share/applications/mupdf-gl.desktop".source = ./config/applications/mupdf-gl.desktop;
     ".local/share/applications/thorium-shell.desktop".source = ./config/applications/thorium-shell.desktop;
+    ".local/share/kxmlgui5/okular/part.rc".source = ./config/okular/part.rc;
     ".local/share/fonts/NordwandMono".source = ./assets/fonts/NordwandMono;
     "Pictures/wallpaper/PIA26702~orig.png".source = ./assets/wallpaper + "/PIA26702~orig.png";
   };
