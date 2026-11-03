@@ -1,0 +1,50 @@
+#!/bin/sh
+item=
+last=
+
+find_item() {
+  for it in $(gdbus call --session --dest org.kde.StatusNotifierWatcher --object-path /StatusNotifierWatcher \
+      --method org.freedesktop.DBus.Properties.Get org.kde.StatusNotifierWatcher RegisteredStatusNotifierItems \
+      | grep -oE "'[^']+'" | tr -d "'"); do
+    svc=${it%%/*}
+    path=/${it#*/}
+    if gdbus call --session --dest "$svc" --object-path "$path" --method org.freedesktop.DBus.Properties.Get \
+        org.kde.StatusNotifierItem Id 2>/dev/null | grep -q "'kime'"; then
+      item="$svc $path"
+      return 0
+    fi
+  done
+  item=
+  return 1
+}
+
+icon_name() {
+  set -- $item
+  gdbus call --session --dest "$1" --object-path "$2" --method org.freedesktop.DBus.Properties.Get \
+    org.kde.StatusNotifierItem IconName 2>/dev/null | grep -oE "kime-[a-z]+"
+}
+
+find_item && last=$(icon_name)
+
+dbus-monitor --session "type='signal',interface='org.kde.StatusNotifierItem',member='NewIcon'" 2>/dev/null |
+while read -r line; do
+  case $line in
+    signal*) ;;
+    *) continue ;;
+  esac
+  [ -n "$item" ] || find_item || continue
+  name=$(icon_name)
+  if [ -z "$name" ]; then
+    find_item || continue
+    name=$(icon_name)
+  fi
+  [ -z "$name" ] || [ "$name" = "$last" ] && continue
+  last=$name
+  case $name in
+    kime-hangul) text="한글" ;;
+    kime-latin) text="English" ;;
+    *) continue ;;
+  esac
+  gdbus call --session --dest org.kde.plasmashell --object-path /org/kde/osdService \
+    --method org.kde.osdService.showText input-keyboard "$text" >/dev/null 2>&1
+done
