@@ -112,6 +112,8 @@ kate
 krdc
 kde-partitionmanager
 isoimagewriter
+plasma-discover
+plasma-discover-flatpak
 plasma-systemmonitor
 speedcrunch
 transmission-qt
