@@ -77,7 +77,7 @@ ayugram-desktop
 tailscale
 gimp
 kdenlive
-darktable
+digikam
 obs-studio
 audacity
 libreoffice-writer
@@ -109,6 +109,9 @@ ark
 gwenview
 okular
 kate
+krdc
+kde-partitionmanager
+isoimagewriter
 plasma-systemmonitor
 speedcrunch
 transmission-qt
