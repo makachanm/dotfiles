@@ -69,24 +69,19 @@ in
           "org.kde.plasma.panelspacer"
           {
             name = "org.kde.plasma.icontasks";
-            config.General = {
-              launchers = [
-                "applications:zen-browser.desktop"
-                "applications:thorium-browser.desktop"
-                "applications:com.microsoft.VSCode.desktop"
-                "applications:org.kde.kate.desktop"
-                "applications:org.kde.dolphin.desktop"
-                "applications:org.speedcrunch.SpeedCrunch.desktop"
-                "applications:slack.desktop"
-                "applications:vesktop.desktop"
-                "applications:com.ayugram.desktop.desktop"
-                "applications:com.spotify.Client.desktop"
-                "applications:steam.desktop"
-                "applications:org.prismlauncher.PrismLauncher.desktop"
-              ];
-              showOnlyCurrentScreen = true;
-              sortingStrategy = 0;
-            };
+            config.General.launchers = [
+              "preferred://filemanager"
+              "applications:org.speedcrunch.SpeedCrunch.desktop"
+              "applications:org.kde.kate.desktop"
+              "applications:com.microsoft.VSCode.desktop"
+              "applications:com.ayugram.desktop.desktop"
+              "applications:thorium-browser.desktop"
+              "preferred://browser"
+              "applications:slack.desktop"
+              "applications:vesktop.desktop"
+              "applications:com.spotify.Client.desktop"
+              "applications:org.kde.konsole.desktop"
+            ];
           }
           "org.kde.plasma.panelspacer"
           "org.kde.plasma.marginsseparator"
@@ -253,6 +248,7 @@ in
         Theme = "None";
       };
       dolphinrc.MainWindow.MenuBar = "Disabled";
+      gwenviewrc.MainWindow.MenuBar = "Disabled";
       konsolerc."Desktop Entry".DefaultProfile = "Mono.profile";
       konsolerc.KonsoleWindow.ShowMenuBarByDefault = false;
       konsolerc.TabBar = {
