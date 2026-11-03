@@ -163,8 +163,8 @@ in
         "karousel-column-width-decrease" = "Meta+D";
         "karousel-column-width-maximize" = "Meta+Z";
         "Window Fullscreen" = [ ];
-        "Window Close" = [ "Meta+C" "Alt+F4" ];
-        "karousel-window-toggle-floating" = "Meta+X";
+        "Window Close" = [ "Meta+Shift+Backspace" "Alt+F4" ];
+        "karousel-window-toggle-floating" = "Meta+Shift+Space";
         "karousel-column-toggle-stacked" = [ ];
         "karousel-cycle-preset-widths" = [ ];
         "karousel-column-move-to-next-desktop" = [ ];
