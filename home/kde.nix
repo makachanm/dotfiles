@@ -163,8 +163,9 @@ in
         "karousel-column-width-decrease" = "Meta+D";
         "karousel-column-width-maximize" = "Meta+Z";
         "Window Fullscreen" = [ ];
-        "Window Close" = [ "Meta+Shift+Backspace" "Alt+F4" ];
-        "karousel-window-toggle-floating" = "Meta+Shift+Space";
+        "Window Close" = [ "Meta+Backspace" "Alt+F4" ];
+        "Window Restore" = [ ];
+        "karousel-window-toggle-floating" = "Meta+Shift+Z";
         "karousel-column-toggle-stacked" = [ ];
         "karousel-cycle-preset-widths" = [ ];
         "karousel-column-move-to-next-desktop" = [ ];
@@ -190,8 +191,8 @@ in
       "services/org.kde.krunner.desktop"._launch = "Alt+Space";
       "services/org.kde.dolphin.desktop"._launch = [ ];
       "services/org.kde.spectacle.desktop" = {
-        RectangularRegionScreenShot = "Meta+F";
-        FullScreenScreenShot = "Meta+Shift+F";
+        RectangularRegionScreenShot = "Meta+X";
+        FullScreenScreenShot = "Meta+Shift+X";
       };
     };
 
@@ -203,7 +204,7 @@ in
       };
       terminal = {
         name = "Terminal";
-        key = "Meta+R";
+        key = "Meta+C";
         command = "konsole";
       };
       systemMonitor = {
