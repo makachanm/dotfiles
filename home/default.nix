@@ -13,6 +13,7 @@ let
     "thorium-shell"
   ];
   kimeOsd = pkgs.writeShellScript "kime-osd" (builtins.readFile ./config/kime/kime-osd);
+  imeFlags = "--ozone-platform=wayland --enable-wayland-ime --wayland-text-input-version=3";
   autostart = name: exec: {
     text = ''
       [Desktop Entry]
@@ -70,6 +71,7 @@ in
     "autostart/kime-osd.desktop" = autostart "kime OSD" "${kimeOsd}";
     "kime/config.yaml".source = ./config/kime/config.yaml;
     "vim/vimrc".source = ./config/vim/vimrc;
+    "thorium/thorium-flags.conf".text = imeFlags;
   };
 
   xdg.dataFile = lib.genAttrs (map (app: "applications/${app}.desktop") hiddenApps) (_: {
@@ -79,6 +81,45 @@ in
     '';
   }) // {
     "applications/vim.desktop".source = ./config/applications/vim.desktop;
+    "applications/com.microsoft.VSCode.desktop".text = ''
+      [Desktop Entry]
+      Name=Visual Studio Code
+      GenericName=Text Editor
+      Exec=/usr/share/code/code ${imeFlags} %F
+      Icon=vscode
+      Type=Application
+      StartupNotify=false
+      StartupWMClass=com.microsoft.VSCode
+      Categories=TextEditor;Development;IDE;
+      MimeType=application/x-code-workspace;
+      Actions=new-empty-window;
+
+      [Desktop Action new-empty-window]
+      Name=New Empty Window
+      Exec=/usr/share/code/code ${imeFlags} --new-window %F
+      Icon=vscode
+    '';
+    "applications/slack.desktop".text = ''
+      [Desktop Entry]
+      Name=Slack
+      Exec=/usr/bin/slack ${imeFlags} %U
+      Icon=/usr/share/pixmaps/slack.png
+      Type=Application
+      StartupNotify=true
+      StartupWMClass=Slack
+      Categories=Network;InstantMessaging;
+      MimeType=x-scheme-handler/slack;
+    '';
+    "applications/vesktop.desktop".text = ''
+      [Desktop Entry]
+      Name=Vesktop
+      Exec=/opt/Vesktop/vesktop ${imeFlags} %U
+      Icon=vesktop
+      Type=Application
+      StartupWMClass=vesktop
+      Categories=Network;
+      MimeType=x-scheme-handler/discord;
+    '';
     "SpeedCrunch/color-schemes/Mono.json".source = ./config/speedcrunch/Mono.json;
     "kxmlgui5/okular/part.rc".source = ./config/okular/part.rc;
     "fonts/NordwandMono".source = ./assets/fonts/NordwandMono;
