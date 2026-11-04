@@ -70,17 +70,22 @@ in
           {
             name = "org.kde.plasma.icontasks";
             config.General.launchers = [
+              "preferred://browser"
+              "applications:thorium-browser.desktop"
               "preferred://filemanager"
-              "applications:org.speedcrunch.SpeedCrunch.desktop"
               "applications:org.kde.kate.desktop"
               "applications:com.microsoft.VSCode.desktop"
-              "applications:com.ayugram.desktop.desktop"
-              "applications:thorium-browser.desktop"
-              "preferred://browser"
+              "applications:org.speedcrunch.SpeedCrunch.desktop"
               "applications:slack.desktop"
               "applications:vesktop.desktop"
+              "applications:com.ayugram.desktop.desktop"
               "applications:com.spotify.Client.desktop"
-              "applications:org.kde.konsole.desktop"
+              "applications:steam.desktop"
+              "applications:org.prismlauncher.PrismLauncher.desktop"
+              "applications:gimp.desktop"
+              "applications:org.kde.kdenlive.desktop"
+              "applications:com.bitwig.BitwigStudio.desktop"
+              "applications:com.obsproject.Studio.desktop"
             ];
           }
           "org.kde.plasma.panelspacer"
@@ -125,6 +130,7 @@ in
                 "org.kde.kscreen"
                 "org.kde.plasma.clipboard"
                 "org.kde.plasma.mediacontroller"
+                "org.kde.kdeconnect"
               ];
               hiddenItems = [
                 "org.kde.plasma.clipboard"

@@ -122,4 +122,5 @@ vlc
 [flatpak]
 org.prismlauncher.PrismLauncher
 com.spotify.Client
+com.bitwig.BitwigStudio
 net.pcsx2.PCSX2
