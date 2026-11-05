@@ -9,11 +9,11 @@ let
   hiddenApps = [
     "im-chooser"
     "io.github.vectorgraphics.asymptote"
-    "mupdf-gl"
     "thorium-shell"
   ];
   kimeOsd = pkgs.writeShellScript "kime-osd" (builtins.readFile ./config/kime/kime-osd);
   imeFlags = "--ozone-platform=wayland --enable-wayland-ime --wayland-text-input-version=3";
+  thoriumFlags = imeFlags + " --password-store=basic";
   autostart = name: exec: {
     text = ''
       [Desktop Entry]
@@ -71,7 +71,7 @@ in
     "autostart/kime-osd.desktop" = autostart "kime OSD" "${kimeOsd}";
     "kime/config.yaml".source = ./config/kime/config.yaml;
     "vim/vimrc".source = ./config/vim/vimrc;
-    "thorium/thorium-flags.conf".text = imeFlags;
+    "thorium/thorium-flags.conf".text = thoriumFlags;
   };
 
   xdg.dataFile = lib.genAttrs (map (app: "applications/${app}.desktop") hiddenApps) (_: {
@@ -143,15 +143,4 @@ in
       run /usr/bin/git clone -q https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git"
     fi
   '';
-
-  dconf.settings."org/gnome/desktop/interface" = {
-    cursor-blink = true;
-    cursor-blink-time = 1200;
-    cursor-blink-timeout = 10;
-    cursor-size = 24;
-    document-font-name = "IBM Plex Sans KR Medium 12";
-    font-name = "IBM Plex Sans KR 10";
-    monospace-font-name = "Nordwand Mono 11";
-    toolkit-accessibility = false;
-  };
 }
