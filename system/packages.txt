@@ -70,6 +70,8 @@ libvirt-daemon-kvm
 libvirt-daemon-config-network
 zen-browser
 thorium-browser
+thunderbird
+zoom
 slack
 vesktop
 ayugram-desktop
@@ -91,7 +93,7 @@ plasma-workspace
 plasma-desktop
 kwin
 dolphin
-systemsettings
+plasma-systemsettings
 plasma-nm
 plasma-pa
 bluedevil
@@ -122,5 +124,7 @@ vlc
 [flatpak]
 org.prismlauncher.PrismLauncher
 com.spotify.Client
+com.notion.app.desktop.notion
+org.localsend.localsend_app
 com.bitwig.BitwigStudio
 net.pcsx2.PCSX2
