@@ -72,10 +72,12 @@ in
             config.General.launchers = [
               "preferred://browser"
               "applications:thorium-browser.desktop"
+              "applications:net.thunderbird.Thunderbird.desktop"
               "preferred://filemanager"
-              "applications:org.kde.kate.desktop"
               "applications:com.microsoft.VSCode.desktop"
               "applications:org.speedcrunch.SpeedCrunch.desktop"
+              "applications:Goose.desktop"
+              "applications:com.notion.app.desktop.notion.desktop"
               "applications:slack.desktop"
               "applications:vesktop.desktop"
               "applications:com.ayugram.desktop.desktop"
@@ -84,7 +86,7 @@ in
               "applications:org.prismlauncher.PrismLauncher.desktop"
               "applications:gimp.desktop"
               "applications:org.kde.kdenlive.desktop"
-              "applications:com.bitwig.BitwigStudio.desktop"
+              "applications:cockos-reaper.desktop"
               "applications:com.obsproject.Studio.desktop"
             ];
           }
