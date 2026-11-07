@@ -6,7 +6,7 @@ My KDE + Fedora settings.
 
 ```sh
 sudo dnf install nix nix-daemon
-sudo sh system/nix-selinux.sh
+sudo sh system/scripts/nix-selinux.sh
 nix run home-manager -- switch --flake .#maka -b hm-backup
 ```
 
