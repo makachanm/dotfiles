@@ -79,7 +79,6 @@ in
       Hidden=true
     '';
   }) // {
-    "applications/vim.desktop".source = ./config/applications/vim.desktop;
     "applications/com.microsoft.VSCode.desktop".text = ''
       [Desktop Entry]
       Name=Visual Studio Code
@@ -119,8 +118,6 @@ in
       Categories=Network;
       MimeType=x-scheme-handler/discord;
     '';
-    "SpeedCrunch/color-schemes/Mono.json".source = ./config/speedcrunch/Mono.json;
-    "kxmlgui5/okular/part.rc".source = ./config/okular/part.rc;
     "fonts/NordwandMono".source = ./assets/fonts/NordwandMono;
   };
 
