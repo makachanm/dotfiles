@@ -222,9 +222,6 @@ video/x-ogm+ogg=vlc.desktop
 video/x-theora+ogg=vlc.desktop
 
 [Added Associations]
-text/plain=org.kde.kate.desktop;vim.desktop;libreoffice-writer.desktop;com.microsoft.VSCode.desktop;
-text/markdown=org.kde.kate.desktop;vim.desktop;com.microsoft.VSCode.desktop;
-application/json=org.kde.kate.desktop;vim.desktop;zen-browser.desktop;com.microsoft.VSCode.desktop;
 image/png=org.kde.gwenview.desktop;gimp.desktop;
 image/jpeg=org.kde.gwenview.desktop;gimp.desktop;
 inode/directory=org.kde.dolphin.desktop;com.microsoft.VSCode.desktop;

@@ -258,10 +258,6 @@ in
       };
       dolphinrc.MainWindow.MenuBar = "Disabled";
       gwenviewrc.MainWindow.MenuBar = "Disabled";
-      okularpartrc."Main View" = {
-        ShowLeftPanel = false;
-        ShowBottomBar = false;
-      };
       "kdeconnect/config".General.disabled_providers_v2 = "loopback, lan";
     };
   };
@@ -279,15 +275,6 @@ in
       };
       "MainWindow/Toolbar mainToolBar".Hidden = true;
       "MainWindow/Toolbar sessionToolbar".Hidden = true;
-    };
-  };
-
-  programs.okular = {
-    enable = true;
-    package = null;
-    general = {
-      showMenuBar = false;
-      showSidebar = false;
     };
   };
 

@@ -126,5 +126,4 @@ org.prismlauncher.PrismLauncher
 com.spotify.Client
 com.notion.app.desktop.notion
 org.localsend.localsend_app
-com.bitwig.BitwigStudio
 net.pcsx2.PCSX2
