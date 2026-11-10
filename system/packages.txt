@@ -115,7 +115,6 @@ kde-partitionmanager
 isoimagewriter
 plasma-discover
 plasma-discover-flatpak
-kde-connect
 plasma-systemmonitor
 speedcrunch
 transmission-qt
