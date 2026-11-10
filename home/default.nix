@@ -3,6 +3,7 @@ let
   copied = {
     ".local/share/konsole/Mono.profile" = ./config/konsole/Mono.profile;
     ".config/SpeedCrunch/SpeedCrunch.ini" = ./config/speedcrunch/SpeedCrunch.ini;
+    ".local/share/kf.syntaxhighlighting/themes/Mono.theme" = ./config/kate/Mono.theme;
   };
   hiddenApps = [
     "im-chooser"
