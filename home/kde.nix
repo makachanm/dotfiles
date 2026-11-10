@@ -206,7 +206,6 @@ in
             name = "org.kde.plasma.battery";
             config.General.showPercentage = true;
           }
-          "org.kde.plasma.notifications"
           {
             name = "org.kde.plasma.digitalclock";
             config.Appearance = {
@@ -265,6 +264,7 @@ in
               fontSize = 10;
             };
           }
+          "org.kde.plasma.notifications"
         ];
       }
     ];
