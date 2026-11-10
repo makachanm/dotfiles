@@ -14,7 +14,7 @@ in
       lookAndFeel = "org.kde.breezedark.desktop";
       colorScheme = "BreezeDark";
       iconTheme = "breeze-dark";
-      wallpaper = "${config.home.homeDirectory}/Pictures/wallpaper/PIA26702~orig.png";
+      wallpaper = "${config.home.homeDirectory}/Pictures/wallpaper/untitled_01154_upscaled_4k.png";
     };
 
     fonts = {
@@ -44,6 +44,116 @@ in
       number = 4;
       rows = 2;
     };
+
+    desktop.widgets = [
+      {
+        name = "org.kde.plasma.weather";
+        position.horizontal = 64;
+        position.vertical = 32;
+        size.width = 576;
+        size.height = 400;
+        screen = 0;
+        config.WeatherStation = {
+          placeDisplayName = "Jeonju, South Korea, KR";
+          placeInfo = "Jeonju, South Korea, KR|1845457";
+          provider = "bbcukmet";
+        };
+      }
+      {
+        name = "org.kde.plasma.systemmonitor.memory";
+        position.horizontal = 64;
+        position.vertical = 432;
+        size.width = 240;
+        size.height = 240;
+        screen = 0;
+        config = {
+          Configuration.CurrentPreset = "org.kde.plasma.systemmonitor";
+          Appearance = {
+            chartFace = "org.kde.ksysguard.piechart";
+            title = "Memory Usage";
+          };
+          SensorColors."memory/physical/used" = "61,174,233";
+          Sensors = {
+            highPrioritySensorIds = ''["memory/physical/used"]'';
+            lowPrioritySensorIds = ''["memory/physical/total"]'';
+            totalSensors = ''["memory/physical/usedPercent"]'';
+          };
+        };
+      }
+      {
+        name = "org.kde.plasma.systemmonitor.net";
+        position.horizontal = 64;
+        position.vertical = 672;
+        size.width = 240;
+        size.height = 240;
+        screen = 0;
+        config = {
+          Configuration.CurrentPreset = "org.kde.plasma.systemmonitor";
+          Appearance = {
+            chartFace = "org.kde.ksysguard.linechart";
+            title = "Network Speed";
+          };
+          SensorColors = {
+            "network/all/download" = "61,174,233";
+            "network/all/upload" = "233,120,61";
+          };
+          Sensors.highPrioritySensorIds = ''["network/all/download","network/all/upload"]'';
+        };
+      }
+      {
+        name = "org.kde.plasma.systemmonitor.cpucore";
+        position.horizontal = 304;
+        position.vertical = 432;
+        size.width = 336;
+        size.height = 480;
+        screen = 0;
+        config = {
+          Configuration.CurrentPreset = "org.kde.plasma.systemmonitor";
+          Appearance = {
+            chartFace = "org.kde.ksysguard.barchart";
+            title = "Individual Core Usage";
+          };
+          SensorColors = {
+            "cpu/cpu.*/usage" = "61,174,233";
+            "cpu/cpu0/usage" = "61,174,233";
+            "cpu/cpu1/usage" = "61,110,233";
+            "cpu/cpu10/usage" = "217,233,61";
+            "cpu/cpu11/usage" = "153,233,61";
+            "cpu/cpu12/usage" = "88,233,61";
+            "cpu/cpu13/usage" = "61,233,98";
+            "cpu/cpu14/usage" = "61,233,163";
+            "cpu/cpu15/usage" = "61,233,227";
+            "cpu/cpu2/usage" = "77,61,233";
+            "cpu/cpu3/usage" = "141,61,233";
+            "cpu/cpu4/usage" = "206,61,233";
+            "cpu/cpu5/usage" = "233,61,196";
+            "cpu/cpu6/usage" = "233,61,131";
+            "cpu/cpu7/usage" = "233,61,67";
+            "cpu/cpu8/usage" = "233,120,61";
+            "cpu/cpu9/usage" = "233,184,61";
+          };
+          Sensors = {
+            highPrioritySensorIds = ''["cpu/cpu.*/usage"]'';
+            totalSensors = ''["cpu/all/usage"]'';
+          };
+        };
+      }
+      {
+        name = "org.kde.plasma.webbrowser";
+        position.horizontal = 64;
+        position.vertical = 912;
+        size.width = 576;
+        size.height = 448;
+        screen = 0;
+        config.General = {
+          enableNavigationBar = false;
+          favIcon = "https://news.hada.io/favicon-dark.ico?20260826e";
+          url = "https://news.hada.io/";
+          useDefaultUrl = true;
+          useFavIcon = false;
+        };
+      }
+    ];
 
     panels = [
       {

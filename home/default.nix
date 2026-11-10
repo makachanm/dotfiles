@@ -125,6 +125,7 @@ in
   home.file = {
     ".zshrc".source = ./config/zsh/zshrc;
     "Pictures/wallpaper/PIA26702~orig.png".source = ./assets/wallpaper + "/PIA26702~orig.png";
+    "Pictures/wallpaper/untitled_01154_upscaled_4k.png".source = ./assets/wallpaper + "/untitled_01154_upscaled_4k.png";
   };
 
   home.activation.copyConfigs = lib.hm.dag.entryAfter [ "writeBoundary" ] (
