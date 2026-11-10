@@ -389,12 +389,6 @@ in
 
   home.packages = [
     (pkgs.writeShellScriptBin "qdbus" ''exec /usr/lib64/qt6/bin/qdbus "$@"'')
-    # Restore desktop widget positions + webbrowser url after plasma-manager
-    # re-creates desktop widgets (their scripted geometry is overridden by
-    # the folder containment's grid layout manager; see session note 2026-11-10).
-    (pkgs.writeShellScriptBin "plasma-widget-fixup" ''
-      exec ${pkgs.python3}/bin/python3 ${./scripts/plasma-widget-fixup.py}
-    '')
   ];
 
   home.file.".local/share/kwin/scripts/karousel".source = "${karousel}/karousel";
