@@ -256,14 +256,6 @@ in
               disabledStatusNotifiers = "Xwayland Video Bridge";
             };
           }
-          {
-            name = "org.kde.plasma.notes";
-            config.General = {
-              noteId = "notes";
-              color = "black";
-              fontSize = 10;
-            };
-          }
           "org.kde.plasma.notifications"
         ];
       }
