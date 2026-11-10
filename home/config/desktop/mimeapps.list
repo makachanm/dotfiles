@@ -149,7 +149,6 @@ application/vnd.oasis.opendocument.presentation=libreoffice-impress.desktop
 x-scheme-handler/tg=com.ayugram.desktop.desktop
 x-scheme-handler/tonsite=com.ayugram.desktop.desktop
 x-scheme-handler/discord=vesktop.desktop
-x-scheme-handler/claude-cli=claude-code-url-handler.desktop
 application/ico=org.kde.gwenview.desktop
 application/x-navi-animation=org.kde.gwenview.desktop
 image/ico=org.kde.gwenview.desktop

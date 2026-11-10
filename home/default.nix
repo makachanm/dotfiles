@@ -3,8 +3,6 @@ let
   copied = {
     ".local/share/konsole/Mono.profile" = ./config/konsole/Mono.profile;
     ".config/SpeedCrunch/SpeedCrunch.ini" = ./config/speedcrunch/SpeedCrunch.ini;
-    ".config/mimeapps.list" = ./config/desktop/mimeapps.list;
-    ".claude/settings.json" = ./config/claude/settings.json;
   };
   hiddenApps = [
     "im-chooser"
