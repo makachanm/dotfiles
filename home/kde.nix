@@ -132,7 +132,7 @@ in
                 "org.kde.kscreen"
                 "org.kde.plasma.clipboard"
                 "org.kde.plasma.mediacontroller"
-                "org.kde.kdeconnect"
+
               ];
               hiddenItems = [
                 "org.kde.plasma.clipboard"
@@ -258,7 +258,6 @@ in
       };
       dolphinrc.MainWindow.MenuBar = "Disabled";
       gwenviewrc.MainWindow.MenuBar = "Disabled";
-      "kdeconnect/config".General.disabled_providers_v2 = "loopback, lan";
     };
   };
 
