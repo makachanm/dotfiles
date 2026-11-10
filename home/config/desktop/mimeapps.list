@@ -220,6 +220,7 @@ video/x-msvideo=vlc.desktop
 video/x-nsv=vlc.desktop
 video/x-ogm+ogg=vlc.desktop
 video/x-theora+ogg=vlc.desktop
+x-scheme-handler/goose=Goose.desktop
 
 [Added Associations]
 image/png=org.kde.gwenview.desktop;gimp.desktop;
