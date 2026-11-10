@@ -149,7 +149,7 @@ in
           enableNavigationBar = false;
           favIcon = "https://news.hada.io/favicon-dark.ico?20260826e";
           url = "https://news.hada.io/";
-          useDefaultUrl = true;
+          useDefaultUrl = false;
           useFavIcon = false;
         };
       }
