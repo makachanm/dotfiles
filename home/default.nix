@@ -4,6 +4,7 @@ let
     ".local/share/konsole/Mono.profile" = ./config/konsole/Mono.profile;
     ".config/SpeedCrunch/SpeedCrunch.ini" = ./config/speedcrunch/SpeedCrunch.ini;
     ".local/share/kf.syntaxhighlighting/themes/Mono.theme" = ./config/kate/Mono.theme;
+    ".config/plasma/kickeractions" = ./config/kickeractions;
   };
   hiddenApps = [
     "im-chooser"
