@@ -8,6 +8,7 @@ let
   hiddenApps = [
     "im-chooser"
     "mupdf"
+    "org.kde.kmenuedit"
     "io.github.vectorgraphics.asymptote"
     "thorium-shell"
   ];
