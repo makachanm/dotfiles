@@ -7,6 +7,7 @@ let
   };
   hiddenApps = [
     "im-chooser"
+    "mupdf"
     "io.github.vectorgraphics.asymptote"
     "thorium-shell"
   ];
