@@ -15,8 +15,13 @@ tuned-ppd
 thermald
 plasma-integration
 plasma-breeze
-htop
 filelight
+kinfocenter
+umbrello
+gns3-server
+gns3-gui
+massif-visualizer
+mupdf
 kime
 zsh
 git
@@ -46,6 +51,8 @@ libfl-static
 glibc-static
 libstdc++-static
 openssl-devel
+libcurl-devel
+libXinerama-devel
 alsa-lib-devel
 libasan
 libubsan
@@ -126,3 +133,4 @@ com.spotify.Client
 com.notion.app.desktop.notion
 org.localsend.localsend_app
 net.pcsx2.PCSX2
+org.ghidra_sre.Ghidra
