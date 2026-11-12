@@ -26,9 +26,20 @@ in
     };
 
     powerdevil = {
-      AC.inhibitLidActionWhenExternalMonitorConnected = true;
-      battery.inhibitLidActionWhenExternalMonitorConnected = true;
-      lowBattery.inhibitLidActionWhenExternalMonitorConnected = true;
+      AC = {
+        inhibitLidActionWhenExternalMonitorConnected = true;
+        powerButtonAction = "hibernate";
+        autoSuspend.idleTimeout = 1800;
+      };
+      battery = {
+        inhibitLidActionWhenExternalMonitorConnected = true;
+        powerButtonAction = "hibernate";
+      };
+      lowBattery = {
+        inhibitLidActionWhenExternalMonitorConnected = true;
+        powerButtonAction = "hibernate";
+        autoSuspend.action = "hibernate";
+      };
     };
 
     input.touchpads = [
@@ -189,7 +200,6 @@ in
           }
           "org.kde.plasma.marginsseparator"
           "org.kde.plasma.notifications"
-          "org.kde.plasma.marginsseparator"
         ];
       }
     ];
@@ -267,8 +277,6 @@ in
         desktopchangeosdEnabled = true;
         diminactiveEnabled = true;
         glideEnabled = true;
-        scaleEnabled = false;
-        zoomEnabled = false;
       };
       kwinrc.Xwayland.Scale = 1.45;
       kwinrc.Script-karousel = {
@@ -297,6 +305,11 @@ in
       };
       dolphinrc.MainWindow.MenuBar = "Disabled";
       gwenviewrc.MainWindow.MenuBar = "Disabled";
+      kuriikwsfilterrc.General = {
+        EnableWebShortcuts = true;
+        KeywordDelimiter = ":";
+        UsePreferredWebShortcutsOnly = false;
+      };
     };
   };
 
