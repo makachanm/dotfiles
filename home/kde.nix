@@ -108,6 +108,7 @@ in
             ];
           }
           "org.kde.plasma.panelspacer"
+          "org.kde.plasma.marginsseparator"
           {
             name = "org.kde.plasma.resources-monitor";
             config.Appearance = {
@@ -120,7 +121,7 @@ in
               fontWeight = 450;
               keepFontSize = true;
             };
-            config.General.graphs = ''[{"_v":4,"type":"cpu","sizes":[40,-1],"fontSize":-1,"colors":["highlightColor","textColor","textColor"],"sensorsType":["usage","none",false],"thresholds":[85,105],"clockAggregator":"average","eCoresCount":0},{"_v":4,"type":"memory","sizes":[40,-1],"fontSize":-1,"colors":["highlightColor","negativeTextColor"],"sensorsType":["physical-percent","none"],"thresholds":[70,90]},{"_v":4,"type":"networkText","sizes":[-1,-1],"fontSize":-1,"colors":["highlightColor","positiveTextColor"],"sensorsType":[false,"kibibyte"],"ignoredInterfaces":[],"icons":true}]'';
+            config.General.graphs = ''[{"_v":4,"type":"cpu","sizes":[50,-1],"fontSize":-1,"colors":["highlightColor","textColor","textColor"],"sensorsType":["usage","none",false],"thresholds":[85,105],"clockAggregator":"average","eCoresCount":0},{"_v":4,"type":"memory","sizes":[50,-1],"fontSize":-1,"colors":["highlightColor","negativeTextColor"],"sensorsType":["physical-percent","none"],"thresholds":[70,90]},{"_v":4,"type":"networkText","sizes":[-1,-1],"fontSize":-1,"colors":["highlightColor","positiveTextColor"],"sensorsType":[false,"kibibyte"],"ignoredInterfaces":[],"icons":true}]'';
           }
           "org.kde.plasma.marginsseparator"
           {
@@ -140,7 +141,6 @@ in
               fontWeight = 450;
             };
           }
-          "org.kde.plasma.marginsseparator"
         ];
       }
       {
