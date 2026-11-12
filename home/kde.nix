@@ -28,6 +28,7 @@ in
     powerdevil = {
       AC = {
         inhibitLidActionWhenExternalMonitorConnected = true;
+        whenLaptopLidClosed = "doNothing";
         powerButtonAction = "hibernate";
         autoSuspend.idleTimeout = 1800;
       };
