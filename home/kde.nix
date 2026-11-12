@@ -56,7 +56,20 @@ in
       rows = 2;
     };
 
-    desktop.widgets = [ ];
+    desktop.widgets = [
+      {
+        name = "com.github.prayag2.modernclock";
+        position = {
+          horizontal = 144;
+          vertical = 416;
+        };
+        size = {
+          width = 512;
+          height = 160;
+        };
+        config.Appearance.show_time = false;
+      }
+    ];
 
     panels = [
       {
@@ -121,7 +134,7 @@ in
               fontWeight = 450;
               keepFontSize = true;
             };
-            config.General.graphs = ''[{"_v":4,"type":"cpu","sizes":[50,-1],"fontSize":-1,"colors":["highlightColor","textColor","textColor"],"sensorsType":["usage","none",false],"thresholds":[85,105],"clockAggregator":"average","eCoresCount":0},{"_v":4,"type":"memory","sizes":[50,-1],"fontSize":-1,"colors":["highlightColor","negativeTextColor"],"sensorsType":["physical-percent","none"],"thresholds":[70,90]},{"_v":4,"type":"networkText","sizes":[-1,-1],"fontSize":-1,"colors":["highlightColor","positiveTextColor"],"sensorsType":[false,"kibibyte"],"ignoredInterfaces":[],"icons":true}]'';
+            config.General.graphs = ''[{"_v":4,"type":"cpu","sizes":[50,-1],"fontSize":-1,"colors":["highlightColor","textColor","textColor"],"sensorsType":["usage","none",false],"thresholds":[85,105],"clockAggregator":"average","eCoresCount":0},{"_v":4,"type":"memory","sizes":[50,-1],"fontSize":-1,"colors":["highlightColor","negativeTextColor"],"sensorsType":["physical-percent","none"],"thresholds":[70,90]}]'';
           }
           "org.kde.plasma.marginsseparator"
           {
@@ -136,7 +149,7 @@ in
               customDateFormat = "yyyy MMM dd";
               displayTimezoneFormat = "UTCOffset";
               fontFamily = "IBM Plex Sans";
-              fontSize = 11;
+              fontSize = 7;
               fontStyleName = "Text";
               fontWeight = 450;
             };
@@ -174,26 +187,18 @@ in
           {
             name = "org.kde.plasma.advanced-weather-widget";
             config.General = {
-              activeLocation = ''{"name":"전주시, 전북특별자치도, 대한민국","lat":35.8434,"lon":127.14,"altitude":51,"timezone":"Asia/Seoul","countryCode":"KR"}'';
               alertsProvider = "librewxr";
-              altitude = 51;
               autoDetectLocation = true;
               compressedBadgePosition = "bottom-center";
-              countryCode = "KR";
-              latitude = 35.8434;
-              locationName = "전주시, 전북특별자치도, 대한민국";
-              longitude = 127.14;
               panelSimpleLayoutType = 2;
               panelSimpleTempShadowEnabled = false;
               radarEnabled = false;
-              savedLocations = ''[{"name":"전주시, 전북특별자치도, 대한민국","lat":35.8434,"lon":127.14,"altitude":51,"timezone":"Asia/Seoul","countryCode":"KR","starred":true}]'';
               simpleFontAutoSz = 13;
               simpleIconAutoSz = 40;
               simpleIconSizeManual = 24;
               simplePanelDim = 32;
               simplePanelIsVertical = true;
               simplePanelLargeDim = 40;
-              timezone = "Asia/Seoul";
               tooltipEnabled = false;
               weatherProvider = "bbc";
               widgetLayoutMode = "simple";
@@ -280,7 +285,7 @@ in
         diminactiveEnabled = true;
         glideEnabled = true;
       };
-      kwinrc.Xwayland.Scale = 1.45;
+      kwinrc.Xwayland.Scale = 1.25;
       kwinrc.Script-karousel = {
         untileOnDrag = false;
         gapsOuterTop = 10;
