@@ -61,7 +61,7 @@ in
     panels = [
       {
         location = "top";
-        height = 36;
+        height = 38;
         floating = false;
         opacity = "opaque";
         widgets = [
@@ -108,23 +108,23 @@ in
             ];
           }
           "org.kde.plasma.panelspacer"
-          "org.kde.plasma.marginsseparator"
           {
             name = "org.kde.plasma.resources-monitor";
             config.Appearance = {
               abbreviate = true;
               autoFontAndSize = false;
               displayment = "always";
-              fontFamily = "IBM Plex Sans KR";
-              fontSize = 8;
+              fontFamily = "IBM Plex Sans Text";
               fontStyleName = "Regular";
-              fontWeight = 400;
-              keepFontSize = true;
+              fontWeight = 450;
             };
-            config.General.graphs = ''[{"_v":4,"type":"cpu","sizes":[30,-1],"fontSize":6,"colors":["highlightColor","textColor","textColor"],"sensorsType":["usage","none",false],"thresholds":[85,105],"clockAggregator":"average","eCoresCount":0},{"_v":4,"type":"memory","sizes":[30,-1],"fontSize":6,"colors":["highlightColor","negativeTextColor"],"sensorsType":["physical-percent","physical"],"thresholds":[70,90]},{"_v":4,"type":"networkText","sizes":[-1,-1],"fontSize":6,"colors":["highlightColor","positiveTextColor"],"sensorsType":[false,"kibibyte"],"ignoredInterfaces":[],"icons":true}]'';
+            config.General.graphs = ''[{"_v":4,"type":"cpu","sizes":[40,-1],"fontSize":-1,"colors":["highlightColor","textColor","textColor"],"sensorsType":["usage","none",false],"thresholds":[85,105],"clockAggregator":"average","eCoresCount":0},{"_v":4,"type":"memory","sizes":[40,-1],"fontSize":-1,"colors":["highlightColor","negativeTextColor"],"sensorsType":["physical-percent","physical"],"thresholds":[70,90]},{"_v":4,"type":"networkText","sizes":[-1,-1],"fontSize":-1,"colors":["highlightColor","positiveTextColor"],"sensorsType":[false,"kibibyte"],"ignoredInterfaces":[],"icons":true}]'';
           }
-          "org.kde.plasma.battery"
           "org.kde.plasma.marginsseparator"
+          {
+            name = "org.kde.plasma.battery";
+            config.General.showPercentage = true;
+          }
           {
             name = "org.kde.plasma.digitalclock";
             config.Appearance = {
@@ -149,6 +149,26 @@ in
         floating = true;
         height = 40;
         widgets = [
+          "org.kde.plasma.marginsseparator"
+          {
+            name = "org.kde.plasma.systemtray";
+            config.General = {
+              extraItems = [
+                "org.kde.plasma.networkmanagement"
+                "org.kde.plasma.bluetooth"
+                "org.kde.plasma.volume"
+                "org.kde.plasma.brightness"
+              ];
+              shownItems = [
+                "org.kde.plasma.networkmanagement"
+                "org.kde.plasma.bluetooth"
+                "org.kde.plasma.volume"
+                "org.kde.plasma.brightness"
+              ];
+              disabledStatusNotifiers = "Xwayland Video Bridge,kime";
+            };
+          }
+          "org.kde.plasma.marginsseparator"
           {
             name = "org.kde.plasma.advanced-weather-widget";
             config.General = {
@@ -165,40 +185,20 @@ in
               panelSimpleTempShadowEnabled = false;
               radarEnabled = false;
               savedLocations = ''[{"name":"전주시, 전북특별자치도, 대한민국","lat":35.8434,"lon":127.14,"altitude":51,"timezone":"Asia/Seoul","countryCode":"KR","starred":true}]'';
-              simpleFontAutoSz = 12;
-              simpleIconAutoSz = 36;
+              simpleFontAutoSz = 13;
+              simpleIconAutoSz = 40;
               simpleIconSizeManual = 24;
-              simplePanelDim = 28;
+              simplePanelDim = 32;
               simplePanelIsVertical = true;
-              simplePanelLargeDim = 36;
+              simplePanelLargeDim = 40;
               timezone = "Asia/Seoul";
               tooltipEnabled = false;
               weatherProvider = "bbc";
               widgetLayoutMode = "simple";
+              widgetSimpleDetailsItemIcons = "feelslike=1;humidity=1;pressure=1;dewpoint=1;visibility=1;preciprate=1;precipsum=1;uvindex=1;airquality=1;pollen=1;spaceweather=1;alerts=1;snowcover=1;datetime=1";
+              widgetSimpleDetailsOrder = "humidity;feelslike;airquality";
             };
           }
-          "org.kde.plasma.marginsseparator"
-          {
-            name = "org.kde.plasma.systemtray";
-            config.General = {
-              extraItems = [
-                "org.kde.plasma.networkmanagement"
-                "org.kde.plasma.bluetooth"
-                "org.kde.plasma.volume"
-                "org.kde.plasma.brightness"
-                "org.kde.kscreen"
-              ];
-              shownItems = [
-                "org.kde.plasma.networkmanagement"
-                "org.kde.plasma.bluetooth"
-                "org.kde.plasma.volume"
-                "org.kde.plasma.brightness"
-                "org.kde.kscreen"
-              ];
-              disabledStatusNotifiers = "Xwayland Video Bridge";
-            };
-          }
-          "org.kde.plasma.marginsseparator"
           "org.kde.plasma.notifications"
         ];
       }
