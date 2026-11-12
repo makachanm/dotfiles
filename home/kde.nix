@@ -116,7 +116,7 @@ in
               autoFontAndSize = false;
               displayment = "always";
               fontFamily = "IBM Plex Sans Text";
-              fontSize = 6;
+              fontSize = 5;
               fontStyleName = "Regular";
               fontWeight = 450;
               keepFontSize = true;
