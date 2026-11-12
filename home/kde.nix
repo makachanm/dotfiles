@@ -45,100 +45,7 @@ in
       rows = 2;
     };
 
-    desktop.widgets = [
-      {
-        name = "org.kde.plasma.weather";
-        position.horizontal = 64;
-        position.vertical = 80;
-        size.width = 576;
-        size.height = 400;
-        screen = 0;
-        config.WeatherStation = {
-          placeDisplayName = "Jeonju, South Korea, KR";
-          placeInfo = "Jeonju, South Korea, KR|1845457";
-          provider = "bbcukmet";
-        };
-      }
-      {
-        name = "org.kde.plasma.systemmonitor.memory";
-        position.horizontal = 64;
-        position.vertical = 480;
-        size.width = 240;
-        size.height = 240;
-        screen = 0;
-        config = {
-          Configuration.CurrentPreset = "org.kde.plasma.systemmonitor";
-          Appearance = {
-            chartFace = "org.kde.ksysguard.piechart";
-            title = "Memory Usage";
-          };
-          SensorColors."memory/physical/used" = "61,174,233";
-          Sensors = {
-            highPrioritySensorIds = ''["memory/physical/used"]'';
-            lowPrioritySensorIds = ''["memory/physical/total"]'';
-            totalSensors = ''["memory/physical/usedPercent"]'';
-          };
-        };
-      }
-      {
-        name = "org.kde.plasma.systemmonitor.net";
-        position.horizontal = 64;
-        position.vertical = 720;
-        size.width = 240;
-        size.height = 240;
-        screen = 0;
-        config = {
-          Configuration.CurrentPreset = "org.kde.plasma.systemmonitor";
-          Appearance = {
-            chartFace = "org.kde.ksysguard.linechart";
-            title = "Network Speed";
-          };
-          SensorColors = {
-            "network/all/download" = "61,174,233";
-            "network/all/upload" = "233,120,61";
-          };
-          Sensors.highPrioritySensorIds = ''["network/all/download","network/all/upload"]'';
-        };
-      }
-      {
-        name = "org.kde.plasma.systemmonitor.cpucore";
-        position.horizontal = 304;
-        position.vertical = 480;
-        size.width = 336;
-        size.height = 480;
-        screen = 0;
-        config = {
-          Configuration.CurrentPreset = "org.kde.plasma.systemmonitor";
-          Appearance = {
-            chartFace = "org.kde.ksysguard.barchart";
-            title = "Individual Core Usage";
-          };
-          SensorColors = {
-            "cpu/cpu.*/usage" = "61,174,233";
-            "cpu/cpu0/usage" = "61,174,233";
-            "cpu/cpu1/usage" = "61,110,233";
-            "cpu/cpu10/usage" = "217,233,61";
-            "cpu/cpu11/usage" = "153,233,61";
-            "cpu/cpu12/usage" = "88,233,61";
-            "cpu/cpu13/usage" = "61,233,98";
-            "cpu/cpu14/usage" = "61,233,163";
-            "cpu/cpu15/usage" = "61,233,227";
-            "cpu/cpu2/usage" = "77,61,233";
-            "cpu/cpu3/usage" = "141,61,233";
-            "cpu/cpu4/usage" = "206,61,233";
-            "cpu/cpu5/usage" = "233,61,196";
-            "cpu/cpu6/usage" = "233,61,131";
-            "cpu/cpu7/usage" = "233,61,67";
-            "cpu/cpu8/usage" = "233,120,61";
-            "cpu/cpu9/usage" = "233,184,61";
-          };
-          Sensors = {
-            highPrioritySensorIds = ''["cpu/cpu.*/usage"]'';
-            totalSensors = ''["cpu/all/usage"]'';
-          };
-        };
-      }
-    ];
+    desktop.widgets = [ ];
 
     panels = [
       {
@@ -198,13 +105,14 @@ in
               autoFontAndSize = false;
               displayment = "always";
               fontFamily = "IBM Plex Sans KR";
-              fontSize = 6;
+              fontSize = 8;
               fontStyleName = "Regular";
               fontWeight = 400;
               keepFontSize = true;
             };
-            config.General.graphs = ''[{"_v":4,"type":"batteryText","sizes":[-1,-1],"fontSize":8,"colors":["textColor","neutralTextColor"],"sensorsType":["percentage",false],"thresholds":[15,5],"title":"BAT","titleWhen":"always","device":"824"},{"_v":4,"type":"cpuText","sizes":[-1,-1],"fontSize":8,"colors":["textColor","highlightColor"],"sensorsType":["usage"],"title":"CPU","titleWhen":"always"},{"_v":4,"type":"memoryText","sizes":[-1,-1],"fontSize":8,"colors":["textColor","highlightColor"],"sensorsType":["physical-percent"],"title":"MEM","titleWhen":"always"}]'';
+            config.General.graphs = ''[{"_v":4,"type":"cpu","sizes":[30,-1],"fontSize":6,"colors":["highlightColor","textColor","textColor"],"sensorsType":["usage","none",false],"thresholds":[85,105],"clockAggregator":"average","eCoresCount":0},{"_v":4,"type":"memory","sizes":[30,-1],"fontSize":6,"colors":["highlightColor","negativeTextColor"],"sensorsType":["physical-percent","physical"],"thresholds":[70,90]},{"_v":4,"type":"networkText","sizes":[-1,-1],"fontSize":6,"colors":["highlightColor","positiveTextColor"],"sensorsType":[false,"kibibyte"],"ignoredInterfaces":[],"icons":true}]'';
           }
+          "org.kde.plasma.battery"
           "org.kde.plasma.marginsseparator"
           {
             name = "org.kde.plasma.digitalclock";
@@ -268,7 +176,6 @@ in
                 "org.kde.plasma.volume"
                 "org.kde.plasma.brightness"
                 "org.kde.kscreen"
-                "org.kde.plasma.battery"
               ];
               shownItems = [
                 "org.kde.plasma.networkmanagement"
@@ -276,7 +183,6 @@ in
                 "org.kde.plasma.volume"
                 "org.kde.plasma.brightness"
                 "org.kde.kscreen"
-                "org.kde.plasma.battery"
               ];
               disabledStatusNotifiers = "Xwayland Video Bridge";
             };
