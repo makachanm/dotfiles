@@ -49,7 +49,7 @@ in
       {
         name = "org.kde.plasma.weather";
         position.horizontal = 64;
-        position.vertical = 32;
+        position.vertical = 80;
         size.width = 576;
         size.height = 400;
         screen = 0;
@@ -62,7 +62,7 @@ in
       {
         name = "org.kde.plasma.systemmonitor.memory";
         position.horizontal = 64;
-        position.vertical = 432;
+        position.vertical = 480;
         size.width = 240;
         size.height = 240;
         screen = 0;
@@ -83,7 +83,7 @@ in
       {
         name = "org.kde.plasma.systemmonitor.net";
         position.horizontal = 64;
-        position.vertical = 672;
+        position.vertical = 720;
         size.width = 240;
         size.height = 240;
         screen = 0;
@@ -103,7 +103,7 @@ in
       {
         name = "org.kde.plasma.systemmonitor.cpucore";
         position.horizontal = 304;
-        position.vertical = 432;
+        position.vertical = 480;
         size.width = 336;
         size.height = 480;
         screen = 0;
@@ -138,21 +138,6 @@ in
           };
         };
       }
-      {
-        name = "org.kde.plasma.webbrowser";
-        position.horizontal = 64;
-        position.vertical = 912;
-        size.width = 576;
-        size.height = 448;
-        screen = 0;
-        config.General = {
-          enableNavigationBar = false;
-          favIcon = "https://news.hada.io/favicon-dark.ico?20260826e";
-          url = "https://news.hada.io/";
-          useDefaultUrl = false;
-          useFavIcon = false;
-        };
-      }
     ];
 
     panels = [
@@ -162,20 +147,24 @@ in
         floating = false;
         opacity = "opaque";
         widgets = [
+          "org.kde.plasma.marginsseparator"
           {
             name = "org.kde.plasma.kickerdash";
             config.General = {
-              customButtonImage = "preferences-other-symbolic";
+              customButtonImage = "application-menu";
               useCustomButtonImage = true;
-              highlightNewlyInstalledApps = false;
-              recentOrdering = 1;
-              showRecentApps = false;
-              showRecentDocs = false;
             };
             extraConfig = "(widget) => { widget.globalShortcut = 'Meta+Space'; }";
           }
-          "org.kde.plasma.marginsseparator"
+          {
+            name = "org.kde.plasma.panelspacer";
+            config.General = {
+              expanding = false;
+              length = 5;
+            };
+          }
           "org.kde.plasma.pager"
+          "org.kde.plasma.marginsseparator"
           "org.kde.plasma.panelspacer"
           {
             name = "org.kde.plasma.icontasks";
@@ -184,7 +173,6 @@ in
               "applications:thorium-browser.desktop"
               "applications:net.thunderbird.Thunderbird.desktop"
               "preferred://filemanager"
-              "applications:org.kde.plasma-systemmonitor.desktop"
               "applications:org.speedcrunch.SpeedCrunch.desktop"
               "applications:com.microsoft.VSCode.desktop"
               "applications:slack.desktop"
@@ -193,20 +181,31 @@ in
               "applications:vesktop.desktop"
               "applications:com.ayugram.desktop.desktop"
               "applications:com.spotify.Client.desktop"
+              "applications:steam.desktop"
+              "applications:org.prismlauncher.PrismLauncher.desktop"
               "applications:gimp.desktop"
               "applications:org.kde.kdenlive.desktop"
               "applications:cockos-reaper.desktop"
               "applications:com.obsproject.Studio.desktop"
-              "applications:steam.desktop"
-              "applications:org.prismlauncher.PrismLauncher.desktop"
             ];
           }
           "org.kde.plasma.panelspacer"
           "org.kde.plasma.marginsseparator"
           {
-            name = "org.kde.plasma.battery";
-            config.General.showPercentage = true;
+            name = "org.kde.plasma.resources-monitor";
+            config.Appearance = {
+              abbreviate = true;
+              autoFontAndSize = false;
+              displayment = "always";
+              fontFamily = "IBM Plex Sans KR";
+              fontSize = 6;
+              fontStyleName = "Regular";
+              fontWeight = 400;
+              keepFontSize = true;
+            };
+            config.General.graphs = ''[{"_v":4,"type":"batteryText","sizes":[-1,-1],"fontSize":8,"colors":["textColor","neutralTextColor"],"sensorsType":["percentage",false],"thresholds":[15,5],"title":"BAT","titleWhen":"always","device":"824"},{"_v":4,"type":"cpuText","sizes":[-1,-1],"fontSize":8,"colors":["textColor","highlightColor"],"sensorsType":["usage"],"title":"CPU","titleWhen":"always"},{"_v":4,"type":"memoryText","sizes":[-1,-1],"fontSize":8,"colors":["textColor","highlightColor"],"sensorsType":["physical-percent"],"title":"MEM","titleWhen":"always"}]'';
           }
+          "org.kde.plasma.marginsseparator"
           {
             name = "org.kde.plasma.digitalclock";
             config.Appearance = {
@@ -232,6 +231,35 @@ in
         height = 40;
         widgets = [
           {
+            name = "org.kde.plasma.advanced-weather-widget";
+            config.General = {
+              activeLocation = ''{"name":"전주시, 전북특별자치도, 대한민국","lat":35.8434,"lon":127.14,"altitude":51,"timezone":"Asia/Seoul","countryCode":"KR"}'';
+              alertsProvider = "librewxr";
+              altitude = 51;
+              autoDetectLocation = true;
+              compressedBadgePosition = "bottom-center";
+              countryCode = "KR";
+              latitude = 35.8434;
+              locationName = "전주시, 전북특별자치도, 대한민국";
+              longitude = 127.14;
+              panelSimpleLayoutType = 2;
+              panelSimpleTempShadowEnabled = false;
+              radarEnabled = false;
+              savedLocations = ''[{"name":"전주시, 전북특별자치도, 대한민국","lat":35.8434,"lon":127.14,"altitude":51,"timezone":"Asia/Seoul","countryCode":"KR","starred":true}]'';
+              simpleFontAutoSz = 12;
+              simpleIconAutoSz = 36;
+              simpleIconSizeManual = 24;
+              simplePanelDim = 28;
+              simplePanelIsVertical = true;
+              simplePanelLargeDim = 36;
+              timezone = "Asia/Seoul";
+              tooltipEnabled = false;
+              weatherProvider = "bbc";
+              widgetLayoutMode = "simple";
+            };
+          }
+          "org.kde.plasma.marginsseparator"
+          {
             name = "org.kde.plasma.systemtray";
             config.General = {
               extraItems = [
@@ -240,24 +268,22 @@ in
                 "org.kde.plasma.volume"
                 "org.kde.plasma.brightness"
                 "org.kde.kscreen"
-                "org.kde.plasma.clipboard"
-                "org.kde.plasma.mediacontroller"
-
-              ];
-              hiddenItems = [
-                "org.kde.plasma.clipboard"
-                "org.kde.plasma.mediacontroller"
+                "org.kde.plasma.battery"
               ];
               shownItems = [
                 "org.kde.plasma.networkmanagement"
                 "org.kde.plasma.bluetooth"
                 "org.kde.plasma.volume"
                 "org.kde.plasma.brightness"
+                "org.kde.kscreen"
+                "org.kde.plasma.battery"
               ];
               disabledStatusNotifiers = "Xwayland Video Bridge";
             };
           }
+          "org.kde.plasma.marginsseparator"
           "org.kde.plasma.notifications"
+          "org.kde.plasma.marginsseparator"
         ];
       }
     ];
