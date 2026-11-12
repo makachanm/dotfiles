@@ -115,8 +115,10 @@ in
               autoFontAndSize = false;
               displayment = "always";
               fontFamily = "IBM Plex Sans Text";
+              fontSize = 9;
               fontStyleName = "Regular";
               fontWeight = 450;
+              keepFontSize = true;
             };
             config.General.graphs = ''[{"_v":4,"type":"cpu","sizes":[40,-1],"fontSize":-1,"colors":["highlightColor","textColor","textColor"],"sensorsType":["usage","none",false],"thresholds":[85,105],"clockAggregator":"average","eCoresCount":0},{"_v":4,"type":"memory","sizes":[40,-1],"fontSize":-1,"colors":["highlightColor","negativeTextColor"],"sensorsType":["physical-percent","physical"],"thresholds":[70,90]},{"_v":4,"type":"networkText","sizes":[-1,-1],"fontSize":-1,"colors":["highlightColor","positiveTextColor"],"sensorsType":[false,"kibibyte"],"ignoredInterfaces":[],"icons":true}]'';
           }
