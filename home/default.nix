@@ -12,11 +12,6 @@ let
     "org.kde.kmenuedit"
     "io.github.vectorgraphics.asymptote"
     "thorium-shell"
-    "org.kde.kinfocenter"
-    "org.kde.massif-visualizer"
-    "org.kde.umbrello"
-    "org.localsend.localsend_app"
-    "Zoom"
     "org.kde.plasma.emojier"
   ];
   kimeOsd = pkgs.writeShellScript "kime-osd" (builtins.readFile ./config/kime/kime-osd);
