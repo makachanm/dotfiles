@@ -4,14 +4,20 @@ let
     ".local/share/konsole/Mono.profile" = ./config/konsole/Mono.profile;
     ".config/SpeedCrunch/SpeedCrunch.ini" = ./config/speedcrunch/SpeedCrunch.ini;
     ".local/share/kf.syntaxhighlighting/themes/Mono.theme" = ./config/kate/Mono.theme;
-    ".config/plasma/kickeractions" = ./config/kickeractions;
   };
   hiddenApps = [
     "im-chooser"
     "mupdf"
+    "mupdf-gl"
     "org.kde.kmenuedit"
     "io.github.vectorgraphics.asymptote"
     "thorium-shell"
+    "org.kde.kinfocenter"
+    "org.kde.massif-visualizer"
+    "org.kde.umbrello"
+    "org.localsend.localsend_app"
+    "Zoom"
+    "org.kde.plasma.emojier"
   ];
   kimeOsd = pkgs.writeShellScript "kime-osd" (builtins.readFile ./config/kime/kime-osd);
   imeFlags = "--ozone-platform=wayland --enable-wayland-ime --wayland-text-input-version=3";
@@ -76,12 +82,7 @@ in
     "thorium/thorium-flags.conf".text = thoriumFlags;
   };
 
-  xdg.dataFile = lib.genAttrs (map (app: "applications/${app}.desktop") hiddenApps) (_: {
-    text = ''
-      [Desktop Entry]
-      Hidden=true
-    '';
-  }) // {
+  xdg.dataFile = {
     "applications/com.microsoft.VSCode.desktop".text = ''
       [Desktop Entry]
       Name=Visual Studio Code
@@ -137,6 +138,20 @@ in
       '') copied
     )
   );
+
+  home.activation.hideApps = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
+    for app in ${lib.concatStringsSep " " hiddenApps}; do
+      for dir in "$HOME/.local/share/flatpak/exports/share" /var/lib/flatpak/exports/share /usr/share; do
+        src="$dir/applications/$app.desktop"
+        if [ -f "$src" ]; then
+          dest="$HOME/.local/share/applications/$app.desktop"
+          run /usr/bin/install -Dm644 "$src" "$dest"
+          run /usr/bin/sed -i -e '/^NoDisplay=/d' -e '0,/^\[Desktop Entry\]$/s//[Desktop Entry]\nNoDisplay=true/' "$dest"
+          break
+        fi
+      done
+    done
+  '';
 
   home.activation.zinit = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     if [ ! -d "$HOME/.local/share/zinit/zinit.git" ]; then
