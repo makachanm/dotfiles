@@ -65,7 +65,6 @@ in
         floating = false;
         opacity = "opaque";
         widgets = [
-          "org.kde.plasma.marginsseparator"
           {
             name = "org.kde.plasma.kickerdash";
             config.General = {
@@ -74,13 +73,7 @@ in
             };
             extraConfig = "(widget) => { widget.globalShortcut = 'Meta+Space'; }";
           }
-          {
-            name = "org.kde.plasma.panelspacer";
-            config.General = {
-              expanding = false;
-              length = 5;
-            };
-          }
+          "org.kde.plasma.marginsseparator"
           "org.kde.plasma.pager"
           "org.kde.plasma.marginsseparator"
           "org.kde.plasma.panelspacer"
@@ -132,7 +125,6 @@ in
           {
             name = "org.kde.plasma.digitalclock";
             config.Appearance = {
-              autoFontAndSize = false;
               dateFormat = "custom";
               customDateFormat = "yyyy MMM dd";
               displayTimezoneFormat = "UTCOffset";
