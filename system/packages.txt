@@ -83,7 +83,6 @@ slack
 vesktop
 ayugram-desktop
 tailscale
-gimp
 krita
 kdenlive
 digikam

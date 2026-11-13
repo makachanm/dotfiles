@@ -101,7 +101,6 @@ in
               "applications:com.spotify.Client.desktop"
               "applications:steam.desktop"
               "applications:org.prismlauncher.PrismLauncher.desktop"
-              "applications:gimp.desktop"
               "applications:org.kde.kdenlive.desktop"
               "applications:cockos-reaper.desktop"
               "applications:com.obsproject.Studio.desktop"
