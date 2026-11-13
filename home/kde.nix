@@ -56,20 +56,7 @@ in
       rows = 2;
     };
 
-    desktop.widgets = [
-      {
-        name = "com.github.prayag2.modernclock";
-        position = {
-          horizontal = 144;
-          vertical = 416;
-        };
-        size = {
-          width = 512;
-          height = 160;
-        };
-        config.Appearance.show_time = false;
-      }
-    ];
+    desktop.widgets = [ ];
 
     panels = [
       {
@@ -285,7 +272,7 @@ in
         diminactiveEnabled = true;
         glideEnabled = true;
       };
-      kwinrc.Xwayland.Scale = 1.25;
+      kwinrc.Xwayland.Scale = 1.45;
       kwinrc.Script-karousel = {
         untileOnDrag = false;
         gapsOuterTop = 10;
