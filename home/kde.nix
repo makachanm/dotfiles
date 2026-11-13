@@ -301,6 +301,10 @@ in
         Theme = "None";
       };
       dolphinrc.MainWindow.MenuBar = "Disabled";
+      katerc."KTextEditor View" = {
+        "Auto Color Theme Selection" = false;
+        Theme = "Mono";
+      };
       gwenviewrc.MainWindow.MenuBar = "Disabled";
       kuriikwsfilterrc.General = {
         EnableWebShortcuts = true;
@@ -314,6 +318,23 @@ in
     enable = true;
     defaultProfile = "Mono";
     customColorSchemes.Mono = ./config/konsole/Mono.colorscheme;
+    profiles.Mono = {
+      colorScheme = "Mono";
+      font = {
+        name = "Nordwand Mono";
+        size = 13;
+      };
+      extraConfig = {
+        "Cursor Options".CursorShape = 0;
+        General = {
+          ShowTerminalSizeHint = false;
+          TerminalCenter = true;
+          TerminalMargin = 10;
+        };
+        Scrolling.ScrollBarPosition = 2;
+        "Terminal Features".BlinkingCursorEnabled = true;
+      };
+    };
     extraConfig = {
       KonsoleWindow.ShowMenuBarByDefault = false;
       TabBar = {
