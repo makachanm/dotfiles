@@ -1,10 +1,5 @@
 { lib, pkgs, ... }:
 let
-  copied = {
-    ".local/share/konsole/Mono.profile" = ./config/konsole/Mono.profile;
-    ".config/SpeedCrunch/SpeedCrunch.ini" = ./config/speedcrunch/SpeedCrunch.ini;
-    ".local/share/kf.syntaxhighlighting/themes/Mono.theme" = ./config/kate/Mono.theme;
-  };
   hiddenApps = [
     "im-chooser"
     "mupdf"
@@ -117,6 +112,7 @@ in
       Categories=Network;
       MimeType=x-scheme-handler/discord;
     '';
+    "kf.syntaxhighlighting/themes/Mono.theme".source = ./config/kate/Mono.theme;
     "fonts/NordwandMono".source = ./assets/fonts/NordwandMono;
   };
 
@@ -125,14 +121,6 @@ in
     "Pictures/wallpaper/PIA26702~orig.png".source = ./assets/wallpaper + "/PIA26702~orig.png";
     "Pictures/wallpaper/untitled_01154_upscaled_4k.png".source = ./assets/wallpaper + "/untitled_01154_upscaled_4k.png";
   };
-
-  home.activation.copyConfigs = lib.hm.dag.entryAfter [ "writeBoundary" ] (
-    lib.concatStrings (
-      lib.mapAttrsToList (dest: src: ''
-        run install -Dm644 ${src} "$HOME/${dest}"
-      '') copied
-    )
-  );
 
   home.activation.hideApps = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
     for app in ${lib.concatStringsSep " " hiddenApps}; do
