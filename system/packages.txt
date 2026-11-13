@@ -84,6 +84,7 @@ vesktop
 ayugram-desktop
 tailscale
 gimp
+krita
 kdenlive
 digikam
 obs-studio

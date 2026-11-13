@@ -124,6 +124,7 @@ in
             config.General.graphs = ''[{"_v":4,"type":"cpu","sizes":[50,-1],"fontSize":-1,"colors":["highlightColor","textColor","textColor"],"sensorsType":["usage","none",false],"thresholds":[85,105],"clockAggregator":"average","eCoresCount":0},{"_v":4,"type":"memory","sizes":[50,-1],"fontSize":-1,"colors":["highlightColor","negativeTextColor"],"sensorsType":["physical-percent","none"],"thresholds":[70,90]}]'';
           }
           "org.kde.plasma.marginsseparator"
+          "org.kde.plasma.marginsseparator"
           {
             name = "org.kde.plasma.battery";
             config.General.showPercentage = true;
@@ -139,8 +140,10 @@ in
               fontSize = 7;
               fontStyleName = "Text";
               fontWeight = 450;
+              showDate = false;
             };
           }
+          "org.kde.plasma.marginsseparator"
         ];
       }
       {
