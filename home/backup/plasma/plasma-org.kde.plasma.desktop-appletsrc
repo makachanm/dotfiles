@@ -51,7 +51,7 @@ immutability=1
 plugin=org.kde.plasma.icontasks
 
 [Containments][1057][Applets][1064][Configuration][General]
-launchers=preferred://browser,applications:thorium-browser.desktop,applications:net.thunderbird.Thunderbird.desktop,preferred://filemanager,applications:org.speedcrunch.SpeedCrunch.desktop,applications:com.microsoft.VSCode.desktop,applications:slack.desktop,applications:com.notion.app.desktop.notion.desktop,applications:Goose.desktop,applications:vesktop.desktop,applications:com.ayugram.desktop.desktop,applications:com.spotify.Client.desktop,applications:steam.desktop,applications:org.prismlauncher.PrismLauncher.desktop,applications:gimp.desktop,applications:org.kde.kdenlive.desktop,applications:cockos-reaper.desktop,applications:com.obsproject.Studio.desktop
+launchers=preferred://browser,applications:thorium-browser.desktop,applications:net.thunderbird.Thunderbird.desktop,preferred://filemanager,applications:org.speedcrunch.SpeedCrunch.desktop,applications:com.microsoft.VSCode.desktop,applications:slack.desktop,applications:com.notion.app.desktop.notion.desktop,applications:Goose.desktop,applications:vesktop.desktop,applications:com.ayugram.desktop.desktop,applications:com.spotify.Client.desktop,applications:steam.desktop,applications:org.prismlauncher.PrismLauncher.desktop,applications:org.kde.krita.desktop,applications:org.kde.kdenlive.desktop,applications:cockos-reaper.desktop,applications:com.obsproject.Studio.desktop
 
 [Containments][1057][Applets][1065]
 immutability=1
@@ -109,6 +109,7 @@ fontFamily=IBM Plex Sans
 fontSize=7
 fontStyleName=Text
 fontWeight=450
+showDate=false
 
 [Containments][1057][Applets][1070][Configuration][ConfigDialog]
 DialogHeight=630
@@ -122,8 +123,12 @@ plugin=org.kde.plasma.marginsseparator
 immutability=1
 plugin=org.kde.plasma.marginsseparator
 
+[Containments][1057][Applets][1101]
+immutability=1
+plugin=org.kde.plasma.marginsseparator
+
 [Containments][1057][General]
-AppletOrder=1059;1058;1061;1062;1063;1064;1065;1066;1067;1095;1068;1070;1100
+AppletOrder=1059;1058;1061;1062;1063;1064;1065;1066;1067;1095;1101;1068;1070;1100
 
 [Containments][1072]
 activityId=
