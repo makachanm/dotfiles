@@ -266,8 +266,9 @@ in
         desktopchangeosdEnabled = true;
         diminactiveEnabled = true;
         glideEnabled = true;
+        scaleEnabled = false;
+        zoomEnabled = false;
       };
-      kwinrc.Xwayland.Scale = 1.45;
       kwinrc.Script-karousel = {
         untileOnDrag = false;
         gapsOuterTop = 10;
