@@ -362,9 +362,6 @@ in
 
   home.file.".local/share/kwin/scripts/karousel".source = "${karousel}/karousel";
 
-  # /usr/bin/zen-browser creates ~/.zen/native-messaging-hosts under KDE, and
-  # once ~/.zen exists Zen treats it as the legacy home and starts a fresh
-  # profile there. Point ~/.zen at the real XDG profile dir instead.
   home.file.".zen".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/zen";
 }
