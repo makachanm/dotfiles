@@ -103,24 +103,39 @@ in
           "org.kde.plasma.panelspacer"
           "org.kde.plasma.marginsseparator"
           {
-            name = "org.kde.plasma.resources-monitor";
-            config.Appearance = {
-              abbreviate = true;
-              autoFontAndSize = false;
-              displayment = "always";
-              fontFamily = "IBM Plex Sans Text";
-              fontSize = 6;
-              fontStyleName = "Regular";
-              fontWeight = 450;
-              keepFontSize = true;
+            name = "org.kde.plasma.kvitals";
+            config.General = {
+              activeProfileId = "ed9157dc-f2b3-4bf8-998f-4fdc8bbfb653";
+              backgroundType = "translucent";
+              fontFamily = "IBM Plex Sans Medm";
+              iconSize = 18;
+              labelOpacity = 1;
+              mergeFamilyMetrics = false;
+              migrationDone = true;
+              pinnedMetrics = "uptime/uptime,cpu/usage,ram/percentage";
+              profileList = ''{"version":1,"profiles":[{"id":"ed9157dc-f2b3-4bf8-998f-4fdc8bbfb653","name":"Default","createdAt":1794804264811,"isDefault":true,"data":{"pinnedMetrics":"uptime/uptime,cpu/usage,ram/percentage","cpuEnabled":true,"cpuSubMetrics":"usage,freq,temp","cpuVisibility":"both","ramEnabled":true,"ramSubMetrics":"percentage","ramWidgetShowBoth":false,"ramVisibility":"both","ramUnit":"GiB","swapEnabled":false,"swapSubMetrics":"percent,used","swapVisibility":"both","tempEnabled":true,"tempLabel":"System","tempVisibility":"both","tempSensor":"auto","tempSelection":"","tempLabels":"","gpuEnabled":true,"gpuSubMetrics":"usage,vram,temp","gpuVisibility":"both","batEnabled":true,"batSubMetrics":"percentage,power","batVisibility":"both","netEnabled":true,"netSubMetrics":"down,up","netVisibility":"both","diskEnabled":false,"diskSubMetrics":"read,write","diskVisibility":"both","fanEnabled":false,"fanVisibility":"both","uptimeEnabled":false,"uptimeVisibility":"both","cpuLabel":"CPU","ramLabel":"RAM","swapLabel":"SWAP","diskLabel":"DSK","diskLabels":"","netLabel":"NET","networkInterface":"auto","showNetworkIp":false,"batteryDevice":"auto","batLabel":"BAT","gpuSelection":"","gpuLabels":"","fanLabel":"FAN","fanLabels":"","coolantLabels":"","displayMode":"icons","layoutType":"horizontal","iconSize":18,"mergeFamilyMetrics":false,"showSeparators":false,"backgroundType":"translucent","panelPadding":0,"cpuIcon":"cpu-symbolic","ramIcon":"memory-symbolic","swapIcon":"memory-symbolic","tempIcon":"temperature-symbolic","gpuIcon":"gpu-symbolic","batteryIcon":"battery-symbolic","powerIcon":"voltage-symbolic","networkIcon":"network-symbolic","diskIcon":"storage-symbolic","fanIcon":"fan-symbolic","uptimeIcon":"system-symbolic","fontFamily":"IBM Plex Sans Medm","fontSize":0,"fontBold":false,"metricOrder":"cpu,ram,swap,temp,gpu,bat,net,disk,fan,uptime","updateInterval":2000,"useCustomColors":false,"iconColor":"","labelColor":"","fontColor":"","enableThresholdColors":false,"warningColor":"#e5a50a","criticalColor":"#da4453","cpuWarningThreshold":70,"cpuCriticalThreshold":90,"tempWarningThreshold":60,"tempCriticalThreshold":85,"systemWarningThreshold":60,"systemCriticalThreshold":85,"ramWarningThreshold":70,"ramCriticalThreshold":90,"swapWarningThreshold":70,"swapCriticalThreshold":90,"ramTempWarningThreshold":60,"ramTempCriticalThreshold":85,"gpuWarningThreshold":70,"gpuCriticalThreshold":90,"gpuTempWarningThreshold":60,"gpuTempCriticalThreshold":85,"batteryWarningThreshold":30,"batteryCriticalThreshold":15,"diskWarningThreshold":80,"diskCriticalThreshold":90,"diskTempWarningThreshold":45,"diskTempCriticalThreshold":60,"coolantTempWarningThreshold":40,"coolantTempCriticalThreshold":50,"tempUnit":"C","networkUnit":"bytes","fanUnit":"rpm","fanMaxRpm":2000,"labelOpacity":1,"separatorOpacity":0.4}}]}'';
+              shortcutInitialized = true;
+              showSeparators = false;
             };
-            config.General.graphs = ''[{"_v":4,"type":"cpu","sizes":[50,-1],"fontSize":-1,"colors":["highlightColor","textColor","textColor"],"sensorsType":["usage","none",false],"thresholds":[85,105],"clockAggregator":"average","eCoresCount":0},{"_v":4,"type":"memory","sizes":[50,-1],"fontSize":-1,"colors":["highlightColor","negativeTextColor"],"sensorsType":["physical-percent","none"],"thresholds":[70,90]}]'';
+            extraConfig = "(widget) => { widget.globalShortcut = 'Meta+Shift+V'; }";
           }
           "org.kde.plasma.marginsseparator"
           "org.kde.plasma.marginsseparator"
           {
-            name = "org.kde.plasma.battery";
-            config.General.showPercentage = true;
+            name = "io.github.fosvcat.betterkdebattery";
+            config.General = {
+              colorCharging = "#ffffff";
+              colorLow = "#da4453";
+              colorProfilePerformance = "#aa0000";
+              colorProfilePowerSaver = "#00aa00";
+              emptyOpacity = 30;
+              numberFollowsRingColor = false;
+              numberSize = 130;
+              profileIndicatorSize = 130;
+              ringScale = 130;
+              ringThicknessScale = 70;
+              sleepBlockedSymbol = 0;
+            };
           }
           {
             name = "org.kde.plasma.digitalclock";
@@ -133,6 +148,7 @@ in
               fontStyleName = "Text";
               fontWeight = 450;
               showDate = false;
+              use24hFormat = 0;
             };
           }
           "org.kde.plasma.marginsseparator"
