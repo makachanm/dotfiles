@@ -141,7 +141,13 @@ in
     done
   '';
 
-  home.activation.zinit = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+  home.activation.herdr = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    if [ ! -x "$HOME/.local/bin/herdr-app" ]; then
+      run /usr/bin/env PATH=/usr/bin:/bin /bin/sh -c '/usr/bin/curl -fsSL https://releases.herdr.dev/app/install.sh | /bin/sh'
+    fi
+  '';
+
+  home.activation.zinit =lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     if [ ! -d "$HOME/.local/share/zinit/zinit.git" ]; then
       run /usr/bin/git clone -q https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git"
     fi
