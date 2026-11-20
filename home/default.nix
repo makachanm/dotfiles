@@ -34,6 +34,11 @@ in
 
   programs.home-manager.enable = true;
   programs.man.enable = false;
+
+  home.packages = [
+    pkgs.typst
+    pkgs.tinymist
+  ];
   xdg.mime.enable = false;
 
   xdg.userDirs = {

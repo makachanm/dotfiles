@@ -86,9 +86,9 @@ in
               "preferred://filemanager"
               "applications:org.speedcrunch.SpeedCrunch.desktop"
               "applications:com.microsoft.VSCode.desktop"
+              "applications:herdr-app.desktop"
               "applications:slack.desktop"
               "applications:com.notion.app.desktop.notion.desktop"
-              "applications:Goose.desktop"
               "applications:vesktop.desktop"
               "applications:com.ayugram.desktop.desktop"
               "applications:com.spotify.Client.desktop"
@@ -131,6 +131,7 @@ in
               emptyOpacity = 30;
               numberFollowsRingColor = false;
               numberSize = 130;
+              numberWeight = 2;
               profileIndicatorSize = 130;
               ringScale = 130;
               ringThicknessScale = 70;
