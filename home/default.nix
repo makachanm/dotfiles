@@ -36,9 +36,9 @@ in
   programs.man.enable = false;
 
   home.packages = [
-    pkgs.typst
     pkgs.tinymist
   ];
+
   xdg.mime.enable = false;
 
   xdg.userDirs = {
@@ -143,11 +143,29 @@ in
 
   home.activation.herdr = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     if [ ! -x "$HOME/.local/bin/herdr-app" ]; then
-      run /usr/bin/env PATH=/usr/bin:/bin /bin/sh -c '/usr/bin/curl -fsSL https://releases.herdr.dev/app/install.sh | /bin/sh'
+      run /usr/bin/env PATH=/usr/bin:/bin /bin/sh -c 'curl -fsSL https://releases.herdr.dev/app/install.sh | sh'
     fi
   '';
 
-  home.activation.zinit =lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+  home.activation.claude = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    if [ ! -x "$HOME/.local/bin/claude" ]; then
+      run /usr/bin/env PATH=/usr/bin:/bin /bin/sh -c 'curl -fsSL https://claude.ai/install.sh | bash'
+    fi
+  '';
+
+  home.activation.opencode = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    if [ ! -x "$HOME/.opencode/bin/opencode" ]; then
+      run /usr/bin/env PATH=/usr/bin:/bin /bin/sh -c 'curl -fsSL https://opencode.ai/install | bash -s -- --no-modify-path'
+    fi
+  '';
+
+  home.activation.typst = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    if [ ! -x "$HOME/.cargo/bin/typst" ]; then
+      run /usr/bin/env PATH=/usr/bin:/bin cargo install -q --locked typst-cli
+    fi
+  '';
+
+  home.activation.zinit = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     if [ ! -d "$HOME/.local/share/zinit/zinit.git" ]; then
       run /usr/bin/git clone -q https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git"
     fi
