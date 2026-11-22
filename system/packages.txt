@@ -87,8 +87,6 @@ krita
 kdenlive
 digikam
 obs-studio
-audacity
-sooperlooper
 libreoffice-writer
 libreoffice-calc
 libreoffice-impress
