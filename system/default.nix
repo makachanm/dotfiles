@@ -235,6 +235,7 @@ let
     if ! rpm -q tailscale >/dev/null; then
       curl -fsSL https://tailscale.com/install.sh | sh
     fi
+    tailscale set --ssh
   '';
 
   udev = ''
