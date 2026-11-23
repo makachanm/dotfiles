@@ -1,0 +1,7 @@
+{
+  "global": {},
+  "terminal": {
+    "ctrl-shift-c": "terminal.copy",
+    "ctrl-shift-v": "terminal.paste"
+  }
+}

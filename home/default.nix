@@ -145,6 +145,9 @@ in
     if [ ! -x "$HOME/.local/bin/herdr-app" ]; then
       run /usr/bin/env PATH=/usr/bin:/bin /bin/sh -c 'curl -fsSL https://releases.herdr.dev/app/install.sh | sh'
     fi
+    for f in keys.json settings.json; do
+      run /usr/bin/install -Dm644 ${./config/herdr}/$f "$HOME/.config/herdr-app/$f"
+    done
   '';
 
   home.activation.claude = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
