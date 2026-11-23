@@ -2,6 +2,7 @@ set -e
 semanage fcontext -a -t etc_t '/nix/store/[^/]+/etc(/.*)?'
 semanage fcontext -a -t lib_t '/nix/store/[^/]+/lib(/.*)?'
 semanage fcontext -a -t systemd_unit_file_t '/nix/store/[^/]+/lib/systemd/system(/.*)?'
+semanage fcontext -a -t systemd_unit_file_t '/nix/store/[^/]+-unit-[^/]+\.(service|target|mount|socket|timer|path)(/.*)?'
 semanage fcontext -a -t man_t '/nix/store/[^/]+/man(/.*)?'
 semanage fcontext -a -t bin_t '/nix/store/[^/]+/s?bin(/.*)?'
 semanage fcontext -a -t usr_t '/nix/store/[^/]+/share(/.*)?'

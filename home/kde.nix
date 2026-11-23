@@ -82,17 +82,16 @@ in
             config.General.launchers = [
               "preferred://browser"
               "applications:thorium-browser.desktop"
-              "applications:net.thunderbird.Thunderbird.desktop"
               "preferred://filemanager"
               "applications:org.speedcrunch.SpeedCrunch.desktop"
               "applications:com.microsoft.VSCode.desktop"
               "applications:herdr-app.desktop"
-              "applications:slack.desktop"
+              "applications:com.slack.Slack.desktop"
               "applications:com.notion.app.desktop.notion.desktop"
-              "applications:vesktop.desktop"
+              "applications:dev.vencord.Vesktop.desktop"
               "applications:com.ayugram.desktop.desktop"
               "applications:com.spotify.Client.desktop"
-              "applications:steam.desktop"
+              "applications:com.valvesoftware.Steam.desktop"
               "applications:org.prismlauncher.PrismLauncher.desktop"
               "applications:org.kde.krita.desktop"
               "applications:org.kde.kdenlive.desktop"
@@ -362,7 +361,4 @@ in
   ];
 
   home.file.".local/share/kwin/scripts/karousel".source = "${karousel}/karousel";
-
-  home.file.".zen".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/zen";
 }

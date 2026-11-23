@@ -10,14 +10,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
-  outputs = { nixpkgs, home-manager, plasma-manager, ... }: {
+  outputs = { nixpkgs, home-manager, plasma-manager, nix-flatpak, ... }: {
     homeConfigurations.maka = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules = [
         plasma-manager.homeModules.plasma-manager
-        ./home
+        nix-flatpak.homeManagerModules.nix-flatpak
+        ./default.nix
       ];
     };
   };

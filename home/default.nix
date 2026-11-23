@@ -39,6 +39,54 @@ in
     pkgs.tinymist
   ];
 
+  services.flatpak = {
+    enable = true;
+    uninstallUnmanaged = true;
+    remotes = [
+      {
+        name = "flathub";
+        location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+      }
+      {
+        name = "notion-origin";
+        location = "https://app.linux-packages.notion.com/notion.flatpakrepo";
+      }
+    ];
+    packages = [
+      "app.zen_browser.zen"
+      "us.zoom.Zoom"
+      "com.slack.Slack"
+      "dev.vencord.Vesktop"
+      "com.spotify.Client"
+      {
+        appId = "com.notion.app.desktop.notion";
+        origin = "notion-origin";
+      }
+      "org.localsend.localsend_app"
+      "org.kde.krita"
+      "org.kde.kdenlive"
+      "org.kde.digikam"
+      "com.obsproject.Studio"
+      "org.videolan.VLC"
+      "org.libreoffice.LibreOffice"
+      "org.speedcrunch.SpeedCrunch"
+      "com.transmissionbt.Transmission"
+      "org.kde.filelight"
+      "org.kde.massif-visualizer"
+      "org.kde.krdc"
+      "org.kde.isoimagewriter"
+      "com.valvesoftware.Steam"
+      "org.prismlauncher.PrismLauncher"
+      "net.pcsx2.PCSX2"
+      "org.ghidra_sre.Ghidra"
+    ];
+    overrides.global.Environment = {
+      GTK_IM_MODULE = "wayland";
+      QT_IM_MODULE = "wayland";
+      QT_IM_MODULES = "wayland";
+    };
+  };
+
   xdg.mime.enable = false;
 
   xdg.userDirs = {
@@ -96,22 +144,22 @@ in
       Exec=/usr/share/code/code ${imeFlags} --new-window %F
       Icon=vscode
     '';
-    "applications/slack.desktop".text = ''
+    "applications/com.slack.Slack.desktop".text = ''
       [Desktop Entry]
       Name=Slack
-      Exec=/usr/bin/slack ${imeFlags} %U
-      Icon=/usr/share/pixmaps/slack.png
+      Exec=flatpak run --command=com.slack.Slack com.slack.Slack ${imeFlags} %U
+      Icon=com.slack.Slack
       Type=Application
       StartupNotify=true
       StartupWMClass=Slack
       Categories=Network;InstantMessaging;
       MimeType=x-scheme-handler/slack;
     '';
-    "applications/vesktop.desktop".text = ''
+    "applications/dev.vencord.Vesktop.desktop".text = ''
       [Desktop Entry]
       Name=Vesktop
-      Exec=/opt/Vesktop/vesktop ${imeFlags} %U
-      Icon=vesktop
+      Exec=flatpak run --command=startvesktop dev.vencord.Vesktop ${imeFlags} %U
+      Icon=dev.vencord.Vesktop
       Type=Application
       StartupWMClass=vesktop
       Categories=Network;

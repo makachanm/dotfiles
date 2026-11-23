@@ -1,17 +1,26 @@
 # dotfiles
 
-My KDE + Fedora settings.
+My KDE + Fedora settings. `home/` and `system/` are separate Nix flakes.
 
-## Home
+## Nix
 
 ```sh
 sudo dnf install nix nix-daemon
 sudo sh system/scripts/nix-selinux.sh
-nix run home-manager -- switch --flake .#maka -b hm-backup
 ```
 
-After that: `home-manager switch --flake .#maka`
+## Home
+
+```sh
+nix run home-manager -- switch --flake ./home#maka -b hm-backup
+```
+
+After that: `home-manager switch --flake ./home#maka`
 
 ## System
+
+```sh
+system/apply.sh
+```
 
 Check `system/README.md`.
