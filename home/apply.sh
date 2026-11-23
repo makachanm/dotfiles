@@ -1,3 +1,3 @@
 #!/bin/sh
 set -e
-nix run home-manager -- switch --flake "$(dirname "$(realpath "$0")")#maka" -b hm-backup
+nix --extra-experimental-features "nix-command flakes" run home-manager -- switch --flake "$(dirname "$(realpath "$0")")#maka" -b hm-backup

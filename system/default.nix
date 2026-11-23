@@ -147,6 +147,40 @@ let
     Current=voidsddm
   '';
 
+  vscodeRepo = pkgs.writeText "vscode.repo" ''
+    [code]
+    name=Visual Studio Code
+    baseurl=https://packages.microsoft.com/yumrepos/vscode
+    enabled=1
+    autorefresh=1
+    type=rpm-md
+    gpgcheck=1
+    gpgkey=https://packages.microsoft.com/keys/microsoft.asc
+  '';
+
+  grubDefault = pkgs.writeText "grub" ''
+    GRUB_TIMEOUT_STYLE=hidden
+    GRUB_TIMEOUT=5
+    GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
+    GRUB_DEFAULT=saved
+    GRUB_DISABLE_SUBMENU=true
+    GRUB_TERMINAL_OUTPUT="console"
+    GRUB_CMDLINE_LINUX="rhgb quiet"
+    GRUB_DISABLE_RECOVERY="true"
+    GRUB_ENABLE_BLSCFG=true
+  '';
+
+  nixLabels = {
+    "/nix/store/[^/]+/etc(/.*)?" = "etc_t";
+    "/nix/store/[^/]+/lib(/.*)?" = "lib_t";
+    "/nix/store/[^/]+/lib/systemd/system(/.*)?" = "systemd_unit_file_t";
+    "/nix/store/[^/]+/man(/.*)?" = "man_t";
+    "/nix/store/[^/]+/s?bin(/.*)?" = "bin_t";
+    "/nix/store/[^/]+/share(/.*)?" = "usr_t";
+    "/nix/var/nix/daemon-socket(/.*)?" = "var_run_t";
+    "/nix/var/nix/profiles(/per-user/[^/]+)?/[^/]+" = "usr_t";
+  };
+
   asUser = script: ''
     /usr/sbin/runuser -u ${user} -- /usr/bin/env -i HOME=/home/${user} USER=${user} PATH=/usr/bin:/bin /bin/sh -ec ${pkgs.lib.escapeShellArg script}
   '';
@@ -162,7 +196,29 @@ let
         dnf copr enable -y "$copr"
       fi
     done
-    cp --no-preserve=mode ${./repos}/* /etc/yum.repos.d/
+    cp --no-preserve=mode ${vscodeRepo} /etc/yum.repos.d/vscode.repo
+  '';
+
+  selinux = ''
+    labels=$(semanage fcontext -l -C)
+    ${pkgs.lib.concatStrings (pkgs.lib.mapAttrsToList (path: type: ''
+      echo "$labels" | grep -qF -- ${pkgs.lib.escapeShellArg path} || semanage fcontext -a -t ${type} ${pkgs.lib.escapeShellArg path}
+    '') nixLabels)}
+    restorecon -R /nix
+    systemctl enable --now nix-daemon.socket
+  '';
+
+  plymouth = ''
+    if [ "$(plymouth-set-default-theme)" != bgrt-nologo ]; then
+      src=/usr/share/plymouth/themes
+      dst=$src/bgrt-nologo
+      mkdir -p $dst
+      for f in $src/spinner/*.png; do
+        [ "$(basename $f)" = watermark.png ] || cp -f $f $dst/
+      done
+      sed -e 's|^ImageDir=.*|ImageDir=/usr/share/plymouth/themes/bgrt-nologo|' -e 's|^Name=BGRT$|Name=BGRT (no logo)|' $src/bgrt/bgrt.plymouth > $dst/bgrt-nologo.plymouth
+      plymouth-set-default-theme -R bgrt-nologo
+    fi
   '';
 
   dnfPackages = ''
@@ -205,8 +261,8 @@ let
   '';
 
   grub = ''
-    if ! cmp -s ${./grub} /etc/default/grub; then
-      cp --no-preserve=mode ${./grub} /etc/default/grub
+    if ! cmp -s ${grubDefault} /etc/default/grub; then
+      cp --no-preserve=mode ${grubDefault} /etc/default/grub
       grub2-mkconfig -o /boot/grub2/grub.cfg
     fi
   '';
@@ -263,6 +319,7 @@ in
 pkgs.writeShellScript "system-apply" ''
   set -e
   export PATH=/usr/bin:/usr/sbin:/bin:/sbin
+  ${selinux}
   ${repos}
   ${dnfPackages}
   ${tailscale}
@@ -270,6 +327,7 @@ pkgs.writeShellScript "system-apply" ''
   ${keydConfig}
   ${sddmConfig}
   ${grub}
+  ${plymouth}
   ${herdr}
   ${claude}
   ${opencode}
