@@ -17,7 +17,6 @@ plasma-integration
 plasma-breeze
 filelight
 kinfocenter
-umbrello
 gns3-server
 gns3-gui
 massif-visualizer
