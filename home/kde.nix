@@ -96,7 +96,7 @@ in
               "applications:org.prismlauncher.PrismLauncher.desktop"
               "applications:org.kde.krita.desktop"
               "applications:org.kde.kdenlive.desktop"
-              "applications:cockos-reaper.desktop"
+              "applications:renoise.desktop"
               "applications:com.obsproject.Studio.desktop"
             ];
           }
