@@ -39,54 +39,6 @@ in
     pkgs.tinymist
   ];
 
-  services.flatpak = {
-    enable = true;
-    uninstallUnmanaged = true;
-    remotes = [
-      {
-        name = "flathub";
-        location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
-      }
-      {
-        name = "notion-origin";
-        location = "https://app.linux-packages.notion.com/notion.flatpakrepo";
-      }
-    ];
-    packages = [
-      "app.zen_browser.zen"
-      "us.zoom.Zoom"
-      "com.slack.Slack"
-      "dev.vencord.Vesktop"
-      "com.spotify.Client"
-      {
-        appId = "com.notion.app.desktop.notion";
-        origin = "notion-origin";
-      }
-      "org.localsend.localsend_app"
-      "org.kde.krita"
-      "org.kde.kdenlive"
-      "org.kde.digikam"
-      "com.obsproject.Studio"
-      "org.videolan.VLC"
-      "org.libreoffice.LibreOffice"
-      "org.speedcrunch.SpeedCrunch"
-      "com.transmissionbt.Transmission"
-      "org.kde.filelight"
-      "org.kde.massif-visualizer"
-      "org.kde.krdc"
-      "org.kde.isoimagewriter"
-      "com.valvesoftware.Steam"
-      "org.prismlauncher.PrismLauncher"
-      "net.pcsx2.PCSX2"
-      "org.ghidra_sre.Ghidra"
-    ];
-    overrides.global.Environment = {
-      GTK_IM_MODULE = "wayland";
-      QT_IM_MODULE = "wayland";
-      QT_IM_MODULES = "wayland";
-    };
-  };
-
   xdg.mime.enable = false;
 
   xdg.userDirs = {
@@ -190,34 +142,12 @@ in
   '';
 
   home.activation.herdr = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    if [ ! -x "$HOME/.local/bin/herdr-app" ]; then
-      run /usr/bin/env PATH=/usr/bin:/bin /bin/sh -c 'curl -fsSL https://releases.herdr.dev/app/install.sh | sh'
-    fi
     run /usr/bin/mkdir -p "$HOME/.config/herdr-app"
     run /usr/bin/cp -r --no-preserve=mode ${./config/herdr}/. "$HOME/.config/herdr-app/"
   '';
 
-  home.activation.claude = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    if [ ! -x "$HOME/.local/bin/claude" ]; then
-      run /usr/bin/env PATH=/usr/bin:/bin /bin/sh -c 'curl -fsSL https://claude.ai/install.sh | bash'
-    fi
-  '';
-
-  home.activation.opencode = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    if [ ! -x "$HOME/.opencode/bin/opencode" ]; then
-      run /usr/bin/env PATH=/usr/bin:/bin /bin/sh -c 'curl -fsSL https://opencode.ai/install | bash -s -- --no-modify-path'
-    fi
-  '';
-
-  home.activation.typst = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    if [ ! -x "$HOME/.cargo/bin/typst" ]; then
-      run /usr/bin/env PATH=/usr/bin:/bin cargo install -q --locked typst-cli
-    fi
-  '';
-
-  home.activation.zinit = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    if [ ! -d "$HOME/.local/share/zinit/zinit.git" ]; then
-      run /usr/bin/git clone -q https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git"
-    fi
+  home.activation.flatpak = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    run /usr/bin/mkdir -p "$HOME/.local/share/flatpak/overrides"
+    run /usr/bin/cp --no-preserve=mode ${./config/flatpak/global} "$HOME/.local/share/flatpak/overrides/global"
   '';
 }

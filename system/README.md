@@ -1,20 +1,21 @@
-## Nix (`apply.sh`)
+## `apply.sh`
+
+Runs `default.nix` as root. Safe to run again.
 
 | | |
 | --- | --- |
+| dnf | RPM Fusion, COPR, `repos/*.repo`, packages |
+| tailscale | official installer |
 | `udev/*.rules` | `/etc/udev/rules.d/` |
 | keyd | `/etc/keyd/default.conf` |
-| sddm | `/etc/sddm.conf.d/10-voidsddm.conf` |
-| tailscale | `tailscaled.service`, `/usr/local/bin/tailscale` |
+| sddm | `/etc/sddm.conf.d/10-voidsddm.conf`, voidsddm theme |
+| `grub` | `/etc/default/grub`, `grub2-mkconfig` when changed |
+| herdr, claude, opencode, typst, zinit | as the user, when missing |
+| Flatpak | user installation, unlisted apps removed |
 
 ## Files
 
 | | |
 | --- | --- |
-| `repos/*.repo` | `/etc/yum.repos.d/` |
 | `scripts/plymouth-nologo.sh` | Removes Plymouth Fedora Logo |
 | `scripts/nix-selinux.sh` | SELinux labels for the Nix store |
-| `grub` | `/etc/default/grub`, then `grub2-mkconfig -o /boot/grub2/grub.cfg` |
-| `voidsddm/` | `/usr/share/sddm/themes/voidsddm` (submodule: `git submodule update --init`) |
-
-`packages.txt`: COPR + RPM
