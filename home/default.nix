@@ -148,6 +148,6 @@ in
 
   home.activation.flatpak = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     run /usr/bin/mkdir -p "$HOME/.local/share/flatpak/overrides"
-    run /usr/bin/cp --no-preserve=mode ${./config/flatpak/global} "$HOME/.local/share/flatpak/overrides/global"
+    run /usr/bin/cp -r --no-preserve=mode ${./config/flatpak}/. "$HOME/.local/share/flatpak/overrides/"
   '';
 }
