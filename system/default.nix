@@ -57,6 +57,7 @@ let
     "perf"
     "golang"
     "cargo"
+    "uv"
     "nodejs22"
     "nodejs22-npm"
     "code"
@@ -286,6 +287,12 @@ let
     fi
   '';
 
+  agy = asUser ''
+    if [ ! -x "$HOME/.local/bin/agy" ]; then
+      curl -fsSL https://antigravity.google/cli/install.sh | bash
+    fi
+  '';
+
   typst = asUser ''
     if [ ! -x "$HOME/.cargo/bin/typst" ]; then
       cargo install -q --locked typst-cli
@@ -332,6 +339,7 @@ pkgs.writeShellScript "system-apply" ''
   ${herdr}
   ${claude}
   ${opencode}
+  ${agy}
   ${typst}
   ${zinit}
   ${flatpak}
